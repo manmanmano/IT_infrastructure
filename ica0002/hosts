@@ -1,1 +1,1 @@
-FIXME ansible_host=193.40.156.86 ansible_port=FIXME ansible_ssh_user=ubuntu
+manmanmano-1 ansible_host=193.40.156.86 ansible_port=3222 ansible_ssh_user=ubuntu
