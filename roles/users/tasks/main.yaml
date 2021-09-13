@@ -1,0 +1,19 @@
+- name: Add the user roman to managed hosts
+  ansible.builtin.user:
+    name: roman
+
+- name: Set authorized keys for roman from url
+  ansible.posix.authorized_keys:
+    user: romankuchin
+    state: present
+    key: https://github.com/romankuchin.keys
+
+- name: Add the user juri to managed hosts
+  ansible.builtin.user: 
+    name: juri 
+
+- name: Set authorized keys for juri from url
+  ansible.posix.authorized_key: 
+    user: hudolejev 
+    state: present
+    key: https://github.com/hudolejev.keys
