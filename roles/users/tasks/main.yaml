@@ -3,8 +3,8 @@
     name: roman
 
 - name: Set authorized keys for roman from url
-  ansible.posix.authorized_keys:
-    user: romankuchin
+  ansible.posix.authorized_key:
+    user: roman
     state: present
     key: https://github.com/romankuchin.keys
 
@@ -14,6 +14,6 @@
 
 - name: Set authorized keys for juri from url
   ansible.posix.authorized_key: 
-    user: hudolejev 
+    user: juri 
     state: present
     key: https://github.com/hudolejev.keys
