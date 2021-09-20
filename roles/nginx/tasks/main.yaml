@@ -2,3 +2,14 @@
   apt: 
     name: nginx
     update_cache: yes
+
+- name: Copy index.html to the server
+  ansible.builtin.copy:
+    src: ../../files/index.html
+    dest: /var/www/html
+
+- name: Nginx service
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: yes
