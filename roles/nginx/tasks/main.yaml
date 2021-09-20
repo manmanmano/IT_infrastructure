@@ -5,7 +5,7 @@
 
 - name: Copy index.html to the server
   ansible.builtin.copy:
-    src: ../../files/index.html
+    src: ../files/default 
     dest: /var/www/html
 
 - name: Nginx service
