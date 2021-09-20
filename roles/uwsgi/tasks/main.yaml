@@ -12,3 +12,9 @@
   ansible.builtin.copy:
     src: ../files/agama.ini
     dest: /etc/uwsgi/apps-enabled/agama.ini
+
+- name: uWSGI service                                                           
+  ansible.builtin.service:                                                      
+    name: nginx                                                                 
+    state: started                                                              
+    enabled: yes         
