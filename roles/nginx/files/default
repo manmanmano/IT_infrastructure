@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Welcome</title>
-    </head>
-    <body>
-        <h1>Welcome to my server!</h1>
-        <p>This is manmanmano here, I hope you'll have a great time and enjoy
-            my beautiful server!</p>
-        <em>Mamma mia marcello!</em>
-        <br>
-        <b>COOL!</b>
-    </body>
-</html>
+server {
+	listen 80 default_server;
+	server_name manmanmano;
+
+	location / {
+		uwsgi_pass localhost:5000;
+		include uwsgi_params;
+	}
+}
