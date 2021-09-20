@@ -7,3 +7,8 @@
   apt: 
     name: uwsgi-plugin-python3
     update-cache: yes
+
+- name: Copy agama.ini to desired directory
+  ansible.builtin.copy:
+    src: ../files/agama.ini
+    dest: /etc/uwsgi/apps-enabled/agama.ini
