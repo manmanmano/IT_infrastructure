@@ -1,4 +1,4 @@
-manmanmano-1 ansible_host=193.40.156.86 ansible_port=18180 ansible_ssh_user=ubuntu
+manmanmano-1 ansible_host=193.40.156.86 ansible_port=18122 ansible_ssh_user=ubuntu
 
 [web_servers]
 manmanmano-1
