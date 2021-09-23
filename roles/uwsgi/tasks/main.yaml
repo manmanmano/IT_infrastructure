@@ -7,8 +7,8 @@
     name: uwsgi-plugin-python3
 
 - name: Copy agama.ini to desired directory
-  ansible.builtin.copy:
-    src: ../files/agama.ini
+  ansible.builtin.template:
+    src: ../templates/agama.ini
     dest: /etc/uwsgi/apps-enabled/agama.ini
   notify: Restart uWSGI
 
