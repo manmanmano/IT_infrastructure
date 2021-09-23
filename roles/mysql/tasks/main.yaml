@@ -2,11 +2,20 @@
   apt:
     name: mysql-server
 
+- name: Install package "python3-pymysql"
+  apt:
+    name: python3-pymysql
+
 - name: MySQL service
   ansible.builtin.service:
     name: mysql
     state: started
     enabled: yes
+
+- name: MySQL database
+  community.mysql.mysql_db:
+    name: "{{ mysql_database }}"
+    login_unix_socket: /var/run/mysqld/mysqld.sock
 
 - name: copy override.cnf to /etc/mysql/mysql.conf.d/
   ansible.builtin.copy:
