@@ -1,12 +1,10 @@
 - name: Install uWSGI package uwsgi
   apt:
     name: uwsgi
-    update_cache: yes
 
 - name: Install uWSGI package uwsgi-plugin-python3
   apt: 
     name: uwsgi-plugin-python3
-    update-cache: yes
 
 - name: Copy agama.ini to desired directory
   ansible.builtin.copy:

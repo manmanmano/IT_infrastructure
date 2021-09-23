@@ -1,7 +1,6 @@
 - name: Install the package "nginx"
   apt: 
     name: nginx
-    update_cache: yes
 
 - name: Copy index.html to the server
   ansible.builtin.copy:

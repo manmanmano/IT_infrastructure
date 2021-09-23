@@ -1,0 +1,4 @@
+- name:  Update APT cache
+  ansible.buitin.apt:
+    cache_valid_time: 86400
+
