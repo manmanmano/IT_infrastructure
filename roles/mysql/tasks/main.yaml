@@ -1,0 +1,9 @@
+- name: Install package "mysql"
+  apt:
+    name: mysql-server
+
+- name: MySQL service
+  ansible.builtin.service:
+    name: mysql
+    state: started
+    enabled: yes
