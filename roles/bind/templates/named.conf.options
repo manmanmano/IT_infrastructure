@@ -1,3 +1,9 @@
+acl networks { 
+    {%for network in dns_networks-%}
+    {{ network }};
+    {%endfor%}
+};
+
 options {
         directory "/var/cache/bind";
 
