@@ -21,10 +21,10 @@
   notify: Restart bind
 
 - name: Copy resolv.conf
-  ansilbe.builtin.template:
+  ansible.builtin.template:
     src: ../templates/resolv.conf
     dest: /etc/resolv.conf
-    notify: Restart bind
+  notify: Restart bind
 
 - name: Stop systemd-resolved
   ansible.builtin.service:
