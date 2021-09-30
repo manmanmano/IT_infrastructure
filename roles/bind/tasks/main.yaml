@@ -19,3 +19,15 @@
     src: ../templates/db.clounsible
     dest: /etc/bind/
   notify: Restart bind
+
+- name: Copy resolv.conf
+  ansilbe.builtin.template:
+    src: ../templates/resolv.conf
+    dest: /etc/resolv.conf
+    notify: Restart bind
+
+- name: Stop systemd-resolved
+  ansible.builtin.service:
+    name: systemd-resolved
+    state: stopped
+    enabled: no
