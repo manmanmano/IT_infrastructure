@@ -11,5 +11,11 @@
 - name: Copy new named.conf.options
   ansible.builtin.template:
     src: ../templates/named.conf.options
-    dest: /etc/bind/named.conf.options
+    dest: /etc/bind/
+  notify: Restart bind
+
+- name: Copy db.startup_name
+  ansible.builtin.template:
+    src: ../templates/db.clounsible
+    dest: /etc/bind/
   notify: Restart bind
