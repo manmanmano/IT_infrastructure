@@ -1,3 +1,9 @@
 - name: install package "bind9"
   apt:
     name: bind9
+
+- name: service bind
+  ansible.builtin.service:
+    name: bind9
+    state: started
+    enabled: yes

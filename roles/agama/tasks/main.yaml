@@ -9,8 +9,9 @@
 
 - name: Install the application dependencies
   apt:
-    name: python3-flask-sqlalchemy
-    name: python3-pymysql
+    pkg: 
+      - python3-flask-sqlalchemy
+      - python3-pymysql
 
 - name: Download agama.py from the web
   get_url:
