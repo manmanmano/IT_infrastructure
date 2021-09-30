@@ -1,0 +1,14 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+{{ startup_name }}      IN      SOA     manmanmano-1.{{ startup_name }}. mariano.{startup_name}. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+{{ startup_name }}
+manmanmano-1       IN    {{ hostvars['manmanmano-1']['ansible_default_ipv4']['address'] }}  
+manmanmano-2       IN    {{ hostvars['manmanmano-2']['ansible_default_ipv4']['address'] }}  

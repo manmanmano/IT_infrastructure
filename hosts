@@ -4,5 +4,8 @@ manmanmano-2 ansible_host=193.40.156.86 ansible_port=4622 ansible_ssh_user=ubunt
 [web_servers]
 manmanmano-1
 
-[db_server]
+[db_servers]
+manmanmano-2
+
+[dns_servers]
 manmanmano-2

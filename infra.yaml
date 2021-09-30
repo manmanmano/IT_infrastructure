@@ -1,20 +1,36 @@
 ---
+- name: Collect info about all VMs 
+  hosts: all
+  become: yes
+  gather_facts: yes
+  tasks: 
+    - setup:
+
 - name: Init
   hosts: all 
   become: yes
+  gather_facts: no 
   roles: 
     - init
 
 - name: Database server
-  hosts: db_server
+  hosts: db_servers
   become: yes
+  gather_facts: no 
   roles:
     - mysql
+
+- name: DNS server
+  hosts: dns_servers
+  become: yes
+  gather_facts: no
+  roles: 
     - bind
 
 - name: Web server
   hosts: web_servers
   become: yes
+  gather_facts: no
   roles: 
     - agama
     - uwsgi
