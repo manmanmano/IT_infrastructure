@@ -1,8 +1,4 @@
-acl networks { 
-    {%for network in dns_networks-%}
-    {{ network }};
-    {%endfor%}
-};
+acl networks { {%for network in dns_networks%} {{ network }}; {%endfor%} };
 
 options {
         directory "/var/cache/bind";
@@ -17,16 +13,15 @@ options {
         // the all-0's placeholder.
 
         forwarders {
-            {%for forwarder in dns_forwarders-%}
+            {%for forwarder in dns_forwarders-%} 
             {{ forwarder }};
-            {%endfor%}
-         };
+            {%endfor%}};
 
         //========================================================================
         // If BIND logs error messages about the root key being expired,
         // you will need to update your keys.  See https://www.isc.org/bind-keys
         //========================================================================
-        dnssec-validation auto;
+        dnssec-validation no;
 
-        listen-on-v6 { any; };
+        //listen-on-v6 { any; };
 };
