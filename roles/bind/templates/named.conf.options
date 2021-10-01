@@ -14,6 +14,6 @@ options {
 
 
 zone "{{ startup_name }}" {
-    type primary;
+    type master;
     file "db.clounsible";
 };
