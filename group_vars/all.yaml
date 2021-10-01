@@ -1,4 +1,4 @@
-mysql_host: 192.168.42.46
+mysql_host: 192.168.42.108
 mysql_database: agama
 mysql_user: agama 
 mysql_password: !vault |
@@ -16,6 +16,6 @@ dns_forwarders:
   - 9.9.9.10
 dns_networks:
   - 192.168.42.0/24
-  - 127.0.0.1/8
+  - 127.0.0.0/8
 
 startup_name: clounsible.mano

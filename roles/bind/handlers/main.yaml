@@ -2,3 +2,7 @@
   ansible.builtin.service:
     name: bind9
     state: restarted
+
+- name: Reload bind
+  shell:
+    cmd: rndc reload
