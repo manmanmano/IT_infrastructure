@@ -35,3 +35,10 @@
     - agama
     - uwsgi
     - nginx
+
+- name: Systemd-resolved
+  hosts: all
+  become: yes
+  gather_facts: no
+  roles: 
+    - systemd-resolved

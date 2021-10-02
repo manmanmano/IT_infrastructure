@@ -15,5 +15,5 @@ options {
 
 zone "{{ startup_name }}" {
     type master;
-    file "db.clounsible";
+    file "/etc/bind/db.clounsible";
 };
