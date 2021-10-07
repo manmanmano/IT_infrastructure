@@ -35,6 +35,7 @@
     - agama
     - uwsgi
     - nginx
+    - prometheus
 
 - name: Systemd-resolved
   hosts: all

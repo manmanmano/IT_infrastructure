@@ -1,4 +1,4 @@
-mysql_host: 192.168.42.166
+mysql_host: 192.168.42.80
 mysql_database: agama
 mysql_user: agama 
 mysql_password: !vault |
@@ -19,3 +19,5 @@ dns_networks:
   - 127.0.0.0/8
 
 startup_name: clounsible.mano
+
+prometheus_default_port: 9100
