@@ -13,3 +13,9 @@
     src: ../templates/prometheus.yml
     dest: /etc/prometheus/
   notify: Restart prometheus
+
+- name: /etc/default/prometheus
+  ansible.builtin.template:
+    src: ../templates/prometheus
+    dest: /etc/default/
+  notify: Restart prometheus

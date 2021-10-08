@@ -8,8 +8,8 @@
     dest: /var/www/html
 
 - name: Copy default to /etc/nginx/sites-enabled/default      
-  ansible.builtin.copy:
-    src: ../files/default
+  ansible.builtin.template:
+    src: ../templates/default
     dest: /etc/nginx/sites-enabled/default
   notify: Restart Nginx
 
