@@ -1,0 +1,2 @@
+rate(node_cpu_seconds_total[24h])
+rate(node_memory_Active_bytes)
