@@ -34,7 +34,19 @@
   roles: 
     - agama
     - uwsgi
+
+- name: NGINX
+  hosts: all
+  become: yes
+  gather_facts: no
+  roles:
     - nginx
+
+- name: Prometheus
+  hosts: prometheus_servers
+  become: yes
+  gather_facts: no
+  roles: 
     - prometheus
 
 - name: Node exporter

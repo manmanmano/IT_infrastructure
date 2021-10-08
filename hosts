@@ -9,3 +9,6 @@ manmanmano-2
 
 [dns_servers]
 manmanmano-2
+
+[prometheus_servers]
+manmanmano-1

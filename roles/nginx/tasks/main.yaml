@@ -2,10 +2,10 @@
   apt: 
     name: nginx
 
-- name: Copy index.html to the server
-  ansible.builtin.copy:
-    src: ../files/index.html 
-    dest: /var/www/html
+      #- name: Copy index.html to the server
+      #ansible.builtin.copy:
+      #src: ../files/index.html 
+      #dest: /var/www/html
 
 - name: Copy default to /etc/nginx/sites-enabled/default      
   ansible.builtin.template:
