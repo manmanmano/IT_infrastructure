@@ -1,3 +1,9 @@
 - name: Install prometheus-bind-exporter
   apt:
     name: prometheus-bind-exporter
+
+- name: Service bind-exporter
+  ansible.builtin.service:
+    name: prometheus-bind-exporter
+    state: started
+    enabled: yes
