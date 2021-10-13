@@ -13,3 +13,6 @@ manmanmano-2
 
 [prometheus_servers]
 manmanmano-1
+
+[grafana_servers]
+manmanmano-1

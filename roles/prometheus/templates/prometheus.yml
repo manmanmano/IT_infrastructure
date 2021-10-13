@@ -31,3 +31,10 @@ scrape_configs:
         - {{ vm }}:9119
 {%endfor%}
 
+  - job_name: nginx 
+    static_configs:
+      - targets:
+{%for vm in groups['web_servers']%}
+        - {{ vm }}:9113
+{%endfor%}
+

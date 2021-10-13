@@ -59,6 +59,15 @@
   roles: 
     - prometheus
 
+- name: Grafana
+  hosts: grafana_servers
+  become: yes
+  gather_facts: no
+  roles: 
+    - grafana
+  tags: 
+    - g
+
 - name: Systemd-resolved
   hosts: all
   become: yes
