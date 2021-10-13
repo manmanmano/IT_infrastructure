@@ -48,6 +48,8 @@
   gather_facts: no
   roles: 
     - prometheus
+  tags: 
+    - p
 
 - name: Node exporter
   hosts: all
@@ -55,6 +57,13 @@
   gather_facts: no
   roles:
     - node_exporter
+
+- name: MySQL exporter
+  hosts: db_servers
+  become: yes
+  gather_facts: no 
+  roles:
+    - mysql_exporter
 
 - name: Systemd-resolved
   hosts: all
