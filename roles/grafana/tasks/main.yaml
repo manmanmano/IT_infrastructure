@@ -17,3 +17,9 @@
     name: grafana-server
     state: started
     enabled: yes
+
+- name: grafana.ini
+  ansible.builtin.template:
+    src: ../files/grafana.ini
+    dest: /etc/grafana/
+  notify: Restart grafana

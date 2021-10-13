@@ -44,6 +44,8 @@
   roles:
     - nginx
     - nginx_exporter
+  tags:
+    - n
 
 - name: Node exporter
   hosts: all
