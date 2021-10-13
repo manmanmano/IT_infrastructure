@@ -30,3 +30,4 @@ scrape_configs:
 {%for vm in groups['dns_servers']%}
         - {{ vm }}:9119
 {%endfor%}
+

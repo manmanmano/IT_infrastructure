@@ -1,4 +1,4 @@
-- name: Restart nginx-exporter
+- name: Restart Nginx
   ansible.builtin.service:
-    name: prometheus-nginx-exporter
+    name: nginx
     state: restarted

@@ -20,4 +20,4 @@
   ansible.builtin.template:
     src: ../templates/.my.cnf
     dest: /var/lib/prometheus/
-  notify: Restart mysql-exporter
+  notify: Restart mysql

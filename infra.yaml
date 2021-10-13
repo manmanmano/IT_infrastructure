@@ -45,19 +45,19 @@
     - nginx
     - nginx_exporter
 
-- name: Prometheus
-  hosts: prometheus_servers
-  become: yes
-  gather_facts: no
-  roles: 
-    - prometheus
-
 - name: Node exporter
   hosts: all
   become: yes
   gather_facts: no
   roles:
     - node_exporter
+
+- name: Prometheus
+  hosts: prometheus_servers
+  become: yes
+  gather_facts: no
+  roles: 
+    - prometheus
 
 - name: Systemd-resolved
   hosts: all
