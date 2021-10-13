@@ -5,6 +5,9 @@ manmanmano-2 ansible_host=193.40.156.86 ansible_port=4522 ansible_ssh_user=ubunt
 manmanmano-1
 manmanmano-2
 
+[agama_app]
+manmanmano-1
+
 [db_servers]
 manmanmano-2
 

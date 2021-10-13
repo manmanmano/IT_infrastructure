@@ -1,5 +1,5 @@
 server {
-{%if inventory_hostname in groups['prometheus_servers']%}
+{%if inventory_hostname in groups['agama_app']%}
         listen 80 default_server;
         server_name manmanmano;
 
@@ -7,7 +7,8 @@ server {
                 uwsgi_pass localhost:5000;
                 include uwsgi_params;
         }
-
+{%endif%}
+{%if inventory_hostname in groups['prometheus_servers']%}
         location /prometheus {
             proxy_pass http://localhost:9090;
         }

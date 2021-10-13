@@ -29,8 +29,8 @@
     - bind
     - bind_exporter
 
-- name: Web server
-  hosts: web_servers
+- name: Agama
+  hosts: agama_app
   become: yes
   gather_facts: no
   roles: 
