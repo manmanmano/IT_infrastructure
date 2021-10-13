@@ -65,6 +65,13 @@
   roles:
     - mysql_exporter
 
+- name: Bind exporter
+  hosts: dns_servers
+  become: yes
+  gather_facts: no
+  roles:
+    - bind_exporter
+
 - name: Systemd-resolved
   hosts: all
   become: yes

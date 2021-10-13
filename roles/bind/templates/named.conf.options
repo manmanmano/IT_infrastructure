@@ -4,16 +4,19 @@ options {
         directory "/var/cache/bind";
 
         forwarders {
-            {%for forwarder in dns_forwarders-%} 
+{%for forwarder in dns_forwarders-%} 
             {{ forwarder }};
-            {%endfor%}};
+{%endfor%}};
 
         dnssec-validation no;
 
 };
 
-
 zone "{{ startup_name }}" {
     type master;
     file "/etc/bind/db.clounsible";
+};
+
+statistics-channels {
+  inet 127.0.0.1 port 8053 allow {127.0.01; };
 };

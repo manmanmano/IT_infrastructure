@@ -29,6 +29,4 @@ dns_networks:
 
 startup_name: clounsible.mano
 
-prometheus_default_port: 9100
-
 public_url: http://193.40.156.86:2880
