@@ -3,3 +3,6 @@
     name: grafana-server
     state: restarted
 
+- name: Grafana password
+  shell:
+    cmd: grafana-cli admin reset-admin-password {{ grafana_password }}

@@ -11,6 +11,7 @@
 - name: Install grafana
   apt:
     name: grafana
+  notify: Grafana password
 
 - name: Service grafana
   ansible.builtin.service:
@@ -23,7 +24,3 @@
     src: ../files/grafana.ini
     dest: /etc/grafana/
   notify: Restart grafana
-
-- name: Grafana password
-  shell: 
-    cmd: grafana-cli admin reset-admin-password {{ grafana_password }}
