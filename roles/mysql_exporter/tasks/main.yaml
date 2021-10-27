@@ -1,12 +1,14 @@
 - name: install mysql-exporter
   apt:
     name: prometheus-mysqld-exporter
+  register: prom_exporter_installed
 
-- name: MySQL-exporter service
-  ansible.builtin.service:
-    name: prometheus-mysqld-exporter
-    state: started
-    enabled: yes
+- name: my.cnf
+  ansible.builtin.template:
+    src: ../templates/.my.cnf
+    dest: /var/lib/prometheus/
+  notify:
+    - Restart mysql-exporter
 
 - name: MySQL user
   community.mysql.mysql_user:
@@ -20,4 +22,15 @@
   ansible.builtin.template:
     src: ../templates/.my.cnf
     dest: /var/lib/prometheus/
-  notify: Restart mysql
+  notify:
+    - Restart mysql-exporter
+
+- name: Pause for 10 sec
+  pause:
+    seconds: 10
+  when: prom_exporter_installed.changed
+
+- service:
+    name: prometheus-mysqld-exporter
+    state: started
+    enabled: yes

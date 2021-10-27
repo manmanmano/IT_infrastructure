@@ -70,6 +70,15 @@
   tags: 
     - g
 
+- name: InfluxDB
+  hosts: db_servers
+  become: yes
+  gather_facts: no
+  roles:
+    - influxdb
+  tags:
+    - x
+
 - name: Systemd-resolved
   hosts: all
   become: yes

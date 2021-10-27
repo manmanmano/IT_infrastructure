@@ -1,0 +1,19 @@
+- name: Repo key
+  ansible.builtin.apt_key:
+    url: https://repos.influxdata.com/influxdb.key  
+    state: present
+
+- name: Add influxdb repo
+  ansible.builtin.apt_repository:
+    repo:  deb https://repos.influxdata.com/ubuntu focal stable
+    update_cache: yes
+
+- name: Install influxdb
+  apt:
+    name: influxdb
+
+- name: Service influxdb
+  ansible.builtin.service:
+    name: influxdb
+    state: started
+    enabled: yes
