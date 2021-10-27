@@ -19,3 +19,20 @@
     name: influxdb
     state: started
     enabled: yes
+
+- name: Install telegraf
+  apt: 
+    name: 
+      - telegraf
+
+- name: Copy telegraf.conf
+  ansible.builtin.copy:
+    src: ../files/telegraf.conf
+    dest: /etc/telegraf/telegraf.conf
+  notfiy: Restart telegraf
+
+- name: Service telegraf
+  ansible.builtin.service:
+    name: telegraf
+    state: started
+    enabled: yes
