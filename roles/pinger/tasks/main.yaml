@@ -10,6 +10,7 @@
   ansible.builtin.copy:
     src: ../files/pinger.conf
     dest: /etc/pinger/
+  notify: Restart pinger
 
 - name: Copy pinger.sh
   ansible.builtin.copy:

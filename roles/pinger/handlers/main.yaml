@@ -1,3 +1,8 @@
 - name: Reload daemons
   shell:
     cmd: systemctl daemon-reload
+
+- name: Restart pinger
+  ansible.builtin.service:
+    name: pinger
+    state: restarted
