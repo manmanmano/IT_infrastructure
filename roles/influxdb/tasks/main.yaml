@@ -29,7 +29,7 @@
   ansible.builtin.copy:
     src: ../files/telegraf.conf
     dest: /etc/telegraf/telegraf.conf
-  notfiy: Restart telegraf
+  notify: Restart telegraf
 
 - name: Service telegraf
   ansible.builtin.service:
