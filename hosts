@@ -19,3 +19,6 @@ vm1
 
 [grafana_servers]
 vm1
+
+[pingers]
+vm2

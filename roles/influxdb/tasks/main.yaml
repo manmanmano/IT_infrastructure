@@ -10,7 +10,7 @@
 
 - name: Install influxdb
   apt:
-    name: influxdb
+    name: influxdb-client
 
 - name: Service influxdb
   ansible.builtin.service:
