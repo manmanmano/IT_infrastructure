@@ -29,13 +29,6 @@
     - bind
     - bind_exporter
 
-- name: Systemd-resolved
-  hosts: all
-  become: yes
-  gather_facts: no
-  roles: 
-    - systemd-resolved
-
 - name: Agama
   hosts: agama_app
   become: yes
@@ -94,3 +87,10 @@
     - pinger
   tags: 
     - p
+
+- name: Systemd-resolved
+  hosts: all
+  become: yes
+  gather_facts: no
+  roles: 
+    - systemd-resolved

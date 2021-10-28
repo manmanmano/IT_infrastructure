@@ -12,7 +12,6 @@
   apt:
     name: 
       - influxdb
-      - influxdb-client
 
 - name: Service influxdb
   ansible.builtin.service:
