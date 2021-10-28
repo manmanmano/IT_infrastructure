@@ -19,7 +19,6 @@
     owner: pinger
     mode: u+x
 
-
 - name: Copy pinger.service
   ansible.builtin.copy:
     src: ../files/pinger.service

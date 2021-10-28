@@ -76,6 +76,7 @@
   gather_facts: no
   roles:
     - influxdb
+    - influxdb_exporter
   tags:
     - x
 
