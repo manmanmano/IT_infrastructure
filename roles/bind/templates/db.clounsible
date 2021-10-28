@@ -9,3 +9,4 @@ $TTL    604800
 {{ startup_name }}.       IN      NS      manmanmano-1 
 manmanmano-1       IN      A       {{ hostvars['manmanmano-1']['ansible_default_ipv4']['address'] }}
 manmanmano-2       IN      A       {{ hostvars['manmanmano-2']['ansible_default_ipv4']['address'] }}
+backup       IN      A       {{ backup_server_ip }}

@@ -28,6 +28,8 @@
   roles: 
     - bind
     - bind_exporter
+  tags:
+    - b
 
 - name: Agama
   hosts: agama_app
