@@ -39,3 +39,9 @@ scrape_configs:
         - {{ vm }}:9113
 {%endfor%}
 
+  - job_name: influxdb
+    static_configs:
+      - targets:
+{%for vm in groups['db_servers']%}
+        - {{ vm }}:9424
+{%endfor%}

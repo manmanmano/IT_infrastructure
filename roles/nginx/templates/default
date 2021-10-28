@@ -24,6 +24,10 @@ server {
         location /mysql-metrics {
             proxy_pass http://localhost:9104/metrics;
         }
+
+        location /influxdb-metrics {
+            proxy_pass http://localhost:9424/metrics;
+        }
 {%endif%}
 
 {%if inventory_hostname in groups['dns_servers']%}
