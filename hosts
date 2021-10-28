@@ -1,24 +1,24 @@
-vm1 ansible_host=193.40.156.86 ansible_port=5122 ansible_ssh_user=ubuntu
-vm2 ansible_host=193.40.156.86 ansible_port=8722 ansible_ssh_user=ubuntu
+manmanmano-1 ansible_host=193.40.156.86 ansible_port=5122 ansible_ssh_user=ubuntu
+manmanmano-2 ansible_host=193.40.156.86 ansible_port=8722 ansible_ssh_user=ubuntu
 
 [web_servers]
-vm1
-vm2
+manmanmano-1
+manmanmano-2
 
 [agama_app]
-vm1
+manmanmano-1
 
 [db_servers]
-vm2
+manmanmano-2
 
 [dns_servers]
-vm2
+manmanmano-2
 
 [prometheus_servers]
-vm1
+manmanmano-1
 
 [grafana_servers]
-vm1
+manmanmano-1
 
 [pingers]
-vm2
+manmanmano-2
