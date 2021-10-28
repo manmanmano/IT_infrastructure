@@ -24,14 +24,14 @@
     name: 
       - telegraf
 
-- name: Copy telegraf.conf
-  ansible.builtin.copy:
-    src: ../files/telegraf.conf
-    dest: /etc/telegraf/telegraf.conf
-  notify: Restart telegraf
-
 - name: Service telegraf
   ansible.builtin.service:
     name: telegraf
     state: started
     enabled: yes
+
+- name: Copy telegraf.conf
+  ansible.builtin.copy:
+    src: ../files/telegraf.conf
+    dest: /etc/telegraf/telegraf.conf
+  notify: Restart telegraf

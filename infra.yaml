@@ -88,6 +88,15 @@
   tags: 
     - p
 
+- name: Rsyslog
+  hosts: all
+  become: yes
+  gather_facts: no
+  roles:
+    - rsyslog
+  tags: 
+    - r
+
 - name: Systemd-resolved
   hosts: all
   become: yes

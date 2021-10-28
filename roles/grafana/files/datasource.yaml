@@ -36,7 +36,7 @@ datasources:
     # <map> fields that will be converted to json and stored in jsonData
     editable: false
 
-  - name: InfluxDB
+  - name: InfluxDB-latency
     # <string, required> datasource type. Required
     type: influxdb
     # <string, required> access mode. proxy or direct (Server or Browser in the UI). Required
