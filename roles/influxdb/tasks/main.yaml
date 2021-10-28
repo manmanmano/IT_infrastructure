@@ -13,6 +13,12 @@
     name: 
       - influxdb
 
+- name: Copy influxdb.conf
+  ansible.builtin.copy:
+    src: ../files/influxdb.conf
+    dest: /etc/influxdb/influxdb.conf
+  notify: Restart influxdb
+
 - name: Service influxdb
   ansible.builtin.service:
     name: influxdb
@@ -24,14 +30,14 @@
     name: 
       - telegraf
 
-- name: Service telegraf
-  ansible.builtin.service:
-    name: telegraf
-    state: started
-    enabled: yes
-
 - name: Copy telegraf.conf
   ansible.builtin.copy:
     src: ../files/telegraf.conf
     dest: /etc/telegraf/telegraf.conf
   notify: Restart telegraf
+
+- name: Service telegraf
+  ansible.builtin.service:
+    name: telegraf
+    state: started
+    enabled: yes
