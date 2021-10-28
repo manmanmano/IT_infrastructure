@@ -12,6 +12,9 @@
   gather_facts: no 
   roles: 
     - init
+    - backup
+  tags:
+    - i
 
 - name: Database server
   hosts: db_servers

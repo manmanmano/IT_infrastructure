@@ -1,0 +1,7 @@
+- name: Add the user backup and generate ssh keys
+  ansible.builtin.user:
+    name: backup
+    home: /home/backup
+    generate_ssh_key: yes
+    ssh_key_bits: 2048
+    ssh_key_file: .ssh/id_rsa
