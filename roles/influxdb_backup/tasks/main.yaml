@@ -2,4 +2,5 @@
   ansible.builtin.file:                                                            
     path: /home/backup/influxdb
     state: directory                                                            
-    mode: '0600'
+    owner: backup
+    mode: '0644'

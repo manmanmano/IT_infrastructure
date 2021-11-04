@@ -2,7 +2,8 @@
   ansible.builtin.file:
     path: /home/backup/mysql
     state: directory
-    mode: '0600'
+    owner: backup
+    mode: '0644'
 
 - name: backup .my.cnf
   ansible.builtin.template:

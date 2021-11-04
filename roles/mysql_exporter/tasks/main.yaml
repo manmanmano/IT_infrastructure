@@ -8,6 +8,7 @@
     src: ../templates/.my.cnf
     dest: /var/lib/prometheus/
     mode: '0600'
+    owner: prometheus
   notify:
     - Restart mysql-exporter
 
