@@ -7,6 +7,7 @@
   ansible.builtin.template:
     src: ../templates/.my.cnf
     dest: /var/lib/prometheus/
+    mode: '0600'
   notify:
     - Restart mysql-exporter
 

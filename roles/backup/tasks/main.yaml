@@ -10,7 +10,7 @@
   ansible.builtin.file:                                                            
     path: /home/backup/restore
     state: directory                                                            
-    mode: '0600'
+    mode: '0644'
 
 - name: Install duplicity
   apt:
@@ -20,4 +20,4 @@
   ansible.builtin.template:
     src: ../templates/known_hosts
     dest: /home/backup/.ssh/
-    mode: '0600'
+    mode: '0644'

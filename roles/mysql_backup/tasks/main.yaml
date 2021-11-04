@@ -3,3 +3,20 @@
     path: /home/backup/mysql
     state: directory
     mode: '0600'
+
+- name: MySQL backup
+  community.mysql.mysql_user:
+    name: " {{ backup_mysql_user }}"
+    password: "{{ backup_mysql_password }}"
+    host: "%"
+    priv: "{{ mysql_database }}.*:LOCK TABLES,SELECT" 
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+
+- name: backup .my.cnf
+  ansible.builtin.template:
+    src: ../templates/my.cnf
+    dest: /home/backup/.my.cnf
+    owner: backup
+    mode: '0600'
+  notify: Restart MySQL
+
