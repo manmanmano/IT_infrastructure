@@ -17,12 +17,15 @@
     - i
 
 - name: Database server
-  hosts: db_servers
+  hosts: mysql_servers
   become: yes
   gather_facts: no 
   roles:
     - mysql
     - mysql_exporter
+    - mysql_backup
+  tags:
+    - m
 
 - name: DNS server
   hosts: dns_servers
@@ -41,6 +44,8 @@
   roles: 
     - agama
     - uwsgi
+  tags:
+    - a
 
 - name: NGINX
   hosts: web_servers
@@ -76,12 +81,13 @@
     - g
 
 - name: InfluxDB
-  hosts: db_servers
+  hosts: influxdb_servers
   become: yes
   gather_facts: no
   roles:
     - influxdb
     - influxdb_exporter
+    - influxdb_backup
   tags:
     - x
 

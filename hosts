@@ -1,5 +1,5 @@
-manmanmano-1 ansible_host=193.40.156.86 ansible_port=18722 ansible_ssh_user=ubuntu
-manmanmano-2 ansible_host=193.40.156.86 ansible_port=16422 ansible_ssh_user=ubuntu
+manmanmano-1 ansible_host=193.40.156.86 ansible_port=7222 ansible_ssh_user=ubuntu
+manmanmano-2 ansible_host=193.40.156.86 ansible_port=1322 ansible_ssh_user=ubuntu
 
 [web_servers]
 manmanmano-1
@@ -8,7 +8,10 @@ manmanmano-2
 [agama_app]
 manmanmano-1
 
-[db_servers]
+[mysql_servers]
+manmanmano-2
+
+[influxdb_servers]
 manmanmano-2
 
 [dns_servers]

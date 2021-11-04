@@ -18,13 +18,6 @@
     priv: '*.*:PROCESS,REPLICATION CLIENT,SELECT'
     login_unix_socket: /var/run/mysqld/mysqld.sock
 
-- name: my.cnf
-  ansible.builtin.template:
-    src: ../templates/.my.cnf
-    dest: /var/lib/prometheus/
-  notify:
-    - Restart mysql-exporter
-
 - name: Pause for 10 sec
   pause:
     seconds: 10
