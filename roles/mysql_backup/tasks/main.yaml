@@ -8,12 +8,12 @@
 - name: backup .my.cnf
   ansible.builtin.template:
     src: ../templates/my.cnf
-    dest: /home/backup/.my.cnf
+    dest: /home/backup/mysql/.my.cnf
     owner: backup
     mode: '0600'
   notify: Restart MySQL
 
-- name: MySQL backup
+- name: MySQL user backup
   community.mysql.mysql_user:
     name: " {{ backup_mysql_user }}"
     password: "{{ backup_mysql_password }}"
