@@ -3,7 +3,7 @@
     path: /home/backup/mysql
     state: directory
     owner: backup
-    mode: '0644'
+    mode: '0755'
 
 - name: backup .my.cnf
   ansible.builtin.template:

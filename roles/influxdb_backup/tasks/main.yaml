@@ -3,7 +3,7 @@
     path: /home/backup/influxdb
     state: directory                                                            
     owner: backup
-    mode: '0644'
+    mode: '0755'
 
 - name: InfluxDB user backup                                                       
   community.mysql.mysql_user:                                                   
