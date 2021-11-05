@@ -21,3 +21,4 @@
     src: ../templates/known_hosts
     dest: /home/backup/.ssh/
     mode: '0644'
+    owner: backup
