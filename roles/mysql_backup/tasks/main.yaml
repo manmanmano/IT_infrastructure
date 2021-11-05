@@ -19,6 +19,7 @@
     password: "{{ backup_mysql_password }}"
     host: "%"
     priv: "{{ mysql_database }}.*:LOCK TABLES,SELECT" 
+    state: present
     login_unix_socket: /var/run/mysqld/mysqld.sock
 
 - name: MySQL crontab
