@@ -1,8 +1,8 @@
-#Install and configure infrastructure with Ansible:
+# Install and configure infrastructure with Ansible:
 
     ansible-playbook infra.yaml
 
-#MYSQL DATA RESTORATION
+# MYSQL DATA RESTORATION
 
 Firstly, restore MySQL data from the backup:
 
@@ -20,7 +20,7 @@ be found in /home/backup/restore/ directory.
 E.G: zcat *name_of_the_file.gzip*
 
 
-#INFLUXDB DATA RESTORATION
+# INFLUXDB DATA RESTORATION
 
 Firstly, restore InfluxDB data from the backup:
 
