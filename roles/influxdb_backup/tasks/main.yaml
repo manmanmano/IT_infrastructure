@@ -5,15 +5,6 @@
     owner: backup
     mode: '0755'
 
-- name: InfluxDB user backup                                                       
-  community.mysql.mysql_user:                                                   
-    name: " {{ backup_mysql_user }}"                                            
-    password: "{{ backup_mysql_password }}"                                     
-    host: "%"                                                                   
-    priv: "{{ influxdb_database }}.*:LOCK TABLES,SELECT"                           
-    state: present                                                              
-    login_unix_socket: /var/run/mysqld/mysqld.sock                              
-                                                                                
 - name: InfluxDB crontab                                                           
   ansible.builtin.template:                                                     
     src: ../templates/influxdb-backup                                              

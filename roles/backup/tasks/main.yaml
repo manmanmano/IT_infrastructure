@@ -5,12 +5,14 @@
     generate_ssh_key: yes
     ssh_key_bits: 2048
     ssh_key_file: .ssh/id_rsa
+    shell: /bin/bash
 
 - name: Create directory restore for user backup                                
   ansible.builtin.file:                                                            
     path: /home/backup/restore
     state: directory                                                            
     mode: '0755'
+    owner: backup
 
 - name: Install duplicity
   apt:

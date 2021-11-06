@@ -1,4 +1,4 @@
-mysql_host: 192.168.42.174
+mysql_host: 192.168.42.154
 mysql_database: agama
 mysql_user: agama 
 mysql_password: !vault |
@@ -29,7 +29,7 @@ dns_networks:
 
 startup_name: clounsible.mano
 
-public_url: http://193.40.156.86:2780
+public_url: http://193.40.156.86:5080
 
 grafana_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
@@ -41,7 +41,7 @@ grafana_password: !vault |
 
 backup_server_ip: 192.168.42.156
 backup_server_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSne71MCp6CQCHURWe3CLud6vPDkLfL83Oab/giAI7O
-backup_mysql_user: backup
+backup_user: backup
 backup_mysql_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           62656130333539663263376533343136366334396131643336363834613434623861343635343830
@@ -50,4 +50,4 @@ backup_mysql_password: !vault |
           3362383237383262650a336165313738346238363734343536316430306330356235623134383437
           3535
 
-infludb_database: telegraf
+influxdb_database: telegraf

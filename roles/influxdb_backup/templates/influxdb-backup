@@ -1,3 +1,3 @@
-06 00 * * * backup rm -rf /home/backup/influxdb/*; influxd backup -database telegraf /home/backup/influxdb
-12 00 * * 0 backup duplicity --no-encryption full /home/backup/influxdb/telegraf rsync://manmanmano@backup.clounsible.mano//home/manmanmano/
-12 00 * * 1-6 backup duplicity --no-encryption incremental /home/backup/influxdb/telegraf rsync://manmanmano@backup.clounsible.mano//home/manmanmano/
+00 00 * * * backup rm -rf /home/backup/influxdb/*; influxd backup -database telegraf /home/backup/influxdb
+10 00 * * 0 backup duplicity --no-encryption full /home/backup/influxdb/ rsync://manmanmano@backup.clounsible.mano//home/manmanmano/influxdb/
+10 00 * * 1-6 backup duplicity --no-encryption incremental /home/backup/influxdb/ rsync://manmanmano@backup.clounsible.mano//home/manmanmano/influxdb
