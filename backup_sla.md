@@ -12,7 +12,7 @@ Backups are created every day at midnight. We can accept only 12h of data loss s
 
 # VERSIONING AND RETENTION
 
-Our backups are held for a maximum of 30 days. Since we use incremental backuping every day we store a different version, 
+Our backups are held for a maximum of 30 days. Since we use incremental backuping, every day we store a different version, 
 so 30 versions in total.
 
 
