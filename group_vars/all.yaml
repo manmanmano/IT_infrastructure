@@ -1,4 +1,4 @@
-mysql_host: 192.168.42.154
+mysql_host: 192.168.42.141
 mysql_database: agama
 mysql_user: agama 
 mysql_password: !vault |
@@ -29,7 +29,7 @@ dns_networks:
 
 startup_name: clounsible.mano
 
-public_url: http://193.40.156.86:5080
+public_url: http://193.40.156.86:10980
 
 grafana_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
