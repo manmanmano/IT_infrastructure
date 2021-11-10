@@ -25,6 +25,14 @@
     priv: "{{ mysql_database }}.*:ALL"
     login_unix_socket: /var/run/mysqld/mysqld.sock
 
+- name: Replication user
+  community.mysql.mysql_user:
+    name: "{{ replication_user }}"
+    password: "{{ replication_mysql_password }}"
+    host: "%"
+    priv: "*.*:REPLICATION SLAVE"
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+
 - name: copy override.cnf to /etc/mysql/mysql.conf.d/
   ansible.builtin.copy:
     src: ../files/override.cnf
