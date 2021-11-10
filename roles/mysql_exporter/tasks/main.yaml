@@ -25,6 +25,12 @@
     seconds: 10
   when: prom_exporter_installed.changed
 
+- name: /etc/default/prometheus-mysqld-exporter
+  ansible.builtin.template:
+    src: prometheus-mysqld-exporter
+    dest: /etc/default/
+  notify: Restart mysql-exporter
+
 - service:
     name: prometheus-mysqld-exporter
     state: started
