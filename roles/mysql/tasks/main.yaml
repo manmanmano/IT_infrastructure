@@ -34,7 +34,7 @@
     login_unix_socket: /var/run/mysqld/mysqld.sock
 
 - name: copy override.cnf to /etc/mysql/mysql.conf.d/
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: ../files/override.cnf
     dest: /etc/mysql/mysql.conf.d/
   notify: Restart MySQL

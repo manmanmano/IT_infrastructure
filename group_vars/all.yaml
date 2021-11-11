@@ -1,4 +1,4 @@
-mysql_host: 192.168.42.119
+mysql_host: 192.168.42.190
 mysql_database: agama
 mysql_user: agama 
 mysql_password: !vault |
@@ -29,7 +29,7 @@ dns_networks:
 
 startup_name: clounsible.mano
 
-public_url: http://193.40.156.86:4880
+public_url: http://193.40.156.86:6980
 
 grafana_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
@@ -60,3 +60,5 @@ replication_mysql_password: !vault |
           61363637393563373831396465326439313861653935373036373530623331346331353039633765
           3436663732376132640a336239373435373465323731306432343432636230306138353333353333
           6539
+
+node_id: "{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'].split('.')[-1] }}"
