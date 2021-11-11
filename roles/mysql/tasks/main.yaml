@@ -38,3 +38,10 @@
     src: ../files/override.cnf
     dest: /etc/mysql/mysql.conf.d/
   notify: Restart MySQL
+
+- name: MySQL replica RO mode
+  community.mysql.mysql_variables:
+    variable: read_only
+    value: "{{ 'OFF' if inventory_hostname == mysql_host else 'ON' }}"
+    mode: persist
+    login_unix_socket: /var/run/mysqld/mysqld.sock
