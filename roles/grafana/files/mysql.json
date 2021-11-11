@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
   "links": [],
   "panels": [
     {
@@ -91,6 +90,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:281",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -99,6 +99,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:282",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -120,7 +121,21 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
         },
         "overrides": []
       },
@@ -150,6 +165,7 @@
         "dataLinks": []
       },
       "percentage": false,
+      "pluginVersion": "7.0.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -185,6 +201,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:134",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -193,6 +210,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:135",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -207,98 +225,58 @@
       }
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          }
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 12,
         "x": 0,
         "y": 8
       },
-      "hiddenSeries": false,
       "id": 4,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "displayMode": "gradient",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "values": false
+        },
+        "showUnfilled": true
       },
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "7.0.0",
       "targets": [
         {
-          "expr": "rate(mysql_global_variables_read_only[1m])",
+          "expr": "mysql_global_variables_read_only",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
         }
       ],
-      "thresholds": [],
       "timeFrom": null,
-      "timeRegions": [],
       "timeShift": null,
       "title": "Read only status",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "type": "bargauge"
     },
     {
       "datasource": null,
@@ -312,11 +290,11 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "blue",
                 "value": null
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 80
               }
             ]
@@ -533,7 +511,7 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -552,5 +530,5 @@
   "timezone": "",
   "title": "MySQL",
   "uid": "LonNMNcnz",
-  "version": 4
+  "version": 1
 }
