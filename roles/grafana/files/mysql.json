@@ -15,6 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -90,7 +91,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:281",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -99,7 +99,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:282",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -201,7 +200,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:134",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -210,7 +208,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:135",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -229,17 +226,36 @@
       "fieldConfig": {
         "defaults": {
           "custom": {},
-          "mappings": [],
+          "mappings": [
+            {
+              "from": "",
+              "id": 0,
+              "operator": "",
+              "text": "read/write",
+              "to": "",
+              "type": 1,
+              "value": "0"
+            },
+            {
+              "from": "",
+              "id": 1,
+              "operator": "",
+              "text": "read_only",
+              "to": "",
+              "type": 1,
+              "value": "1"
+            }
+          ],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "purple",
                 "value": null
               },
               {
-                "color": "red",
-                "value": 0
+                "color": "yellow",
+                "value": 1
               }
             ]
           }
@@ -254,15 +270,16 @@
       },
       "id": 4,
       "options": {
-        "displayMode": "gradient",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "mean"
+            "last"
           ],
           "values": false
-        },
-        "showUnfilled": true
+        }
       },
       "pluginVersion": "7.0.0",
       "targets": [
@@ -276,7 +293,7 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Read only status",
-      "type": "bargauge"
+      "type": "stat"
     },
     {
       "datasource": null,
@@ -504,6 +521,7 @@
       }
     }
   ],
+  "refresh": false,
   "schemaVersion": 25,
   "style": "dark",
   "tags": [],
@@ -511,8 +529,8 @@
     "list": []
   },
   "time": {
-    "from": "now-5m",
-    "to": "now"
+    "from": "2021-11-11T08:46:36.887Z",
+    "to": "2021-11-11T10:06:36.887Z"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -530,5 +548,5 @@
   "timezone": "",
   "title": "MySQL",
   "uid": "LonNMNcnz",
-  "version": 1
+  "version": 3
 }

@@ -39,9 +39,24 @@
     dest: /etc/mysql/mysql.conf.d/
   notify: Restart MySQL
 
-- name: MySQL replica RO mode
+- name: MySQL replica RO mode on
   community.mysql.mysql_variables:
     variable: read_only
-    value: "{{ 'OFF' if inventory_hostname == mysql_host else 'ON' }}"
+    value: 'ON' 
     mode: persist
     login_unix_socket: /var/run/mysqld/mysqld.sock
+  when: inventory_hostname !=  mysql_host 
+  notify:
+    - Reset MySQL source
+    - Reset MySQL replica
+
+- name: MySQL primary R0 mode off
+  community.mysql.mysql_variables:
+    variable: read_only
+    value: 'OFF' 
+    mode: persist
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+  when: inventory_hostname ==  mysql_host 
+  notify:
+    - Reset MySQL source
+    - Reset MySQL replica
