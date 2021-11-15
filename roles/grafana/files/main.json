@@ -552,21 +552,21 @@
           "custom": {},
           "mappings": [
             {
-              "from": "",
+              "from": "0.5",
               "id": 0,
               "operator": "",
               "text": "UP",
-              "to": "",
-              "type": 1,
+              "to": "1",
+              "type": 2,
               "value": "1"
             },
             {
-              "from": "",
+              "from": "0",
               "id": 1,
               "operator": "",
               "text": "DOWN",
-              "to": "",
-              "type": 1,
+              "to": "0.4",
+              "type": 2,
               "value": "0"
             }
           ],
@@ -1124,5 +1124,5 @@
   "timezone": "",
   "title": "clounsible.mano",
   "uid": "mPEUZid7k",
-  "version": 2
+  "version": 1
 }
