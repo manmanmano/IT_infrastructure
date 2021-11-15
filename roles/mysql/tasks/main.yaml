@@ -12,12 +12,6 @@
     state: started
     enabled: yes
 
-- name: copy override.cnf to /etc/mysql/mysql.conf.d/
-  ansible.builtin.template:
-    src: ../files/override.cnf
-    dest: /etc/mysql/mysql.conf.d/
-  notify: Restart MySQL
-    
 - name: MySQL database
   community.mysql.mysql_db:
     name: "{{ mysql_database }}"
@@ -38,6 +32,15 @@
     host: "%"
     priv: "*.*:REPLICATION SLAVE"
     login_unix_socket: /var/run/mysqld/mysqld.sock
+
+- name: copy override.cnf to /etc/mysql/mysql.conf.d/
+  ansible.builtin.template:
+    src: ../files/override.cnf
+    dest: /etc/mysql/mysql.conf.d/
+  notify: Restart MySQL
+
+- name: Force notified handler to restart MySQL now
+  meta: flush_handlers
 
 - name: MySQL replica RO mode on
   community.mysql.mysql_variables:
