@@ -31,6 +31,8 @@ startup_name: clounsible.mano
 
 public_url: http://193.40.156.86:4180
 
+grafana_port: 3001
+
 grafana_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           38336432373161623566646634616536343838366661303435643965363061363637363661636435
