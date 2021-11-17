@@ -29,7 +29,7 @@ dns_networks:
 
 startup_name: clounsible.mano
 
-public_url: http://193.40.156.86:18980
+public_url: http://193.40.156.86:4180
 
 grafana_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
