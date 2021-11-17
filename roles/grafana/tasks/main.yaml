@@ -7,7 +7,6 @@
   ansible.builtin.template:
     src: grafana.ini.j2
     dest: /opt/grafana/grafana.ini
-  no_log: yes
 
 - name: Grafana docker container
   community.docker.docker_container:

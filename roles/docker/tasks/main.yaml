@@ -7,5 +7,5 @@
 - name: Docker service
   ansible.builtin.service:
     name: docker
-    state: enabled
-    started: yes
+    state: started
+    enabled: yes

@@ -21,18 +21,18 @@
 
 - name: grafana.ini
   ansible.builtin.template:
-    src: ../files/grafana.ini
+    src: grafana.ini.j2 
     dest: /etc/grafana/
   notify: Restart grafana
 
 - name: Datasource
-  ansible.builtin.template:
+  ansible.builtin.copy:
     src: ../files/datasource.yaml
     dest: /etc/grafana/provisioning/datasources/sample.yaml
   notify: Restart grafana
 
 - name: Dashboard
-  ansible.builtin.template:
+  ansible.builtin.copy:
     src: ../files/dashboard.yaml
     dest: /etc/grafana/provisioning/dashboards/sample.yaml
   notify: Restart grafana
