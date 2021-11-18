@@ -1,0 +1,19 @@
+- name: Add the user agama to managed hosts
+  ansible.builtin.user:
+    name: agama
+
+- name: Create the directory /opt/agama
+  ansible.builtin.file:
+    path: /opt/agama
+    state: directory
+
+- name: Install the application dependencies
+  apt:
+    pkg: 
+      - python3-flask-sqlalchemy
+      - python3-pymysql
+
+- name: Download agama.py from the web
+  get_url:
+    url: https://raw.githubusercontent.com/hudolejev/agama/master/agama.py
+    dest: /opt/agama

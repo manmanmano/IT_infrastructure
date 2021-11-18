@@ -1,0 +1,48 @@
+server {
+        listen 80 default_server;
+        server_name manmanmano;
+
+{%if inventory_hostname in groups['agama_app']%}
+        location / {
+            proxy_pass http://localhost:{{ agama_port }};
+        }
+{%endif%}
+{%if inventory_hostname in groups['prometheus_servers']%}
+        location /prometheus {
+            proxy_pass http://localhost:9090;
+        }
+{%endif%}
+
+{%if inventory_hostname in groups['grafana_servers']%}
+        location /grafana {
+            proxy_pass http://localhost:{{ grafana_port }};
+        }
+{%endif%}
+
+{%if inventory_hostname in groups['influxdb_servers']%}
+        location /influxdb-metrics {
+            proxy_pass http://localhost:9424/metrics;
+        }
+{%endif%}
+
+{%if inventory_hostname in groups['mysql_servers']%}
+        location /mysql-metrics {
+            proxy_pass http://localhost:9104/metrics;
+        }
+{%endif%}
+
+{%if inventory_hostname in groups['dns_servers']%}
+        location /bind-metrics {
+            proxy_pass http://localhost:9119/metrics;
+        }
+{%endif%}
+
+        location /node-metrics {
+            proxy_pass http://localhost:9100/metrics;
+        }
+
+        location /nginx-metrics {
+            proxy_pass http://localhost:9113/metrics;
+        }
+
+}

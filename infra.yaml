@@ -43,7 +43,6 @@
   gather_facts: no
   roles: 
     - agama
-    - uwsgi
   tags:
     - a
 

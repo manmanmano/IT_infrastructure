@@ -9,7 +9,7 @@
 
 - name: Copy default to /etc/nginx/sites-enabled/default      
   ansible.builtin.template:
-    src: ../templates/default
+    src: default.j2
     dest: /etc/nginx/sites-enabled/default
   notify: Restart Nginx
 

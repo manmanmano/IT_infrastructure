@@ -1,3 +1,5 @@
+agama_port: 8001
+
 mysql_host: manmanmano-2
 mysql_database: agama
 mysql_user: agama 
