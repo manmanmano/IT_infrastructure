@@ -1,8 +1,12 @@
 [paths]
-{{ grafana_password }}
+
+[security]
+admin_password = {{ grafana_password }}
+
 [server]
 root_url = http://{{ ansible_host }}:{{ ansible_port + 58 }}/grafana
 serve_from_sub_path=true
+
 [database]
 [remote_cache]
 [dataproxy]

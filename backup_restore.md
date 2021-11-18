@@ -10,7 +10,7 @@ Firstly, restore MySQL data from the backup:
 
 Lastly, paste the retrieved MySQL dump into the database:
 
-    mysql -u agama -p agama < /home/backup/restore/agama.mysql
+    mysql -u agama -p < /home/backup/restore/agama.sql 
 
 N.B: Before pasting the restored data into the database check the contents of the file.
 The contents of the file can either be checked  with nano, as the example abov or using

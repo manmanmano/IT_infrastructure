@@ -29,7 +29,7 @@ dns_networks:
 
 startup_name: clounsible.mano
 
-public_url: http://193.40.156.86:4180
+public_url: http://193.40.156.86:3180
 
 grafana_port: 3001
 

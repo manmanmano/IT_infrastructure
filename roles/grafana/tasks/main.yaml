@@ -27,14 +27,20 @@
     src: ../files/dashboard.yaml
     dest: /opt/grafana/provisioning/dashboards/default.yaml
 
-- name: Grafana jsons
+- name: main.json
   ansible.builtin.copy:
-    src: "../files/{{ item }}"
-    dest: "/opt/grafana/provisioning/dashboards/{{ item }}"
-  loop:
-    - main.json
-    - mysql.json
-    - syslog.json
+    src: ../files/main.json
+    dest: /opt/grafana/provisioning/dashboards/main.json 
+
+- name: mysql.json
+  ansible.builtin.copy:
+    src: ../files/mysql.json
+    dest: /opt/grafana/provisioning/dashboards/mysql.json 
+
+- name: syslog.json
+  ansible.builtin.copy:
+    src: ../files/syslog.json
+    dest: /opt/grafana/provisioning/dashboards/syslog.json 
 
 - name: Grafana docker container
   community.docker.docker_container:
