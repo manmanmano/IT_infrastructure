@@ -9,8 +9,8 @@
     enabled: yes
       
 - name: exporter file
-  ansible.builtin.template:
-    src: ../templates/exporter
+  ansible.builtin.copy:
+    src: ../file/exporter
     dest: /etc/nginx/sites-enabled/
   notify: 
     - Restart Nginx

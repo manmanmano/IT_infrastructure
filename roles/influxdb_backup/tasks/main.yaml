@@ -7,5 +7,5 @@
 
 - name: InfluxDB crontab                                                           
   ansible.builtin.template:                                                     
-    src: ../templates/influxdb-backup                                              
+    src: influxdb-backup.j2                                              
     dest: /etc/cron.d/influxdb-backup

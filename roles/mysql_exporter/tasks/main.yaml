@@ -5,8 +5,8 @@
 
 - name: my.cnf
   ansible.builtin.template:
-    src: ../templates/.my.cnf
-    dest: /var/lib/prometheus/
+    src: my.cnf.j2
+    dest: /var/lib/prometheus/.my.cnf
     mode: '0600'
     owner: prometheus
   notify:
@@ -26,7 +26,7 @@
   when: prom_exporter_installed.changed
 
 - name: /etc/default/prometheus-mysqld-exporter
-  ansible.builtin.template:
+  ansible.builtin.copy:
     src: prometheus-mysqld-exporter
     dest: /etc/default/
   notify: Restart mysql-exporter

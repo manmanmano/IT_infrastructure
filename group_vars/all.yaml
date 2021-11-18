@@ -1,4 +1,5 @@
 agama_port: 8001
+grafana_port: 3001
 
 mysql_host: manmanmano-2
 mysql_database: agama
@@ -30,10 +31,6 @@ dns_networks:
   - 127.0.0.0/8
 
 startup_name: clounsible.mano
-
-public_url: http://193.40.156.86:3180
-
-grafana_port: 3001
 
 grafana_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256

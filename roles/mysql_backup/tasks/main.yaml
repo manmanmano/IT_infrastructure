@@ -5,9 +5,9 @@
     owner: backup
     mode: '0755'
 
-- name: backup .my.cnf
+- name: backup my.cnf
   ansible.builtin.template:
-    src: ../templates/my.cnf
+    src: my.cnf.j2
     dest: /home/backup/.my.cnf
     owner: backup
     mode: '0600'
@@ -18,10 +18,9 @@
     name: "{{ backup_user }}"
     password: "{{ backup_mysql_password }}"
     priv: "{{ mysql_database }}.*:LOCK TABLES,SELECT" 
-    state: present
     login_unix_socket: /var/run/mysqld/mysqld.sock
 
 - name: MySQL crontab
   ansible.builtin.template:
-    src: ../templates/mysql-backup
+    src: mysql-backup.j2
     dest: /etc/cron.d/mysql-backup

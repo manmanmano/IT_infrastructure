@@ -35,8 +35,8 @@
 
 - name: copy override.cnf to /etc/mysql/mysql.conf.d/
   ansible.builtin.template:
-    src: ../files/override.cnf
-    dest: /etc/mysql/mysql.conf.d/
+    src: ../files/override.cnf.j2
+    dest: /etc/mysql/mysql.conf.d/override.cnf
   notify: Restart MySQL
 
 - name: Force notified handler to restart MySQL now

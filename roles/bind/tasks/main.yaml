@@ -10,12 +10,12 @@
 
 - name: Copy new named.conf.options
   ansible.builtin.template:
-    src: ../templates/named.conf.options
+    src: named.conf.options.j2
     dest: /etc/bind/named.conf.options
   notify: Restart bind
 
 - name: Copy db.startup_name
   ansible.builtin.template:
-    src: ../templates/db.clounsible
-    dest: /etc/bind/
+    src: db.clounsible.j2
+    dest: /etc/bind/db.clounsible
   notify: Reload bind

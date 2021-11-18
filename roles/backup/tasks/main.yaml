@@ -20,7 +20,7 @@
 
 - name: Copy known_hosts
   ansible.builtin.template:
-    src: ../templates/known_hosts
+    src: known_hosts.j2
     dest: /home/backup/.ssh/
     mode: '0644'
     owner: backup
