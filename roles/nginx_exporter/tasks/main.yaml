@@ -10,8 +10,8 @@
       
 - name: exporter file
   ansible.builtin.copy:
-    src: ../file/exporter
-    dest: /etc/nginx/sites-enabled/
+    src: ../files/exporter
+    dest: /etc/nginx/sites-enabled/exporter
   notify: 
     - Restart Nginx
     - Restart nginx-exporter

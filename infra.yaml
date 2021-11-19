@@ -37,6 +37,15 @@
   tags:
     - b
 
+- name: Fix docker
+  hosts: agama_app
+  become: yes
+  gather_facts: no
+  roles:
+    - iptables
+  tags:
+    - i
+
 - name: Agama
   hosts: agama_app
   become: yes
@@ -70,6 +79,8 @@
   gather_facts: no
   roles: 
     - prometheus
+  tags:
+    - p
 
 - name: Grafana
   hosts: grafana_servers
@@ -97,8 +108,6 @@
   gather_facts: no
   roles:
     - pinger
-  tags: 
-    - p
 
 - name: Rsyslog
   hosts: all

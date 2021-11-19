@@ -3,12 +3,6 @@
     name: prometheus-mysqld-exporter
   register: prom_exporter_installed
 
-- name: /var/lib/prometheus
-  ansible.builtin.file:
-    state: directory
-    recurse: yes
-    path: /var/lib/prometheus/
-
 - name: my.cnf
   ansible.builtin.template:
     src: my.cnf.j2
