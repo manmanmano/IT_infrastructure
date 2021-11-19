@@ -3,14 +3,10 @@
     name: prometheus-mysqld-exporter
   register: prom_exporter_installed
 
-- name: my.cnf
-  ansible.builtin.template:
-    src: my.cnf.j2
-    dest: /var/lib/prometheus/.my.cnf
-    mode: '0600'
-    owner: prometheus
-  notify:
-    - Restart mysql-exporter
+- name: Pause for 10 sec
+  pause:
+    seconds: 10
+  when: prom_exporter_installed.changed
 
 - name: MySQL user
   community.mysql.mysql_user:
@@ -20,10 +16,13 @@
     priv: '*.*:PROCESS,REPLICATION CLIENT,SELECT'
     login_unix_socket: /var/run/mysqld/mysqld.sock
 
-- name: Pause for 10 sec
-  pause:
-    seconds: 10
-  when: prom_exporter_installed.changed
+- name: my.cnf
+  ansible.builtin.template:
+    src: my.cnf.j2
+    dest: /var/lib/prometheus/.my.cnf
+    mode: '0600'
+    owner: prometheus
+  notify: Restart mysql-exporter
 
 - name: /etc/default/prometheus-mysqld-exporter
   ansible.builtin.copy:
