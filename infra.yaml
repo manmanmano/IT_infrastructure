@@ -22,7 +22,7 @@
   gather_facts: no 
   roles:
     - mysql
-    - mysql-exporter
+    - mysql_exporter
     - mysql_backup
   tags:
     - m
