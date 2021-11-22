@@ -8,7 +8,7 @@
     seconds: 10
   when: prom_exporter_installed.changed
 
-- name: MySQL user
+- name: MySQL exporter user
   community.mysql.mysql_user:
     name: "{{ mysql_exporter_user }}"
     password: "{{ mysql_exporter_password }}"
@@ -26,8 +26,8 @@
 
 - name: /etc/default/prometheus-mysqld-exporter
   ansible.builtin.copy:
-    src: prometheus-mysqld-exporter
-    dest: /etc/default/
+    src: ../files/prometheus-mysqld-exporter
+    dest: /etc/default/prometheus-mysqld-exporter
   notify: Restart mysql-exporter
 
 - service:

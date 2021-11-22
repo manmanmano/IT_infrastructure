@@ -22,6 +22,7 @@
   gather_facts: no 
   roles:
     - mysql
+    - mysql-exporter
     - mysql_backup
   tags:
     - m
@@ -78,7 +79,6 @@
   gather_facts: no
   roles: 
     - prometheus
-    - mysql_exporter
   tags:
     - p
 
