@@ -16,16 +16,6 @@
   tags:
     - i
 
-- name: Database server
-  hosts: mysql_servers
-  become: yes
-  gather_facts: no 
-  roles:
-    - mysql
-    - mysql_backup
-  tags:
-    - m
-
 - name: DNS server
   hosts: dns_servers
   become: yes
@@ -36,24 +26,30 @@
   tags:
     - b
 
-- name: Fix docker
-  hosts: agama_app
-  become: yes
-  gather_facts: no
-  roles:
-    - iptables
-  tags:
-    - i
-
-- name: Agama
-  hosts: agama_app
+- name: Systemd-resolved
+  hosts: all
   become: yes
   gather_facts: no
   roles: 
-    - docker
-    - agama
+    - systemd-resolved
+
+- name: Node exporter
+  hosts: all
+  become: yes
+  gather_facts: no
+  roles:
+    - node_exporter
+
+- name: Database server
+  hosts: mysql_servers
+  become: yes
+  gather_facts: no 
+  roles:
+    - mysql
+    - mysql_exporter
+    - mysql_backup
   tags:
-    - a
+    - m
 
 - name: NGINX
   hosts: web_servers
@@ -65,12 +61,32 @@
   tags:
     - n
 
-- name: Node exporter
-  hosts: all
+- name: Docker bug
+  hosts: agama_app
   become: yes
   gather_facts: no
   roles:
-    - node_exporter
+    - iptables
+  tags:
+    - i
+
+- name: Docker
+  hosts: agama_app
+  become: yes
+  gather_facts: no
+  roles:
+    - docker
+  tags: 
+    - d
+
+- name: Agama
+  hosts: agama_app
+  become: yes
+  gather_facts: no
+  roles: 
+    - agama
+  tags:
+    - a
 
 - name: Prometheus
   hosts: prometheus_servers
@@ -78,7 +94,6 @@
   gather_facts: no
   roles: 
     - prometheus
-    - mysql_exporter
   tags:
     - p
 
@@ -117,10 +132,3 @@
     - rsyslog
   tags: 
     - r
-
-- name: Systemd-resolved
-  hosts: all
-  become: yes
-  gather_facts: no
-  roles: 
-    - systemd-resolved
