@@ -3,3 +3,9 @@
     src: ../files/iptables.mangle
     dest: /var/local/iptables.mangle
   notify: Restore iptables
+
+- name: Restore iptables                                                        
+  community.general.iptables_state:                                             
+    path: /var/local/iptables.mangle                                            
+    state: restored                                                             
+    table: mangle
