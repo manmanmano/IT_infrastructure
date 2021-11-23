@@ -4,8 +4,8 @@
     state: started
     enabled: yes
 
-- name: Copy 50-telegraf.conf
+- name: Copy 10-telegraf.conf
   ansible.builtin.copy:
-    src: ../files/50-telegraf.conf
+    src: 10-telegraf.conf
     dest: /etc/rsyslog.d/
   notify: Restart rsyslog

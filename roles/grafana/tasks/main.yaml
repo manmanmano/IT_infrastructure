@@ -19,27 +19,27 @@
 
 - name: Grafana dashboards
   ansible.builtin.copy:
-    src: ../files/datasource.yaml
+    src: datasource.yaml
     dest: /opt/grafana/provisioning/datasources/default.yaml
 
 - name: Grafana dashboards
   ansible.builtin.copy:
-    src: ../files/dashboard.yaml
+    src: dashboard.yaml
     dest: /opt/grafana/provisioning/dashboards/default.yaml
 
 - name: main.json
   ansible.builtin.copy:
-    src: ../files/main.json
+    src: main.json
     dest: /opt/grafana/provisioning/dashboards/main.json 
 
 - name: mysql.json
   ansible.builtin.copy:
-    src: ../files/mysql.json
+    src: mysql.json
     dest: /opt/grafana/provisioning/dashboards/mysql.json 
 
 - name: syslog.json
   ansible.builtin.copy:
-    src: ../files/syslog.json
+    src: syslog.json
     dest: /opt/grafana/provisioning/dashboards/syslog.json 
 
 - name: Grafana docker container

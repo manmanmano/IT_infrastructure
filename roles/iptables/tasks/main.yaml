@@ -1,6 +1,6 @@
 - name: Fix ssl bug for docker
   ansible.builtin.copy:
-    src: ../files/iptables.mangle
+    src: iptables.mangle
     dest: /var/local/iptables.mangle
 
 - name: Restore iptables                                                        

@@ -26,7 +26,7 @@
 
 - name: /etc/default/prometheus-mysqld-exporter
   ansible.builtin.copy:
-    src: ../files/prometheus-mysqld-exporter
+    src: prometheus-mysqld-exporter
     dest: /etc/default/prometheus-mysqld-exporter
   notify: Restart mysql-exporter
 

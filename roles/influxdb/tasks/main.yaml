@@ -15,7 +15,7 @@
 
 - name: Copy influxdb.conf
   ansible.builtin.copy:
-    src: ../files/influxdb.conf
+    src: influxdb.conf
     dest: /etc/influxdb/influxdb.conf
   notify: Restart influxdb
 
@@ -32,7 +32,7 @@
 
 - name: Copy telegraf.conf
   ansible.builtin.copy:
-    src: ../files/telegraf.conf
+    src: telegraf.conf
     dest: /etc/telegraf/telegraf.conf
   notify: Restart telegraf
 

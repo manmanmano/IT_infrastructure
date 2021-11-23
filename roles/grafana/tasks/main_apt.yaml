@@ -27,30 +27,30 @@
 
 - name: Datasource
   ansible.builtin.copy:
-    src: ../files/datasource.yaml
+    src: datasource.yaml
     dest: /etc/grafana/provisioning/datasources/sample.yaml
   notify: Restart grafana
 
 - name: Dashboard
   ansible.builtin.copy:
-    src: ../files/dashboard.yaml
+    src: dashboard.yaml
     dest: /etc/grafana/provisioning/dashboards/sample.yaml
   notify: Restart grafana
 
 - name: main.json
   ansible.builtin.copy:
-    src: ../files/main.json
+    src: main.json
     dest: /var/lib/grafana/dashboards/
   notify: Restart grafana
 
 - name: syslog.json
   ansible.builtin.copy:
-    src: ../files/syslog.json
+    src: syslog.json
     dest: /var/lib/grafana/dashboards/
   notify: Restart grafana
 
 - name: mysql.json
   ansible.builtin.copy: 
-    src: ../files/mysql.json
+    src: mysql.json
     dest: /var/lib/grafana/dashboards/
   notify: Restart grafana

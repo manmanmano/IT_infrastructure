@@ -4,7 +4,7 @@
 
       #- name: Copy index.html to the server
       #ansible.builtin.copy:
-      #src: ../files/index.html 
+      #src: index.html 
       #dest: /var/www/html
 
 - name: Copy default to /etc/nginx/sites-enabled/default      

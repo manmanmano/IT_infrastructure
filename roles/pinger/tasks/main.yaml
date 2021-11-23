@@ -8,20 +8,20 @@
 
 - name: Copy pinger.conf
   ansible.builtin.copy:
-    src: ../files/pinger.conf
+    src: pinger.conf
     dest: /etc/pinger/
   notify: Restart pinger
 
 - name: Copy pinger.sh
   ansible.builtin.copy:
-    src: ../files/pinger.sh
+    src: pinger.sh
     dest: /usr/local/bin/pinger
     owner: pinger
     mode: u+x
 
 - name: Copy pinger.service
   ansible.builtin.copy:
-    src: ../files/pinger.service
+    src: pinger.service
     dest: /etc/systemd/system/
   notify: Reload daemons
 

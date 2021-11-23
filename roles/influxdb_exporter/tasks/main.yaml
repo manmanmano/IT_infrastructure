@@ -1,13 +1,13 @@
 - name: Copy influxdb-exporter binary
   ansible.builtin.copy:
-    src: ../files/influx_stats_exporter_linux_amd64
+    src: influx_stats_exporter_linux_amd64
     dest: /usr/local/bin/prometheus-influxdb-stats-exporter
     owner: prometheus
     mode: u+x
 
 - name: Copy prometheus-influxdb-exporter
   ansible.builtin.copy:
-    src: ../files/prometheus-influxdb-stats-exporter.service
+    src: prometheus-influxdb-stats-exporter.service
     dest: /etc/systemd/system/
   notify: Reload daemons
 
