@@ -1,0 +1,22 @@
+- name: Install keepalived
+  ansible.builtin.apt:
+    name: keepalived
+
+- name: keepalived script
+  src: ha88.j2
+  dest: /usr/local/bin/ha88
+  mode: '755'
+
+
+- name: keepalived.conf
+  ansible.builtin.template:
+    src: keepalived.cfg.j2
+    dest: /etc/keepalived/keepalived.conf
+  notify: Restart keepalived
+
+- name: Service keepalived
+  ansible.builtin.service:
+    name: "{{ item }}"
+    state: started
+  loop:
+    - keepalived
