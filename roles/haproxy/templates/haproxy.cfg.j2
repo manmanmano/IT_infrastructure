@@ -26,7 +26,7 @@ defaults
 
 
 listen clounsible.mano 
-   bind :88
+   bind *:88
    stats enable
    stats uri /stats
    {% for vm in groups['haproxy'] %}
