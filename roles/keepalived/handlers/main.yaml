@@ -4,3 +4,4 @@
     state: restarted  
   loop: 
     - keepalived
+    - haproxy

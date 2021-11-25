@@ -1,5 +1,5 @@
 vrrp_script check_haproxy {                 
-    script "/usr/local/bin/check_ha88" 
+    script "/usr/local/bin/ha88" 
     weight 20                              
     interval 1               
 }
@@ -13,7 +13,7 @@ vrrp_instance clounsible.mano {
     {% endif %}
     advert_int 1                            
     virtual_ipaddress {                     
-        192.168.100."{{ hostvars[inventory_hostname]['manmanmano-2']['ansible_default_ipv4']['address'].split('.')[-1] }}"/24                   
+        192.168.100.{{ hostvars['manmanmano-2']['ansible_default_ipv4']['address'].split('.')[-1] }}/24                   
     }
     unicast_peer {                          
         {% for vm in groups['haproxy'] %}

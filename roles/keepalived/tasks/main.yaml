@@ -3,14 +3,14 @@
     name: keepalived
 
 - name: keepalived script
-  src: ha88.j2
-  dest: /usr/local/bin/ha88
-  mode: '755'
-
+  ansible.builtin.template:
+    src: ha88.j2
+    dest: /usr/local/bin/ha88
+    mode: '755'
 
 - name: keepalived.conf
   ansible.builtin.template:
-    src: keepalived.cfg.j2
+    src: keepalived.conf.j2
     dest: /etc/keepalived/keepalived.conf
   notify: Restart keepalived
 
@@ -19,4 +19,5 @@
     name: "{{ item }}"
     state: started
   loop:
+    - haproxy
     - keepalived
