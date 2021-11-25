@@ -1,0 +1,18 @@
+- name: Copy keepalived-exporter binary
+  ansible.builtin.copy:
+    src: keepalived-exporter
+    dest: /usr/local/bin/prometheus-keepalived-exporter
+    owner: prometheus
+    mode: u+x
+
+- name: Copy keepalived-exporter.service
+  ansible.builtin.copy:
+    src: keepalived-exporter.service
+    dest: /etc/systemd/system/prometheus-keepalived-exporter.service
+  notify: Reload daemons
+
+- name: Keepalived-exporter service
+  ansible.builtin.service:
+    name: prometheus-keepalived-exporter
+    state: started
+    enabled: yes

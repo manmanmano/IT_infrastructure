@@ -1,0 +1,11 @@
+[Unit]                                                                          
+Description=prometheus-keepalived-exporter for keepalived metrics
+Documentation=https://github.com/cafebazaar/keepalived-exporter
+After=network-online.target                                                     
+                                                                                
+[Service]                                                                       
+User=prometheus                                                                     
+ExecStart=/usr/local/bin/prometheus-keepalived-exporter
+                                                                                
+[Install]                                                                       
+WantedBy=multi-user.target 

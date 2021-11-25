@@ -8,6 +8,7 @@ server {
             proxy_set_header Host $http_host;
         }
 {%endif%}
+
 {%if inventory_hostname in groups['prometheus_servers']%}
         location /prometheus {
             proxy_pass http://localhost:9090;
@@ -17,6 +18,16 @@ server {
 {%if inventory_hostname in groups['grafana_servers']%}
         location /grafana {
             proxy_pass http://localhost:{{ grafana_port }};
+        }
+{%endif%}
+
+{%if inventory_hostname in groups['haproxy']%}
+        location /haproxy-metrics {
+            proxy_pass http://localhost:9101/metrics;
+        }
+
+        location /keepalived-metrics {
+            proxy_pass http://localhost:9165/metrics;
         }
 {%endif%}
 

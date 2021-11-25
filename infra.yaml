@@ -69,6 +69,7 @@
     - haproxy
     - haproxy_exporter
     - keepalived
+    - keepalived_exporter
   tags:
     - hk
 
