@@ -9,7 +9,9 @@
   ansible.builtin.copy:
     src: keepalived-exporter.service
     dest: /etc/systemd/system/prometheus-keepalived-exporter.service
-  notify: Reload daemons
+  notify: 
+    - Reload daemons
+    - Restart keepalived-exporter
 
 - name: Keepalived-exporter service
   ansible.builtin.service:

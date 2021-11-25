@@ -9,7 +9,9 @@
   ansible.builtin.copy:
     src: prometheus-influxdb-stats-exporter.service
     dest: /etc/systemd/system/
-  notify: Reload daemons
+  notify: 
+    - Reload daemons
+    - Restart influxdb-exporter
 
 - name: Service prometheus-influxdb-exporter 
   ansible.builtin.service:

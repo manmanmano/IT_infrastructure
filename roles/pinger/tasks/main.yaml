@@ -23,7 +23,9 @@
   ansible.builtin.copy:
     src: pinger.service
     dest: /etc/systemd/system/
-  notify: Reload daemons
+  notify: 
+    - Reload daemons
+    - Restart pinger
 
 - name: Pinger service
   ansible.builtin.service:
