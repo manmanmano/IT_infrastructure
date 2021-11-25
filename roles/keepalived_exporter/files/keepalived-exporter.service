@@ -4,7 +4,7 @@ Documentation=https://github.com/cafebazaar/keepalived-exporter
 After=network-online.target                                                     
                                                                                 
 [Service]                                                                       
-User=prometheus                                                                     
+User=root                                                                     
 ExecStart=/usr/local/bin/prometheus-keepalived-exporter
                                                                                 
 [Install]                                                                       
