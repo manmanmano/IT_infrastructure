@@ -1,4 +1,6 @@
-agama_port: 8001
+first_agama_port: 8001
+second_agama_port: 8010
+
 grafana_port: 3001
 
 mysql_host: manmanmano-2

@@ -15,10 +15,15 @@
     build:
       path: /opt/agama
 
-- name: Agama container                                                
+- name: Agama containers
   community.docker.docker_container:                                            
     container_default_behavior: no_defaults                                     
-    name: agama                                                               
+    name: "{{ item }}"                                                               
     image: agama
-    published_ports: "{{ agama_port }}:8000" 
+    {% for port agama_ports %}
+    published_ports: "{{ port }}:8000" 
+    {% endfor %}
     env: AGAMA_DATABASE_URI=mysql+pymysql://{{ mysql_user }}:{{ mysql_password }}@{{ mysql_host }}/{{ mysql_database }}
+  loop: 
+    - agama1
+    - agama2
