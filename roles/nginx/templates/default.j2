@@ -4,9 +4,14 @@ server {
 
 {%if inventory_hostname in groups['agama_app']%}
         location / {
-            proxy_pass http://localhost:{{ agama_port }};
+            proxy_pass http://localhost:{{ first_agama_port }};
             proxy_set_header Host $http_host;
         }
+
+        location / {
+            proxy_pass http://localhost:{{ second_agama_port }};
+            proxy_set_header Host $http_host;
+        } 
 {%endif%}
 
 {%if inventory_hostname in groups['prometheus_servers']%}
