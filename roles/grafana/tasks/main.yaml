@@ -19,28 +19,20 @@
 
 - name: Grafana dashboards
   ansible.builtin.copy:
-    src: datasource.yaml
-    dest: /opt/grafana/provisioning/datasources/default.yaml
-
+    src: "{{ item.src }}" 
+    dest: "/opt/grafana/provisioning/{{ item.dest }}/default.yaml"
+  loop:
+    - { src: 'dashboard.yaml', dest: 'dashboards' }
+    - { src: 'datasource.yaml', dest: 'datasources' }
+     
 - name: Grafana dashboards
   ansible.builtin.copy:
-    src: dashboard.yaml
-    dest: /opt/grafana/provisioning/dashboards/default.yaml
-
-- name: main.json
-  ansible.builtin.copy:
-    src: main.json
-    dest: /opt/grafana/provisioning/dashboards/main.json 
-
-- name: mysql.json
-  ansible.builtin.copy:
-    src: mysql.json
-    dest: /opt/grafana/provisioning/dashboards/mysql.json 
-
-- name: syslog.json
-  ansible.builtin.copy:
-    src: syslog.json
-    dest: /opt/grafana/provisioning/dashboards/syslog.json 
+    src: "{{ item.src }}" 
+    dest: "/opt/grafana/provisioning/dashboards/{{ item.dest }}"
+  loop:
+    - { src: 'main.json', dest: 'main.json' }
+    - { src: 'mysql.json', dest: 'mysql.json' }
+    - { src: 'syslog.json', dest: 'syslog.json' }
 
 - name: Grafana docker container
   community.docker.docker_container:

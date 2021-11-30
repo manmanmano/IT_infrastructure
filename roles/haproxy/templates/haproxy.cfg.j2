@@ -30,6 +30,6 @@ listen clounsible.mano
    stats enable
    stats uri /stats
    {% for vm in groups['haproxy'] %}
-   server {{ vm }}-docker {{ vm }}:8001 check
-   server {{ vm }}-docker {{ vm }}:8010 check
+   server {{ vm }}-docker1 {{ vm }}:8001 check
+   server {{ vm }}-docker2 {{ vm }}:8010 check
    {% endfor %}

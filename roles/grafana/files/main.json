@@ -56,88 +56,6 @@
                   "text": "DOWN"
                 },
                 "1": {
-                  "color": "purple",
-                  "index": 1,
-                  "text": "BACKUP"
-                },
-                "2": {
-                  "color": "yellow",
-                  "index": 2,
-                  "text": "MASTER"
-                }
-              },
-              "type": "value"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "green",
-                "value": 0.5
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 12,
-        "x": 0,
-        "y": 1
-      },
-      "id": 38,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {
-          "titleSize": 15
-        },
-        "textMode": "value_and_name"
-      },
-      "pluginVersion": "8.2.5",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "keepalived_vrrp_state",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "title": "Keepalived master/backup",
-      "type": "stat"
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [
-            {
-              "options": {
-                "0": {
-                  "color": "red",
-                  "index": 0,
-                  "text": "DOWN"
-                },
-                "1": {
                   "color": "green",
                   "index": 1,
                   "text": "UP"
@@ -164,8 +82,8 @@
       },
       "gridPos": {
         "h": 15,
-        "w": 12,
-        "x": 12,
+        "w": 24,
+        "x": 0,
         "y": 1
       },
       "id": 36,
@@ -243,7 +161,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 16
       },
       "id": 34,
       "options": {
@@ -275,13 +193,95 @@
       "type": "stat"
     },
     {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "red",
+                  "index": 0,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "color": "purple",
+                  "index": 1,
+                  "text": "BACKUP"
+                },
+                "2": {
+                  "color": "yellow",
+                  "index": 2,
+                  "text": "MASTER"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 0.5
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "id": 38,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "titleSize": 15
+        },
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "8.2.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "keepalived_vrrp_state",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Keepalived master/backup",
+      "type": "stat"
+    },
+    {
       "collapsed": false,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 24
       },
       "id": 28,
       "panels": [],
@@ -331,7 +331,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 17
+        "y": 25
       },
       "id": 30,
       "options": {
@@ -382,7 +382,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 17
+        "y": 25
       },
       "hiddenSeries": false,
       "id": 32,
@@ -477,7 +477,7 @@
         "h": 8,
         "w": 12,
         "x": 6,
-        "y": 25
+        "y": 33
       },
       "hiddenSeries": false,
       "id": 26,
@@ -597,7 +597,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 41
       },
       "id": 24,
       "panels": [],
@@ -641,7 +641,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 42
       },
       "id": 20,
       "options": {
@@ -691,7 +691,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 42
       },
       "hiddenSeries": false,
       "id": 22,
@@ -775,7 +775,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 42
+        "y": 50
       },
       "id": 18,
       "panels": [],
@@ -828,7 +828,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 43
+        "y": 51
       },
       "id": 14,
       "options": {
@@ -878,7 +878,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 43
+        "y": 51
       },
       "hiddenSeries": false,
       "id": 16,
@@ -962,7 +962,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 51
+        "y": 59
       },
       "id": 12,
       "panels": [],
@@ -1006,7 +1006,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 52
+        "y": 60
       },
       "id": 8,
       "options": {
@@ -1056,7 +1056,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 52
+        "y": 60
       },
       "hiddenSeries": false,
       "id": 10,
@@ -1140,7 +1140,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 60
+        "y": 68
       },
       "id": 6,
       "panels": [],
@@ -1165,7 +1165,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 61
+        "y": 69
       },
       "hiddenSeries": false,
       "id": 2,
@@ -1260,7 +1260,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 61
+        "y": 69
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1364,5 +1364,5 @@
   "timezone": "",
   "title": "clounsible.mano",
   "uid": "mPEUZid7k",
-  "version": 2
+  "version": 1
 }
