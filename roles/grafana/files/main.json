@@ -465,13 +465,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "InfluxDB-latency",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
+      "fill": 0,
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
@@ -1338,6 +1332,7 @@
       }
     }
   ],
+  "refresh": false,
   "schemaVersion": 32,
   "style": "dark",
   "tags": [],
@@ -1364,5 +1359,5 @@
   "timezone": "",
   "title": "clounsible.mano",
   "uid": "mPEUZid7k",
-  "version": 1
+  "version": 2
 }
