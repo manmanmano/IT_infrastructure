@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 2,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -500,6 +500,7 @@
       }
     }
   ],
+  "refresh": "10s",
   "schemaVersion": 32,
   "style": "dark",
   "tags": [],
