@@ -3,7 +3,7 @@ second_agama_port: 8010
 
 grafana_port: 3001
 
-mysql_host: manmanmano-2
+mysql_host: manmanmano-1
 mysql_database: agama
 mysql_user: agama 
 mysql_password: !vault |

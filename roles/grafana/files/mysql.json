@@ -22,7 +22,6 @@
   "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -38,15 +37,28 @@
             {
               "options": {
                 "0": {
-                  "index": 1,
-                  "text": "DOWN"
+                  "color": "purple",
+                  "index": 2,
+                  "text": "MASTER"
                 },
                 "1": {
+                  "color": "yellow",
                   "index": 0,
-                  "text": "UP"
+                  "text": "SLAVE"
                 }
               },
               "type": "value"
+            },
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "DOWN"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -79,12 +91,14 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "last"
           ],
           "fields": "",
           "values": false
         },
-        "text": {},
+        "text": {
+          "titleSize": 15
+        },
         "textMode": "auto"
       },
       "pluginVersion": "8.2.5",
@@ -200,7 +214,19 @@
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "mappings": [],
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "color": "red",
+                  "index": 0,
+                  "text": "DOWN"
+                }
+              },
+              "type": "special"
+            }
+          ],
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -231,7 +257,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "mean"
+            "last"
           ],
           "fields": "",
           "values": false
@@ -263,13 +289,26 @@
             {
               "options": {
                 "0": {
+                  "index": 0,
                   "text": "READ/WRITE"
                 },
                 "1": {
+                  "index": 1,
                   "text": "READ_ONLY"
                 }
               },
               "type": "value"
+            },
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "color": "red",
+                  "index": 2,
+                  "text": "DOWN"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -382,7 +421,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "mean"
+            "last"
           ],
           "fields": "",
           "values": false
@@ -527,5 +566,5 @@
   "timezone": "",
   "title": "MySQL",
   "uid": "-gAQY4tnk",
-  "version": 1
+  "version": 2
 }
