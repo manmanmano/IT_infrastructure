@@ -8,9 +8,9 @@ Firstly, restore MySQL data from the backup:
 
     sudo -u backup duplicity restore --no-encryption rsync://manmanmano@backup.clounsible.mano//home/manmanmano/mysql/ /home/backup/restore/
 
-Lastly, paste the retrieved MySQL dump into the database:
+Lastly, paste the retrieved MySQL dump into the database as root:
 
-    mysql -u agama -p < /home/backup/restore/agama.sql 
+    sudo mysql < /home/backup/restore/agama.sql 
 
 N.B: Before pasting the restored data into the database check the contents of the file.
 The contents of the file can either be checked  with nano, as the example abov or using
