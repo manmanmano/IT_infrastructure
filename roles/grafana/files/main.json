@@ -50,9 +50,8 @@
             {
               "options": {
                 "0": {
-                  "color": "red",
                   "index": 2,
-                  "text": "No data"
+                  "text": "DOWN"
                 },
                 "1": {
                   "color": "green",
@@ -149,17 +148,6 @@
                 }
               },
               "type": "value"
-            },
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "color": "red",
-                  "index": 2,
-                  "text": "No data"
-                }
-              },
-              "type": "special"
             }
           ],
           "thresholds": {
@@ -192,7 +180,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "last"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -336,17 +324,6 @@
                 }
               },
               "type": "value"
-            },
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "color": "red",
-                  "index": 2,
-                  "text": "No data"
-                }
-              },
-              "type": "special"
             }
           ],
           "thresholds": {
@@ -379,7 +356,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "last"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -644,28 +621,13 @@
             {
               "options": {
                 "0": {
-                  "color": "red",
-                  "index": 0,
                   "text": "DOWN"
                 },
                 "1": {
-                  "color": "green",
-                  "index": 1,
                   "text": "UP"
                 }
               },
               "type": "value"
-            },
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "color": "red",
-                  "index": 2,
-                  "text": "No data"
-                }
-              },
-              "type": "special"
             }
           ],
           "thresholds": {
@@ -838,8 +800,6 @@
               "options": {
                 "from": 0.5,
                 "result": {
-                  "color": "green",
-                  "index": 0,
                   "text": "UP"
                 },
                 "to": 1
@@ -850,24 +810,11 @@
               "options": {
                 "from": 0,
                 "result": {
-                  "color": "red",
-                  "index": 1,
                   "text": "DOWN"
                 },
                 "to": 0.4
               },
               "type": "range"
-            },
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "color": "red",
-                  "index": 2,
-                  "text": "No data"
-                }
-              },
-              "type": "special"
             }
           ],
           "thresholds": {
@@ -1039,25 +986,13 @@
             {
               "options": {
                 "0": {
-                  "index": 0,
                   "text": "DOWN"
                 },
                 "1": {
-                  "index": 1,
                   "text": "UP"
                 }
               },
               "type": "value"
-            },
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "index": 2,
-                  "text": "No data"
-                }
-              },
-              "type": "special"
             }
           ],
           "thresholds": {
@@ -1420,7 +1355,7 @@
     "list": []
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {
