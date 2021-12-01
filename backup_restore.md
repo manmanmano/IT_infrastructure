@@ -4,13 +4,21 @@
 
 # MYSQL DATA RESTORATION
 
-Firstly, restore MySQL data from the backup:
+Firstly, login into the backup user:
 
-    sudo -u backup duplicity restore --no-encryption rsync://manmanmano@backup.clounsible.mano//home/manmanmano/mysql/ /home/backup/restore/
+    sudo - backup
 
-Lastly, paste the retrieved MySQL dump into the database as root:
+Secondly, restore MySQL data from the backup with the following command:
 
-    sudo mysql < /home/backup/restore/agama.sql 
+    duplicity restore --no-encryption rsync://manmanmano@backup.clounsible.mano//home/manmanmano/mysql/ /home/backup/restore/
+
+Thirdly, login into the root user:
+
+    sudo su
+
+Lastly, paste the retrieved MySQL dump into the database as root using the following command:
+
+    mysql < /home/backup/restore/agama.sql 
 
 N.B: Before pasting the restored data into the database check the contents of the file.
 The contents of the file can either be checked  with nano, as the example abov or using
@@ -22,11 +30,15 @@ E.G: zcat *name_of_the_file.gzip*
 
 # INFLUXDB DATA RESTORATION
 
-Firstly, restore InfluxDB data from the backup:
+Firstly, login into the backup user:
 
-    sudo -u backup duplicity restore --no-encryption rsync://manmanmano@backup.clounsible.mano//home/manmanmano/influxdb/ /home/backup/restore/
+    sudo - backup
+
+Secondly, restore InfluxDB data from the backup with the following command:
+
+    duplicity restore --no-encryption rsync://manmanmano@backup.clounsible.mano//home/manmanmano/influxdb/ /home/backup/restore/
     
-Secondly, stop the telegraf service with:
+Secondly, stop the telegraf service with the following command:
 
     service telegraf stop
 
