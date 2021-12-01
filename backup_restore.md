@@ -4,19 +4,23 @@
 
 # MYSQL DATA RESTORATION
 
-Firstly, login into the backup user:
+1) Login into the backup user:
 
-    sudo - backup
+    sudo su backup
 
-Secondly, restore MySQL data from the backup with the following command:
+2) Restore MySQL data from the backup with the following command:
 
     duplicity restore --no-encryption rsync://manmanmano@backup.clounsible.mano//home/manmanmano/mysql/ /home/backup/restore/
 
-Thirdly, login into the root user:
+3) Exit from the backup user:
+
+    exit
+
+4) Login into the root user:
 
     sudo su
 
-Lastly, paste the retrieved MySQL dump into the database as root using the following command:
+5) Paste the retrieved MySQL dump into the database as root using the following command:
 
     mysql < /home/backup/restore/agama.sql 
 
@@ -30,23 +34,27 @@ E.G: zcat *name_of_the_file.gzip*
 
 # INFLUXDB DATA RESTORATION
 
-Firstly, login into the backup user:
+1) Login into the root user:
 
-    sudo - backup
+    sudo su 
 
-Secondly, restore InfluxDB data from the backup with the following command:
-
-    duplicity restore --no-encryption rsync://manmanmano@backup.clounsible.mano//home/manmanmano/influxdb/ /home/backup/restore/
-    
-Secondly, stop the telegraf service with the following command:
+2) Stop the telegraf service with the following command:
 
     service telegraf stop
 
-Thirdly, run:
+3) Run:
 
     influx -execute 'DROP DATABASE telegraf'
 
-Lastly, take the telegraf restored dump and put it into the database:
+4) Login into the backup user:
+
+    sudo su backup
+
+5) Restore InfluxDB data from the backup with the following command:
+
+    duplicity restore --no-encryption rsync://manmanmano@backup.clounsible.mano//home/manmanmano/influxdb/ /home/backup/restore/
+
+6) Take the telegraf restored dump and put it into the database:
 
     influxd restore -portable -database telegraf /home/backup/restore/
 
