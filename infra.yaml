@@ -135,6 +135,7 @@
   gather_facts: no
   roles:
     - pinger
+  tags: ping
 
 - name: Rsyslog
   hosts: all
