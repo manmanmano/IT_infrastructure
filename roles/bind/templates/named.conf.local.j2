@@ -1,0 +1,10 @@
+zone "{{ startup_name }}" {
+{% if inventory_hostname in groups['dns_master'] %}
+    type primary;
+    allow-transfer { key transfer.key; };
+{% else %}
+    type secondary;
+    masters { {{ hostvars[groups['dns_master'][0]]['ansible_default_ipv4']['address'] }}; };
+{% endif %}
+    file "db.{{ startup_name }}";
+};
