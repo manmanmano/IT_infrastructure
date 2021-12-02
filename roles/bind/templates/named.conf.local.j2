@@ -11,6 +11,6 @@ zone "{{ startup_name }}" {
 
 {% if inventory_hostname not in groups['dns_master'] %}
 server {{ hostvars[groups['dns_master'][0]]['ansible_default_ipv4']['address'] }} {
-    keys {key transfer.key; };
+    keys { transfer.key; };
 };
 {% endif %}
