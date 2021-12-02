@@ -6,5 +6,5 @@ zone "{{ startup_name }}" {
     type secondary;
     masters { {{ hostvars[groups['dns_master'][0]]['ansible_default_ipv4']['address'] }}; };
 {% endif %}
-    file "db.{{ startup_name }}";
+    file "/var/cache/bind/db.{{ startup_name }}";
 };
