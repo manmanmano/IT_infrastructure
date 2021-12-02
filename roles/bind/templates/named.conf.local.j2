@@ -4,13 +4,17 @@ zone "{{ startup_name }}" {
     allow-transfer { key transfer.key; 127.0.0.1; };
 {% else %}
     type secondary;
-    masters { {{ hostvars[groups['dns_master'][0]]['ansible_default_ipv4']['address'] }}; };
+{% for master in groups['dns_master'] %}
+    masters { {{ hostvars[master]['ansible_default_ipv4']['address'] }}; };
+{% endfor %}
 {% endif %}
     file "/var/cache/bind/db.{{ startup_name }}";
 };
 
 {% if inventory_hostname not in groups['dns_master'] %}
-server {{ hostvars[groups['dns_master'][0]]['ansible_default_ipv4']['address'] }} {
+{% for master in groups['dns_master'] %}
+server {{ hostvars[master]['ansible_default_ipv4']['address'] }} {
+{% endfor %}
     keys { transfer.key; };
 };
 {% endif %}
