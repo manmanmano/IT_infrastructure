@@ -16,8 +16,15 @@ manmanmano-2
 [influxdb_servers]
 manmanmano-2
 
-[dns_servers]
+[dns_master]
 manmanmano-2
+
+[dns_slaves]
+manmanmano-1
+
+[dns_servers:children]
+dns_master
+dns_slave
 
 [prometheus_servers]
 manmanmano-1
