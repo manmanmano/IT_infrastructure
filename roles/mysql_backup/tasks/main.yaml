@@ -11,6 +11,7 @@
     dest: /home/backup/.my.cnf
     owner: backup
     mode: '0600'
+  no_log: true
   notify: Restart MySQL
 
 - name: MySQL user backup

@@ -10,6 +10,7 @@
   ansible.builtin.template:
     src: agama.ini.j2
     dest: /etc/uwsgi/apps-enabled/agama.ini
+  no_log: true
   notify: Restart uWSGI
 
 - name: uWSGI service                                                           

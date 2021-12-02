@@ -12,6 +12,7 @@
   ansible.builtin.template:
     src: named.conf.options.j2
     dest: /etc/bind/named.conf.options
+  no_log: true
   notify: Restart bind
 
 - name: Copy db.startup_name
