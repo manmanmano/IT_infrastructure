@@ -28,3 +28,15 @@
     dest: /var/cache/bind/db.{{startup_name}}
     force: no
   notify: Reload bind
+
+- name: Nsupdate records
+  community.general.nsupdate:
+    key_name: "nsupdate.key"
+    key_algorithm: "hmac-sha256"
+    key_secret: "{{ nsupdate_key }}"
+    server: "localhost"
+    zone: "{{ startup_name }}"
+    type: "A"
+    value:
+  run_once: True
+
