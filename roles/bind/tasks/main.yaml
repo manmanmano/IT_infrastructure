@@ -26,4 +26,5 @@
   ansible.builtin.template:
     src: db.clounsible.mano.j2
     dest: /var/cache/bind/db.{{startup_name}}
+    force: no
   notify: Reload bind
