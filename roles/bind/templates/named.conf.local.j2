@@ -1,7 +1,7 @@
 zone "{{ startup_name }}" {
 {% if inventory_hostname in groups['dns_master'] %}
     type primary;
-    allow-update { key nsupdate.key; };
+    allow-update { key nsupdate.key; 127.0.0.1; };
     allow-transfer { key transfer.key; 127.0.0.1; };
 {% else %}
     type secondary;
