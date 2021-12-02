@@ -18,5 +18,5 @@
 - name: Copy db.startup_name
   ansible.builtin.template:
     src: db.clounsible.j2
-    dest: /etc/bind/db.clounsible
+    dest: /var/cache/bind/db.clounsible
   notify: Reload bind
