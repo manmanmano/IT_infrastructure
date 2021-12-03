@@ -1,0 +1,14 @@
+$TTL    604800
+{{ startup_name }}.       IN      SOA     manmanmano-1.{{ startup_name }}. mariano.{{ startup_name }}. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+{% for vm in groups['dns_servers']%}
+42.168.192.in-addr.arpa.       IN      NS      {{ vm }}.{{ startup_name }}. 
+{% endfor %}
+{% for vm in groups['all']%}
+{{ hostvars[vm]['ansible_default_ipv4']['address'].split('.')[3] }} IN PTR {{ vm }}.{{ startup_name }}.
+{% endfor %}
