@@ -9,7 +9,7 @@ zone "{{ startup_name }}" {
     masters { {{ hostvars[master]['ansible_default_ipv4']['address'] }}; };
 {% endfor %}
 {% endif %}
-    file "/var/cache/bind/db.{{ startup_name }}";
+    file "db.{{ startup_name }}";
 };
 
 zone "42.168.192.in-addr.arpa" {
@@ -23,7 +23,7 @@ zone "42.168.192.in-addr.arpa" {
     masters { {{ hostvars[master]['ansible_default_ipv4']['address'] }}; };
 {% endfor %}
 {% endif %}
-    file "/var/cache/bind/db.reverse";
+    file "db.reverse";
 };
 
 {% if inventory_hostname not in groups['dns_master'] %}

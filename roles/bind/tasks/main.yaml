@@ -10,19 +10,6 @@
     state: started
     enabled: yes
 
-- name: Copy new named.conf.options
-  ansible.builtin.template:
-    src: named.conf.options.j2
-    dest: /etc/bind/named.conf.options
-  no_log: true
-  notify: Restart bind
-
-- name: Copy new named.conf.local
-  ansible.builtin.template:
-    src: named.conf.local.j2
-    dest: /etc/bind/named.conf.local
-  notify: Restart bind
-
 - name: Copy db.startup_name
   when: inventory_hostname in groups['dns_master']
   ansible.builtin.template:
@@ -38,6 +25,19 @@
     dest: /var/cache/bind/db.reverse
     force: no
   notify: Reload bind
+
+- name: Copy new named.conf.options
+  ansible.builtin.template:
+    src: named.conf.options.j2
+    dest: /etc/bind/named.conf.options
+  no_log: true
+  notify: Restart bind
+
+- name: Copy new named.conf.local
+  ansible.builtin.template:
+    src: named.conf.local.j2
+    dest: /etc/bind/named.conf.local
+  notify: Restart bind
 
 - name: Nsupdate A records
   when: inventory_hostname in groups['dns_master']
