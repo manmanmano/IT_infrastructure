@@ -5,10 +5,6 @@ manmanmano-2 ansible_host=193.40.156.86 ansible_port=16322 ansible_ssh_user=ubun
 manmanmano-1
 manmanmano-2
 
-[agama_app]
-manmanmano-1
-manmanmano-2
-
 [mysql_servers]
 manmanmano-1
 manmanmano-2

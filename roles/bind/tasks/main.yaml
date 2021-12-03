@@ -43,3 +43,18 @@
     record: "{{ item.key }}"
     value: "{{ item.value }}"
   loop: "{{ dns_a_records | dict2items }}"
+  notify: Restart bind
+
+- name: Nsupdate CNAME records
+  when: inventory_hostname in groups['dns_master']
+  community.general.nsupdate:
+    key_name: "nsupdate.key"
+    key_algorithm: "hmac-sha256"
+    key_secret: "{{ nsupdate_key }}"
+    server: "localhost"
+    zone: "{{ startup_name }}"
+    type: "CNAME"
+    record: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop: "{{ dns_cname_records | dict2items }}"
+  notify: Restart bind

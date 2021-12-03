@@ -76,7 +76,7 @@
     - hk
 
 - name: Docker bug
-  hosts: agama_app
+  hosts: web_servers
   become: yes
   gather_facts: no
   roles:
@@ -94,7 +94,7 @@
     - d
 
 - name: Agama
-  hosts: agama_app
+  hosts: web_servers
   become: yes
   gather_facts: no
   roles: 

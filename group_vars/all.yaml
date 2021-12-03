@@ -85,3 +85,16 @@ nsupdate_key: !vault |
 
 dns_a_records:
   backup: '192.168.42.156'
+
+dns_cname_records:
+  grafana: "{{ groups['grafana_servers'][0] }}"
+  influxdb: "{{ groups['influxdb_servers'][0] }}"
+  lb1: "{{ groups['haproxy'][0] }}"
+  lb2: "{{ groups['haproxy'][1] }}"
+  mysql1: "{{ groups['mysql_servers'][0] }}"
+  mysql2: "{{ groups['mysql_servers'][1] }}"
+  ns1: "{{ groups['dns_servers'][0] }}"
+  ns2: "{{ groups['dns_servers'][1] }}"
+  prometheus: "{{ groups['prometheus_servers'][0] }}"
+  web1: "{{ groups['web_servers'][0] }}"
+  web2: "{{ groups['web_servers'][1] }}"
