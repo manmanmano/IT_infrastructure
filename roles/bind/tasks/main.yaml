@@ -1,6 +1,8 @@
 - name: Install package "bind9"
   apt:
-    name: bind9
+    name: 
+      - bind9
+      - python3-dnspython
 
 - name: Service bind
   ansible.builtin.service:
@@ -29,7 +31,8 @@
     force: no
   notify: Reload bind
 
-- name: Nsupdate records
+- name: Nsupdate A records
+  when: inventory_hostname in groups['dns_master']
   community.general.nsupdate:
     key_name: "nsupdate.key"
     key_algorithm: "hmac-sha256"
@@ -37,6 +40,6 @@
     server: "localhost"
     zone: "{{ startup_name }}"
     type: "A"
-    value:
-  run_once: True
-
+    record: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop: "{{ dns_a_records | dict2items }}"
