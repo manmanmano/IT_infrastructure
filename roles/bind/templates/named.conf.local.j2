@@ -12,6 +12,20 @@ zone "{{ startup_name }}" {
     file "/var/cache/bind/db.{{ startup_name }}";
 };
 
+zone "42.168.192.in-addr.arpa" {
+{% if inventory_hostname in groups['dns_master'] %}
+    type primary;
+    allow-update { key nsupdate.key; 127.0.0.1; };
+    allow-transfer { key transfer.key; 127.0.0.1; };
+{% else %}
+    type secondary;
+{% for master in groups['dns_master'] %}
+    masters { {{ hostvars[master]['ansible_default_ipv4']['address'] }}; };
+{% endfor %}
+{% endif %}
+    file "/var/cache/bind/db.reverse";
+};
+
 {% if inventory_hostname not in groups['dns_master'] %}
 {% for master in groups['dns_master'] %}
 server {{ hostvars[master]['ansible_default_ipv4']['address'] }} {
