@@ -1,13 +1,16 @@
-manmanmano-1 ansible_host=193.40.156.86 ansible_port=13922 ansible_ssh_user=ubuntu
+manmanmano-1 ansible_host=193.40.156.86 ansible_port=17622 ansible_ssh_user=ubuntu
 manmanmano-2 ansible_host=193.40.156.86 ansible_port=17322 ansible_ssh_user=ubuntu
+manmanmano-3 ansible_host=193.40.156.86 ansible_port=6822 ansible_ssh_user=ubuntu
 
 [web_servers]
 manmanmano-1
 manmanmano-2
+manmanmano-3
 
 [mysql_servers]
 manmanmano-1
 manmanmano-2
+manmanmano-3
 
 [influxdb_servers]
 manmanmano-2
@@ -17,6 +20,7 @@ manmanmano-2
 
 [dns_slave]
 manmanmano-1
+manmanmano-3
 
 [dns_servers:children]
 dns_master
@@ -34,3 +38,4 @@ manmanmano-2
 [haproxy]
 manmanmano-1
 manmanmano-2
+manmanmano-3

@@ -18,15 +18,8 @@
 - name: Agama containers
   community.docker.docker_container:                                            
     container_default_behavior: no_defaults                                     
-    name: agama-1
+    name: "{{ item.key }}"
     image: agama
-    published_ports: "{{  first_agama_port }}:8000" 
+    published_ports: "{{ item.value }}:8000" 
     env: AGAMA_DATABASE_URI=mysql+pymysql://{{ mysql_user }}:{{ mysql_password }}@{{ mysql_host }}/{{ mysql_database }}
-
-- name: Agama containers
-  community.docker.docker_container:                                            
-    container_default_behavior: no_defaults                                     
-    name: agama-2
-    image: agama
-    published_ports: "{{ second_agama_port }}:8000" 
-    env: AGAMA_DATABASE_URI=mysql+pymysql://{{ mysql_user }}:{{ mysql_password }}@{{ mysql_host }}/{{ mysql_database }}
+  loop: "{{ agama_ports | dict2items }}"

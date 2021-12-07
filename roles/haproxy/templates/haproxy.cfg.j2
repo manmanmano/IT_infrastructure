@@ -32,4 +32,5 @@ listen clounsible.mano
    {% for vm in range(groups['haproxy']|length) %}
    server lb{{ vm+1 }}-docker1 lb{{ vm+1 }}:8001 check
    server lb{{ vm+1 }}-docker2 lb{{ vm+1 }}:8010 check
+   server lb{{ vm+1 }}-docker3 lb{{ vm+1 }}:8100 check
    {% endfor %}

@@ -1,5 +1,7 @@
-first_agama_port: 8001
-second_agama_port: 8010
+agama_ports:
+  agama-1: 8001
+  agama-2: 8010
+  agama-3: 8100
 
 grafana_port: 3001
 
@@ -91,10 +93,14 @@ dns_cname_records:
   influxdb: "{{ groups['influxdb_servers'][0] }}"
   lb1: "{{ groups['haproxy'][0] }}"
   lb2: "{{ groups['haproxy'][1] }}"
+  lb3: "{{ groups['haproxy'][2] }}"
   mysql1: "{{ groups['mysql_servers'][0] }}"
   mysql2: "{{ groups['mysql_servers'][1] }}"
+  mysql3: "{{ groups['mysql_servers'][2] }}"
   ns1: "{{ groups['dns_servers'][0] }}"
   ns2: "{{ groups['dns_servers'][1] }}"
+  ns3: "{{ groups['dns_servers'][2] }}"
   prometheus: "{{ groups['prometheus_servers'][0] }}"
   web1: "{{ groups['web_servers'][0] }}"
   web2: "{{ groups['web_servers'][1] }}"
+  web3: "{{ groups['web_servers'][2] }}"
