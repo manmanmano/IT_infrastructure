@@ -62,7 +62,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -162,7 +162,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -263,7 +263,7 @@
       },
       "id": 8,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -279,7 +279,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "targets": [
         {
           "expr": "mysql_global_variables_server_id",
@@ -347,7 +347,7 @@
       },
       "id": 6,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -363,7 +363,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "targets": [
         {
           "expr": "mysql_global_variables_read_only",
@@ -430,8 +430,8 @@
       },
       "id": 2,
       "options": {
-        "colorMode": "value",
-        "graphMode": "area",
+        "colorMode": "background",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
@@ -446,7 +446,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "targets": [
         {
           "expr": "mysql_up",
@@ -500,7 +500,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -587,5 +587,5 @@
   "timezone": "",
   "title": "MySQL",
   "uid": "-gAQY4tnk",
-  "version": 4
+  "version": 1
 }

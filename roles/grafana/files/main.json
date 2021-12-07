@@ -88,14 +88,14 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 15,
+        "h": 16,
         "w": 24,
         "x": 0,
         "y": 1
       },
       "id": 36,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -111,7 +111,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "targets": [
         {
           "exemplar": true,
@@ -168,17 +168,17 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 16
+        "y": 17
       },
       "id": 34,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "last"
           ],
           "fields": "",
           "values": false
@@ -186,7 +186,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "targets": [
         {
           "exemplar": true,
@@ -254,11 +254,11 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 16
+        "y": 17
       },
       "id": 38,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -274,7 +274,7 @@
         },
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "targets": [
         {
           "exemplar": true,
@@ -294,7 +294,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 25
       },
       "id": 28,
       "panels": [],
@@ -344,17 +344,17 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 25
+        "y": 26
       },
       "id": 30,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "last"
           ],
           "fields": "",
           "values": false
@@ -362,7 +362,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "targets": [
         {
           "exemplar": true,
@@ -395,7 +395,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 25
+        "y": 26
       },
       "hiddenSeries": false,
       "id": 32,
@@ -415,7 +415,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -484,7 +484,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 26,
@@ -504,7 +504,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "pointradius": 0.5,
       "points": true,
       "renderer": "flot",
@@ -606,7 +606,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 41
+        "y": 42
       },
       "id": 24,
       "panels": [],
@@ -650,11 +650,11 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 42
+        "y": 43
       },
       "id": 20,
       "options": {
-        "colorMode": "value",
+        "colorMode": "background",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
@@ -668,7 +668,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "targets": [
         {
           "expr": "nginx_up",
@@ -700,7 +700,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 42
+        "y": 43
       },
       "hiddenSeries": false,
       "id": 22,
@@ -720,7 +720,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -784,7 +784,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 51
       },
       "id": 18,
       "panels": [],
@@ -809,7 +809,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 51
+        "y": 52
       },
       "hiddenSeries": false,
       "id": 16,
@@ -830,7 +830,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -935,12 +935,12 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 61
+        "y": 62
       },
       "id": 14,
       "options": {
-        "colorMode": "value",
-        "graphMode": "area",
+        "colorMode": "background",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
@@ -955,7 +955,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "targets": [
         {
           "expr": "mysql_up",
@@ -976,7 +976,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 70
+        "y": 71
       },
       "id": 12,
       "panels": [],
@@ -1001,7 +1001,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 71
+        "y": 72
       },
       "hiddenSeries": false,
       "id": 10,
@@ -1022,7 +1022,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1118,12 +1118,12 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 80
+        "y": 81
       },
       "id": 8,
       "options": {
-        "colorMode": "value",
-        "graphMode": "area",
+        "colorMode": "background",
+        "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
@@ -1138,7 +1138,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "targets": [
         {
           "expr": "bind_up",
@@ -1159,7 +1159,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 89
+        "y": 90
       },
       "id": 6,
       "panels": [],
@@ -1184,7 +1184,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 90
+        "y": 91
       },
       "hiddenSeries": false,
       "id": 2,
@@ -1205,7 +1205,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1282,7 +1282,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 98
+        "y": 99
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1302,7 +1302,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.0.7",
+      "pluginVersion": "8.1.8",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1368,7 +1368,7 @@
     "list": []
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
