@@ -1,11 +1,10 @@
 agama_ports:
   agama-1: 8001
   agama-2: 8010
-  agama-3: 8100
 
 grafana_port: 3001
 
-mysql_host: mysql2 
+mysql_host: "{{ groups['mysql_servers'][1] }}"
 mysql_database: agama
 mysql_user: agama 
 mysql_password: !vault |
