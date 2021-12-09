@@ -1271,8 +1271,8 @@
     "list": []
   },
   "time": {
-    "from": "2021-12-09T11:29:01.533Z",
-    "to": "2021-12-09T11:39:01.533Z"
+    "from": "now-5m",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -1290,6 +1290,6 @@
   "timezone": "",
   "title": "clounsible.mano",
   "uid": "mPEUZid7k",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }

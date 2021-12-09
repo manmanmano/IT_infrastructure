@@ -518,7 +518,7 @@
       }
     }
   ],
-  "refresh": false,
+  "refresh": "10s",
   "schemaVersion": 33,
   "style": "dark",
   "tags": [],
@@ -526,8 +526,8 @@
     "list": []
   },
   "time": {
-    "from": "2021-12-09T11:27:21.218Z",
-    "to": "2021-12-09T11:37:21.218Z"
+    "from": "now-5m",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -545,6 +545,6 @@
   "timezone": "",
   "title": "MySQL",
   "uid": "-gAQY4tnk",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }

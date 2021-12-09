@@ -1,5 +1,4 @@
-# Install and configure the infrastructure with Ansible:
-### !!! THIS MUST BE DONE ON OUR LOCAL MACHINE !!!
+# Install and configure infrastructure with Ansible:
 
     ansible-playbook infra.yaml
 
@@ -35,7 +34,6 @@ Before starting clean everything from the /home/backup/restore directory with th
 5) Paste the retrieved MySQL dump into the database as root using the following command:
 
     mysql agama < /home/backup/restore/agama.sql 
-
 
 ## INFLUXDB DATA RESTORATION
 
@@ -74,7 +72,7 @@ Before starting clean everything from the /home/backup/restore directory with th
 
     influxd restore -portable -database telegraf /home/backup/restore/
 
-### !!! THIS MUST BE RUN on our local machine !!!
+## !!! THIS MUST BE RUN on our local machine !!!
 In case the backup was successful, we can restart the service telegraf by running the playbook:
     
     ansible-playbook infra.yaml
