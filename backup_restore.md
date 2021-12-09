@@ -3,7 +3,7 @@
 
     ansible-playbook infra.yaml
 
-## MYSQL DATA RESTORATION
+# MYSQL DATA RESTORATION
 
 ### !!! THE FOLLOWING COMMANDS MUST BE EXECUTED ON MYSQL MASTER MACHINE !!!
 The default master machine is manmanmano-2, so be sure to execute these commands there.
@@ -37,7 +37,7 @@ Before starting clean everything from the /home/backup/restore directory with th
     mysql agama < /home/backup/restore/agama.sql 
 
 
-## INFLUXDB DATA RESTORATION
+# INFLUXDB DATA RESTORATION
 
 ### !!! THE FOLLOWING COMMANDS MUST BE EXECUTED ON THE MACHINE THAT HOSTS INFLUXDB !!!
 InfluxDB is located in manmanmano-2, so be sure to executre these commands there.
