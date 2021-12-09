@@ -41,3 +41,5 @@
     image: grafana/grafana
     published_ports: "{{ grafana_port }}:3000"
     volumes: /opt/grafana:/etc/grafana
+    state: started
+    restart_policy: always

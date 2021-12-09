@@ -22,4 +22,6 @@
     image: agama
     published_ports: "{{ item.value }}:8000" 
     env: AGAMA_DATABASE_URI=mysql+pymysql://{{ mysql_user }}:{{ mysql_password }}@{{ mysql_host }}/{{ mysql_database }}
+    state: started
+    restart_policy: always
   loop: "{{ agama_ports | dict2items }}"
