@@ -41,6 +41,8 @@
   gather_facts: no
   roles:
     - node_exporter
+  tags:
+    - ne
 
 - name: Database server
   hosts: mysql_servers
@@ -61,7 +63,7 @@
     - nginx
     - nginx_exporter
   tags:
-    - n
+    - nx
 
 - name: Haproxy and Keepalive
   hosts: haproxy
@@ -82,7 +84,7 @@
   roles:
     - iptables
   tags:
-    - i
+    - ip
 
 - name: Docker
   hosts: web_servers
@@ -137,7 +139,8 @@
   gather_facts: no
   roles:
     - pinger
-  tags: ping
+  tags: 
+    - ping
 
 - name: Rsyslog
   hosts: all
