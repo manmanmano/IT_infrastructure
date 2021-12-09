@@ -1,12 +1,17 @@
-# Install and configure the infrastructure with Ansible:
-### !!! THIS MUST BE DONE ON OUR LOCAL MACHINE !!!
+# INSTALL AND CONFIGURE THE INFRASTRUCTURE WITH ANSIBLE:
+
+
+### !!! THIS MUST BE DONE ON OUR LOCAL MACHINE BEFORE DATA RESTORATION !!!
 
     ansible-playbook infra.yaml
 
+
 # MYSQL DATA RESTORATION
+
 
 ### !!! THE FOLLOWING COMMANDS MUST BE EXECUTED ON MYSQL MASTER MACHINE !!!
 The default master machine is manmanmano-2, so be sure to execute these commands there.
+
 
 Before starting clean everything from the /home/backup/restore directory with the following commands:
 
@@ -15,6 +20,9 @@ Before starting clean everything from the /home/backup/restore directory with th
     2. rm /home/backup/restore/*
 
     3. exit
+
+
+Follow these steps in order to restore our lost data:
 
 1) Login into the backup user:
 
@@ -36,11 +44,15 @@ Before starting clean everything from the /home/backup/restore directory with th
 
     mysql agama < /home/backup/restore/agama.sql 
 
+Now check on our application and see if the data has been successfully restored.
+
 
 # INFLUXDB DATA RESTORATION
 
+
 ### !!! THE FOLLOWING COMMANDS MUST BE EXECUTED ON THE MACHINE THAT HOSTS INFLUXDB !!!
 InfluxDB is located in manmanmano-2, so be sure to executre these commands there.
+
 
 Before starting clean everything from the /home/backup/restore directory with the following commands:
 
@@ -49,6 +61,9 @@ Before starting clean everything from the /home/backup/restore directory with th
     2. rm /home/backup/restore/*
 
     3. exit
+
+
+Follow these steps in order to restore our lost data:
 
 1) Login into the root user:
 
@@ -78,3 +93,5 @@ Before starting clean everything from the /home/backup/restore directory with th
 In case the backup was successful, we can restart the service telegraf by running the playbook:
     
     ansible-playbook infra.yaml
+
+Now check the Syslog dashboard in Grafana and see if our data has been restored.
