@@ -89,7 +89,7 @@ Follow these steps in order to restore our lost data:
 
     influxd restore -portable -database telegraf /home/backup/restore/
 
-### !!! THIS MUST BE RUN on our local machine !!!
+### !!! THIS MUST BE RUN ON OUR LOCAL MACHINE !!!
 In case the backup was successful, we can restart the service telegraf by running the playbook:
     
     ansible-playbook infra.yaml
