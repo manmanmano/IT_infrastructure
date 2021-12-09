@@ -29,11 +29,10 @@ in that.
     mysql agama < /home/backup/restore/agama.sql 
 
 N.B: Before pasting the restored data into the database check the contents of the file.
-The contents of the file can either be checked  with nano, as the example abov or using
-specific commands to view zipped files, such as zless and zcat. The restored file can
-be found in /home/backup/restore/ directory.
+The contents of the file can either be checked  with nano, as the example above. 
+The restored file can be found in /home/backup/restore/ directory.
 
-E.G: zcat *name_of_the_file.gzip*
+E.G: cat *name_of_the_file.gzip*
 
 
 # INFLUXDB DATA RESTORATION
