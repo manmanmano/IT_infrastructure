@@ -4,6 +4,10 @@
 
 # MYSQL DATA RESTORATION
 
+!!! THE FOLLOWING COMMANDS MUST BE EXECUTED ON MYSQL MASTER MACHINE !!!
+The default master machine is manmanmano-2, so be sure to execute these commands
+in that.
+
 1) Login into the backup user:
 
     sudo su backup
@@ -22,7 +26,7 @@
 
 5) Paste the retrieved MySQL dump into the database as root using the following command:
 
-    mysql < /home/backup/restore/agama.sql 
+    mysql agama < /home/backup/restore/agama.sql 
 
 N.B: Before pasting the restored data into the database check the contents of the file.
 The contents of the file can either be checked  with nano, as the example abov or using
