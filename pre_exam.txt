@@ -1,4 +1,4 @@
-Thu Dec  9 12:29:36 PM EET 2021
+Fri Dec 10 10:39:28 AM EET 2021
 + hostname
 localhost.localdomain
 + ansible-playbook infra.yaml --diff
@@ -30,8 +30,8 @@ localhost.localdomain
     \___)=(___/
 
 
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
 ok: [manmanmano-1]
  ______________
 < TASK [setup] >
@@ -78,9 +78,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
+changed: [manmanmano-3]
 changed: [manmanmano-2]
 changed: [manmanmano-1]
-changed: [manmanmano-3]
  ___________________________________________________________
 < TASK [backup : Add the user backup and generate ssh keys] >
  -----------------------------------------------------------
@@ -95,9 +95,9 @@ changed: [manmanmano-3]
     \___)=(___/
 
 
+changed: [manmanmano-3]
 changed: [manmanmano-1]
 changed: [manmanmano-2]
-changed: [manmanmano-3]
  __________________________________________________________
 < TASK [backup : Create directory restore for user backup] >
  ----------------------------------------------------------
@@ -123,7 +123,7 @@ changed: [manmanmano-3]
 +    "state": "directory"
  }
 
-changed: [manmanmano-1]
+changed: [manmanmano-2]
 --- before
 +++ after
 @@ -1,5 +1,5 @@
@@ -147,7 +147,7 @@ changed: [manmanmano-3]
 +    "state": "directory"
  }
 
-changed: [manmanmano-2]
+changed: [manmanmano-1]
  ___________________________________
 < TASK [backup : Install duplicity] >
  -----------------------------------
@@ -172,7 +172,7 @@ The following NEW packages will be installed:
   duplicity librsync2 python3-bcrypt python3-fasteners python3-future
   python3-lockfile python3-monotonic python3-paramiko
 0 upgraded, 8 newly installed, 0 to remove and 139 not upgraded.
-changed: [manmanmano-2]
+changed: [manmanmano-3]
 The following additional packages will be installed:
   librsync2 python3-bcrypt python3-fasteners python3-future python3-lockfile
   python3-monotonic python3-paramiko
@@ -194,7 +194,7 @@ The following NEW packages will be installed:
   duplicity librsync2 python3-bcrypt python3-fasteners python3-future
   python3-lockfile python3-monotonic python3-paramiko
 0 upgraded, 8 newly installed, 0 to remove and 139 not upgraded.
-changed: [manmanmano-3]
+changed: [manmanmano-2]
  __________________________________
 < TASK [backup : Copy known_hosts] >
  ----------------------------------
@@ -210,26 +210,26 @@ changed: [manmanmano-3]
 
 
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpwsk8mrep/known_hosts.j2
-@@ -0,0 +1,2 @@
-+backup ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSne71MCp6CQCHURWe3CLud6vPDkLfL83Oab/giAI7O
-+backup.clounsible.mano ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSne71MCp6CQCHURWe3CLud6vPDkLfL83Oab/giAI7O
-
-changed: [manmanmano-1]
---- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpm2zzln6_/known_hosts.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmp2lscz7si/known_hosts.j2
 @@ -0,0 +1,2 @@
 +backup ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSne71MCp6CQCHURWe3CLud6vPDkLfL83Oab/giAI7O
 +backup.clounsible.mano ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSne71MCp6CQCHURWe3CLud6vPDkLfL83Oab/giAI7O
 
 changed: [manmanmano-2]
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpovnfve9y/known_hosts.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpkk4j2poz/known_hosts.j2
 @@ -0,0 +1,2 @@
 +backup ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSne71MCp6CQCHURWe3CLud6vPDkLfL83Oab/giAI7O
 +backup.clounsible.mano ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSne71MCp6CQCHURWe3CLud6vPDkLfL83Oab/giAI7O
 
 changed: [manmanmano-3]
+--- before
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmplv01ewm2/known_hosts.j2
+@@ -0,0 +1,2 @@
++backup ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSne71MCp6CQCHURWe3CLud6vPDkLfL83Oab/giAI7O
++backup.clounsible.mano ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBSne71MCp6CQCHURWe3CLud6vPDkLfL83Oab/giAI7O
+
+changed: [manmanmano-1]
  ___________________
 < PLAY [DNS server] >
  -------------------
@@ -277,7 +277,7 @@ The following NEW packages will be installed:
 The following packages will be upgraded:
   bind9-dnsutils bind9-libs
 2 upgraded, 5 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-1]
+changed: [manmanmano-3]
 The following additional packages will be installed:
   bind9-dnsutils bind9-libs bind9-utils dns-root-data python3-ply
 Suggested packages:
@@ -287,7 +287,7 @@ The following NEW packages will be installed:
 The following packages will be upgraded:
   bind9-dnsutils bind9-libs
 2 upgraded, 5 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-3]
+changed: [manmanmano-1]
  ____________________________
 < TASK [bind : Service bind] >
  ----------------------------
@@ -302,9 +302,9 @@ changed: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  ____________________________________
 < TASK [bind : Copy db.startup_name] >
  ------------------------------------
@@ -322,7 +322,7 @@ ok: [manmanmano-3]
 skipping: [manmanmano-1]
 skipping: [manmanmano-3]
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpyj0wply5/db.clounsible.mano.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpai3jdsxi/db.clounsible.mano.j2
 @@ -0,0 +1,14 @@
 +$TTL    604800
 +clounsible.mano.       IN      SOA     manmanmano-2.clounsible.mano. mariano.clounsible.mano. (
@@ -335,9 +335,9 @@ skipping: [manmanmano-3]
 +clounsible.mano.       IN      NS      manmanmano-2 
 +clounsible.mano.       IN      NS      manmanmano-1 
 +clounsible.mano.       IN      NS      manmanmano-3 
-+manmanmano-2       IN      A       192.168.42.50
-+manmanmano-1       IN      A       192.168.42.115
-+manmanmano-3       IN      A       192.168.42.126
++manmanmano-2       IN      A       192.168.42.185
++manmanmano-1       IN      A       192.168.42.21
++manmanmano-3       IN      A       192.168.42.125
 
 changed: [manmanmano-2]
  _______________________________
@@ -357,7 +357,7 @@ changed: [manmanmano-2]
 skipping: [manmanmano-1]
 skipping: [manmanmano-3]
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpjg_1u3wj/db.reverse.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpsrjis7gk/db.reverse.j2
 @@ -0,0 +1,14 @@
 +$TTL    604800
 +42.168.192.in-addr.arpa.       IN      SOA     manmanmano-2.clounsible.mano. mariano.clounsible.mano. (
@@ -370,9 +370,9 @@ skipping: [manmanmano-3]
 +42.168.192.in-addr.arpa.       IN      NS      manmanmano-2.clounsible.mano. 
 +42.168.192.in-addr.arpa.       IN      NS      manmanmano-1.clounsible.mano. 
 +42.168.192.in-addr.arpa.       IN      NS      manmanmano-3.clounsible.mano. 
-+115 IN PTR manmanmano-1.clounsible.mano.
-+50 IN PTR manmanmano-2.clounsible.mano.
-+126 IN PTR manmanmano-3.clounsible.mano.
++21 IN PTR manmanmano-1.clounsible.mano.
++185 IN PTR manmanmano-2.clounsible.mano.
++125 IN PTR manmanmano-3.clounsible.mano.
 
 changed: [manmanmano-2]
  ___________________________________________
@@ -389,9 +389,9 @@ changed: [manmanmano-2]
     \___)=(___/
 
 
-changed: [manmanmano-1]
-changed: [manmanmano-3]
 changed: [manmanmano-2]
+changed: [manmanmano-3]
+changed: [manmanmano-1]
  _________________________________________
 < TASK [bind : Copy new named.conf.local] >
  -----------------------------------------
@@ -407,7 +407,7 @@ changed: [manmanmano-2]
 
 
 --- before: /etc/bind/named.conf.local
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmp5bd__oef/named.conf.local.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmp6u2zg7z4/named.conf.local.j2
 @@ -1,8 +1,14 @@
 -//
 -// Do any local configuration here
@@ -432,14 +432,14 @@ changed: [manmanmano-2]
 
 changed: [manmanmano-2]
 --- before: /etc/bind/named.conf.local
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpa1w1tbqo/named.conf.local.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpi1t948pn/named.conf.local.j2
 @@ -1,8 +1,15 @@
 -//
 -// Do any local configuration here
 -//
 +zone "clounsible.mano" {
 +    type secondary;
-+    masters { 192.168.42.50; };
++    masters { 192.168.42.185; };
 +    file "db.clounsible.mano";
 +};
  
@@ -448,41 +448,41 @@ changed: [manmanmano-2]
 -//include "/etc/bind/zones.rfc1918";
 +zone "42.168.192.in-addr.arpa" {
 +    type secondary;
-+    masters { 192.168.42.50; };
++    masters { 192.168.42.185; };
 +    file "db.reverse";
 +};
  
-+server 192.168.42.50 {
-+    keys { transfer.key; };
-+};
-
-changed: [manmanmano-1]
---- before: /etc/bind/named.conf.local
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpwheaebj6/named.conf.local.j2
-@@ -1,8 +1,15 @@
--//
--// Do any local configuration here
--//
-+zone "clounsible.mano" {
-+    type secondary;
-+    masters { 192.168.42.50; };
-+    file "db.clounsible.mano";
-+};
- 
--// Consider adding the 1918 zones here, if they are not used in your
--// organization
--//include "/etc/bind/zones.rfc1918";
-+zone "42.168.192.in-addr.arpa" {
-+    type secondary;
-+    masters { 192.168.42.50; };
-+    file "db.reverse";
-+};
- 
-+server 192.168.42.50 {
++server 192.168.42.185 {
 +    keys { transfer.key; };
 +};
 
 changed: [manmanmano-3]
+--- before: /etc/bind/named.conf.local
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpne0dhoiu/named.conf.local.j2
+@@ -1,8 +1,15 @@
+-//
+-// Do any local configuration here
+-//
++zone "clounsible.mano" {
++    type secondary;
++    masters { 192.168.42.185; };
++    file "db.clounsible.mano";
++};
+ 
+-// Consider adding the 1918 zones here, if they are not used in your
+-// organization
+-//include "/etc/bind/zones.rfc1918";
++zone "42.168.192.in-addr.arpa" {
++    type secondary;
++    masters { 192.168.42.185; };
++    file "db.reverse";
++};
+ 
++server 192.168.42.185 {
++    keys { transfer.key; };
++};
+
+changed: [manmanmano-1]
  _________________________________________________________
 / TASK [bind : Force notified handlers to restart at this \
 \ point]                                                  /
@@ -512,9 +512,9 @@ changed: [manmanmano-3]
     \___)=(___/
 
 
+changed: [manmanmano-2]
 changed: [manmanmano-1]
 changed: [manmanmano-3]
-changed: [manmanmano-2]
  ______________________________________
 < RUNNING HANDLER [bind : Reload bind] >
  --------------------------------------
@@ -564,12 +564,12 @@ changed: [manmanmano-2] => (item={'key': 'backup', 'value': '192.168.42.156'})
 skipping: [manmanmano-1] => (item={'key': 'grafana', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'influxdb', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'lb1', 'value': 'manmanmano-1'}) 
-skipping: [manmanmano-3] => (item={'key': 'grafana', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'lb2', 'value': 'manmanmano-2'}) 
-skipping: [manmanmano-3] => (item={'key': 'influxdb', 'value': 'manmanmano-2'}) 
+skipping: [manmanmano-3] => (item={'key': 'grafana', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'lb3', 'value': 'manmanmano-3'}) 
-skipping: [manmanmano-3] => (item={'key': 'lb1', 'value': 'manmanmano-1'}) 
+skipping: [manmanmano-3] => (item={'key': 'influxdb', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'mysql1', 'value': 'manmanmano-1'}) 
+skipping: [manmanmano-3] => (item={'key': 'lb1', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-1] => (item={'key': 'mysql2', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-3] => (item={'key': 'lb2', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'mysql3', 'value': 'manmanmano-3'}) 
@@ -585,8 +585,8 @@ skipping: [manmanmano-3] => (item={'key': 'ns1', 'value': 'manmanmano-2'})
 skipping: [manmanmano-1] => (item={'key': 'web1', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-3] => (item={'key': 'ns2', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-1] => (item={'key': 'web2', 'value': 'manmanmano-2'}) 
-skipping: [manmanmano-3] => (item={'key': 'ns3', 'value': 'manmanmano-3'}) 
 skipping: [manmanmano-1] => (item={'key': 'web3', 'value': 'manmanmano-3'}) 
+skipping: [manmanmano-3] => (item={'key': 'ns3', 'value': 'manmanmano-3'}) 
 skipping: [manmanmano-3] => (item={'key': 'prometheus', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-3] => (item={'key': 'web1', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-3] => (item={'key': 'web2', 'value': 'manmanmano-2'}) 
@@ -623,15 +623,15 @@ changed: [manmanmano-2] => (item={'key': 'web3', 'value': 'manmanmano-3'})
 The following NEW packages will be installed:
   prometheus-bind-exporter
 0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
+changed: [manmanmano-3]
+The following NEW packages will be installed:
+  prometheus-bind-exporter
+0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
 changed: [manmanmano-1]
 The following NEW packages will be installed:
   prometheus-bind-exporter
 0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
 changed: [manmanmano-2]
-The following NEW packages will be installed:
-  prometheus-bind-exporter
-0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-3]
  ______________________________________________
 < TASK [bind_exporter : Service bind-exporter] >
  ----------------------------------------------
@@ -693,7 +693,7 @@ changed: [manmanmano-2]
 
 
 --- before: /etc/resolv.conf
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmplupaule1/resolv.conf.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmp6cngilhk/resolv.conf.j2
 @@ -1,19 +1,3 @@
 -# This file is managed by man:systemd-resolved(8). Do not edit.
 -#
@@ -715,39 +715,12 @@ changed: [manmanmano-2]
 -options edns0 trust-ad
 -search openstacklocal
 +search clounsible.mano
-+nameserver 192.168.42.115
-+nameserver 192.168.42.126
-
-changed: [manmanmano-1]
---- before: /etc/resolv.conf
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmppiuf0kjn/resolv.conf.j2
-@@ -1,19 +1,3 @@
--# This file is managed by man:systemd-resolved(8). Do not edit.
--#
--# This is a dynamic resolv.conf file for connecting local clients to the
--# internal DNS stub resolver of systemd-resolved. This file lists all
--# configured search domains.
--#
--# Run "resolvectl status" to see details about the uplink DNS servers
--# currently in use.
--#
--# Third party programs must not access this file directly, but only through the
--# symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a different way,
--# replace this symlink by a static file or a different symlink.
--#
--# See man:systemd-resolved.service(8) for details about the supported modes of
--# operation for /etc/resolv.conf.
--
--nameserver 127.0.0.53
--options edns0 trust-ad
--search openstacklocal
-+search clounsible.mano
-+nameserver 192.168.42.115
-+nameserver 192.168.42.126
++nameserver 192.168.42.21
++nameserver 192.168.42.125
 
 changed: [manmanmano-2]
 --- before: /etc/resolv.conf
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmp7aadzutd/resolv.conf.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpfrtvmoyu/resolv.conf.j2
 @@ -1,19 +1,3 @@
 -# This file is managed by man:systemd-resolved(8). Do not edit.
 -#
@@ -769,10 +742,37 @@ changed: [manmanmano-2]
 -options edns0 trust-ad
 -search openstacklocal
 +search clounsible.mano
-+nameserver 192.168.42.115
-+nameserver 192.168.42.126
++nameserver 192.168.42.21
++nameserver 192.168.42.125
 
 changed: [manmanmano-3]
+--- before: /etc/resolv.conf
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpq92lft97/resolv.conf.j2
+@@ -1,19 +1,3 @@
+-# This file is managed by man:systemd-resolved(8). Do not edit.
+-#
+-# This is a dynamic resolv.conf file for connecting local clients to the
+-# internal DNS stub resolver of systemd-resolved. This file lists all
+-# configured search domains.
+-#
+-# Run "resolvectl status" to see details about the uplink DNS servers
+-# currently in use.
+-#
+-# Third party programs must not access this file directly, but only through the
+-# symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a different way,
+-# replace this symlink by a static file or a different symlink.
+-#
+-# See man:systemd-resolved.service(8) for details about the supported modes of
+-# operation for /etc/resolv.conf.
+-
+-nameserver 127.0.0.53
+-options edns0 trust-ad
+-search openstacklocal
++search clounsible.mano
++nameserver 192.168.42.21
++nameserver 192.168.42.125
+
+changed: [manmanmano-1]
  _________________________________________________
 < TASK [systemd-resolved : Stop systemd-resolved] >
  -------------------------------------------------
@@ -839,7 +839,7 @@ The following NEW packages will be installed:
   moreutils prometheus-node-exporter prometheus-node-exporter-collectors
   smartmontools
 0 upgraded, 8 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-3]
+changed: [manmanmano-1]
 The following additional packages will be installed:
   libio-pty-perl libipc-run-perl libtime-duration-perl libtimedate-perl
   moreutils prometheus-node-exporter-collectors smartmontools
@@ -850,7 +850,7 @@ The following NEW packages will be installed:
   moreutils prometheus-node-exporter prometheus-node-exporter-collectors
   smartmontools
 0 upgraded, 8 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-1]
+changed: [manmanmano-3]
  ______________________________________________
 < TASK [node_exporter : Service node-exporter] >
  ----------------------------------------------
@@ -913,7 +913,7 @@ The following NEW packages will be installed:
   mecab-utils mysql-client-8.0 mysql-client-core-8.0 mysql-common mysql-server
   mysql-server-8.0 mysql-server-core-8.0
 0 upgraded, 24 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-2]
+changed: [manmanmano-1]
 The following additional packages will be installed:
   libcgi-fast-perl libcgi-pm-perl libencode-locale-perl libevent-core-2.1-7
   libevent-pthreads-2.1-7 libfcgi-perl libhtml-parser-perl libhtml-tagset-perl
@@ -931,7 +931,7 @@ The following NEW packages will be installed:
   mecab-utils mysql-client-8.0 mysql-client-core-8.0 mysql-common mysql-server
   mysql-server-8.0 mysql-server-core-8.0
 0 upgraded, 24 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-1]
+changed: [manmanmano-2]
 The following additional packages will be installed:
   libcgi-fast-perl libcgi-pm-perl libencode-locale-perl libevent-core-2.1-7
   libevent-pthreads-2.1-7 libfcgi-perl libhtml-parser-perl libhtml-tagset-perl
@@ -969,6 +969,12 @@ Suggested packages:
 The following NEW packages will be installed:
   python3-pymysql
 0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
+changed: [manmanmano-3]
+Suggested packages:
+  python-pymysql-doc
+The following NEW packages will be installed:
+  python3-pymysql
+0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
 changed: [manmanmano-2]
 Suggested packages:
   python-pymysql-doc
@@ -976,12 +982,6 @@ The following NEW packages will be installed:
   python3-pymysql
 0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
 changed: [manmanmano-1]
-Suggested packages:
-  python-pymysql-doc
-The following NEW packages will be installed:
-  python3-pymysql
-0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-3]
  ______________________________
 < TASK [mysql : MySQL service] >
  ------------------------------
@@ -996,8 +996,8 @@ changed: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-2]
+ok: [manmanmano-3]
 ok: [manmanmano-1]
  _______________________________
 < TASK [mysql : MySQL database] >
@@ -1013,9 +1013,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
-changed: [manmanmano-3]
-changed: [manmanmano-1]
 changed: [manmanmano-2]
+changed: [manmanmano-1]
+changed: [manmanmano-3]
  ___________________________
 < TASK [mysql : MySQL user] >
  ---------------------------
@@ -1030,8 +1030,8 @@ changed: [manmanmano-2]
     \___)=(___/
 
 
-changed: [manmanmano-2]
 changed: [manmanmano-1]
+changed: [manmanmano-2]
 changed: [manmanmano-3]
  _________________________________
 < TASK [mysql : Replication user] >
@@ -1066,38 +1066,38 @@ changed: [manmanmano-3]
 
 
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpicshu_k_/override.cnf.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpxusn4am6/override.cnf.j2
 @@ -0,0 +1,6 @@
 +[mysqld]
 +bind-address = 0.0.0.0
 +log-bin = /var/log/mysql/mysql-bin.log
 +relay-log = /var/log/mysql/mysql-relay.log
 +replicate-do-db = agama
-+server-id = 50
++server-id = 185
 
 changed: [manmanmano-2]
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpcr4aeleg/override.cnf.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmp37jg7u5e/override.cnf.j2
 @@ -0,0 +1,6 @@
 +[mysqld]
 +bind-address = 0.0.0.0
 +log-bin = /var/log/mysql/mysql-bin.log
 +relay-log = /var/log/mysql/mysql-relay.log
 +replicate-do-db = agama
-+server-id = 115
-
-changed: [manmanmano-1]
---- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmp2_wllcvj/override.cnf.j2
-@@ -0,0 +1,6 @@
-+[mysqld]
-+bind-address = 0.0.0.0
-+log-bin = /var/log/mysql/mysql-bin.log
-+relay-log = /var/log/mysql/mysql-relay.log
-+replicate-do-db = agama
-+server-id = 126
++server-id = 125
 
 changed: [manmanmano-3]
+--- before
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmp3ymo7u98/override.cnf.j2
+@@ -0,0 +1,6 @@
++[mysqld]
++bind-address = 0.0.0.0
++log-bin = /var/log/mysql/mysql-bin.log
++relay-log = /var/log/mysql/mysql-relay.log
++replicate-do-db = agama
++server-id = 21
+
+changed: [manmanmano-1]
  ____________________________________________________________
 < TASK [mysql : Force notified handler to restart MySQL now] >
  ------------------------------------------------------------
@@ -1126,8 +1126,8 @@ changed: [manmanmano-3]
     \___)=(___/
 
 
-changed: [manmanmano-3]
 changed: [manmanmano-2]
+changed: [manmanmano-3]
 changed: [manmanmano-1]
  _________________________________________
 < TASK [mysql : MySQL replica RO mode on] >
@@ -1227,8 +1227,8 @@ ok: [manmanmano-1]
 
 
 changed: [manmanmano-3]
-changed: [manmanmano-1]
 changed: [manmanmano-2]
+changed: [manmanmano-1]
  ________________________________
 < TASK [mysql_exporter : my.cnf] >
  --------------------------------
@@ -1244,8 +1244,8 @@ changed: [manmanmano-2]
 
 
 changed: [manmanmano-2]
-changed: [manmanmano-3]
 changed: [manmanmano-1]
+changed: [manmanmano-3]
  __________________________________________
 / TASK [mysql_exporter :                   \
 \ /etc/default/prometheus-mysqld-exporter] /
@@ -1512,7 +1512,7 @@ changed: [manmanmano-3]
 -#       "logger:syslog?appname=bob&local=7" or "logger:stdout?json=true"
 +ARGS="--collect.slave_status"
 
-changed: [manmanmano-1]
+changed: [manmanmano-2]
 --- before: /etc/default/prometheus-mysqld-exporter
 +++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/mysql_exporter/files/prometheus-mysqld-exporter
 @@ -1,120 +1 @@
@@ -1638,7 +1638,7 @@ changed: [manmanmano-1]
 -#       "logger:syslog?appname=bob&local=7" or "logger:stdout?json=true"
 +ARGS="--collect.slave_status"
 
-changed: [manmanmano-2]
+changed: [manmanmano-1]
  _________________________________
 < TASK [mysql_exporter : service] >
  ---------------------------------
@@ -1654,8 +1654,8 @@ changed: [manmanmano-2]
 
 
 changed: [manmanmano-3]
-changed: [manmanmano-1]
 changed: [manmanmano-2]
+changed: [manmanmano-1]
  __________________________________________________________
 < TASK [mysql_backup : Create a directory for user backup] >
  ----------------------------------------------------------
@@ -1681,7 +1681,7 @@ changed: [manmanmano-2]
 +    "state": "directory"
  }
 
-changed: [manmanmano-2]
+changed: [manmanmano-1]
 --- before
 +++ after
 @@ -1,5 +1,5 @@
@@ -1693,7 +1693,7 @@ changed: [manmanmano-2]
 +    "state": "directory"
  }
 
-changed: [manmanmano-1]
+changed: [manmanmano-2]
 --- before
 +++ after
 @@ -1,5 +1,5 @@
@@ -1721,8 +1721,8 @@ changed: [manmanmano-3]
 
 
 changed: [manmanmano-1]
-changed: [manmanmano-2]
 changed: [manmanmano-3]
+changed: [manmanmano-2]
  _________________________________________
 < TASK [mysql_backup : MySQL user backup] >
  -----------------------------------------
@@ -1738,8 +1738,8 @@ changed: [manmanmano-3]
 
 
 changed: [manmanmano-3]
-changed: [manmanmano-2]
 changed: [manmanmano-1]
+changed: [manmanmano-2]
  _____________________________________
 < TASK [mysql_backup : MySQL crontab] >
  -------------------------------------
@@ -1755,15 +1755,13 @@ changed: [manmanmano-1]
 
 
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpars248xb/mysql-backup.j2
-@@ -0,0 +1,3 @@
-+00 00 * * * backup mysqldump agama > /home/backup/mysql/agama.sql
-+10 00 * * 0 backup duplicity --no-encryption full /home/backup/mysql/ rsync://manmanmano@backup.clounsible.mano//home/manmanmano/mysql/
-+10 00 * * 1-6 backup duplicity --no-encryption incremental /home/backup/mysql/ rsync://manmanmano@backup.clounsible.mano//home/manmanmano/mysql/
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmptp148nxy/mysql-backup.j2
+@@ -0,0 +1 @@
++
 
-changed: [manmanmano-3]
+changed: [manmanmano-2]
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpipza9znd/mysql-backup.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmp6j5rzuxs/mysql-backup.j2
 @@ -0,0 +1,3 @@
 +00 00 * * * backup mysqldump agama > /home/backup/mysql/agama.sql
 +10 00 * * 0 backup duplicity --no-encryption full /home/backup/mysql/ rsync://manmanmano@backup.clounsible.mano//home/manmanmano/mysql/
@@ -1771,11 +1769,13 @@ changed: [manmanmano-3]
 
 changed: [manmanmano-1]
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmp_x4yo0wk/mysql-backup.j2
-@@ -0,0 +1 @@
-+
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmp5wwb5904/mysql-backup.j2
+@@ -0,0 +1,3 @@
++00 00 * * * backup mysqldump agama > /home/backup/mysql/agama.sql
++10 00 * * 0 backup duplicity --no-encryption full /home/backup/mysql/ rsync://manmanmano@backup.clounsible.mano//home/manmanmano/mysql/
++10 00 * * 1-6 backup duplicity --no-encryption incremental /home/backup/mysql/ rsync://manmanmano@backup.clounsible.mano//home/manmanmano/mysql/
 
-changed: [manmanmano-2]
+changed: [manmanmano-3]
  ______________________________________________
 < RUNNING HANDLER [mysql : Reset MySQL source] >
  ----------------------------------------------
@@ -1817,10 +1817,10 @@ skipping: [manmanmano-2] => (item=startreplica)
 ok: [manmanmano-3] => (item=stopreplica)
 ok: [manmanmano-1] => (item=stopreplica)
 changed: [manmanmano-1] => (item=changeprimary)
-changed: [manmanmano-3] => (item=changeprimary)
 changed: [manmanmano-1] => (item=resetreplica)
-changed: [manmanmano-3] => (item=resetreplica)
+changed: [manmanmano-3] => (item=changeprimary)
 changed: [manmanmano-1] => (item=startreplica)
+changed: [manmanmano-3] => (item=resetreplica)
 changed: [manmanmano-3] => (item=startreplica)
  ___________________________________________________________
 < RUNNING HANDLER [mysql_exporter : Restart mysql-exporter] >
@@ -1836,9 +1836,9 @@ changed: [manmanmano-3] => (item=startreplica)
     \___)=(___/
 
 
-changed: [manmanmano-1]
-changed: [manmanmano-3]
 changed: [manmanmano-2]
+changed: [manmanmano-3]
+changed: [manmanmano-1]
  ________________________________________________
 < RUNNING HANDLER [mysql_backup : Restart MySQL] >
  ------------------------------------------------
@@ -1911,7 +1911,7 @@ The following NEW packages will be installed:
   libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream libtiff5
   libwebp6 libxpm4 nginx nginx-common nginx-core
 0 upgraded, 17 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-3]
+changed: [manmanmano-1]
 The following additional packages will be installed:
   fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0
   libjpeg-turbo8 libjpeg8 libnginx-mod-http-image-filter
@@ -1925,7 +1925,7 @@ The following NEW packages will be installed:
   libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream libtiff5
   libwebp6 libxpm4 nginx nginx-common nginx-core
 0 upgraded, 17 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-1]
+changed: [manmanmano-3]
  ___________________________________
 / TASK [nginx : Copy default to     \
 \ /etc/nginx/sites-enabled/default] /
@@ -1942,137 +1942,7 @@ changed: [manmanmano-1]
 
 
 --- before: /etc/nginx/sites-enabled/default
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpk_oexkli/default.j2
-@@ -1,91 +1,37 @@
--##
--# You should look at the following URL's in order to grasp a solid understanding
--# of Nginx configuration files in order to fully unleash the power of Nginx.
--# https://www.nginx.com/resources/wiki/start/
--# https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
--# https://wiki.debian.org/Nginx/DirectoryStructure
--#
--# In most cases, administrators will remove this file from sites-enabled/ and
--# leave it as reference inside of sites-available where it will continue to be
--# updated by the nginx packaging team.
--#
--# This file will automatically load configuration files provided by other
--# applications, such as Drupal or Wordpress. These applications will be made
--# available underneath a path with that package name, such as /drupal8.
--#
--# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
--##
-+server {
-+        listen 80 default_server;
-+        server_name manmanmano;
- 
--# Default server configuration
--#
--server {
--	listen 80 default_server;
--	listen [::]:80 default_server;
--
--	# SSL configuration
--	#
--	# listen 443 ssl default_server;
--	# listen [::]:443 ssl default_server;
--	#
--	# Note: You should disable gzip for SSL traffic.
--	# See: https://bugs.debian.org/773332
--	#
--	# Read up on ssl_ciphers to ensure a secure configuration.
--	# See: https://bugs.debian.org/765782
--	#
--	# Self signed certs generated by the ssl-cert package
--	# Don't use them in a production server!
--	#
--	# include snippets/snakeoil.conf;
--
--	root /var/www/html;
--
--	# Add index.php to the list if you are using PHP
--	index index.html index.htm index.nginx-debian.html;
--
--	server_name _;
--
--	location / {
--		# First attempt to serve request as file, then
--		# as directory, then fall back to displaying a 404.
--		try_files $uri $uri/ =404;
--	}
--
--	# pass PHP scripts to FastCGI server
--	#
--	#location ~ \.php$ {
--	#	include snippets/fastcgi-php.conf;
--	#
--	#	# With php-fpm (or other unix sockets):
--	#	fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
--	#	# With php-cgi (or other tcp sockets):
--	#	fastcgi_pass 127.0.0.1:9000;
--	#}
--
--	# deny access to .htaccess files, if Apache's document root
--	# concurs with nginx's one
--	#
--	#location ~ /\.ht {
--	#	deny all;
--	#}
--}
-+        location / {
-+            proxy_pass http://localhost:8001;
-+            proxy_set_header Host $http_host;
-+        }
- 
- 
--# Virtual Host configuration for example.com
--#
--# You can move that to a different file under sites-available/ and symlink that
--# to sites-enabled/ to enable it.
--#
--#server {
--#	listen 80;
--#	listen [::]:80;
--#
--#	server_name example.com;
--#
--#	root /var/www/example.com;
--#	index index.html;
--#
--#	location / {
--#		try_files $uri $uri/ =404;
--#	}
--#}
-+
-+        location /haproxy-metrics {
-+            proxy_pass http://localhost:9101/metrics;
-+        }
-+
-+        location /keepalived-metrics {
-+            proxy_pass http://localhost:9165/metrics;
-+        }
-+
-+
-+        location /mysql-metrics {
-+            proxy_pass http://localhost:9104/metrics;
-+        }
-+
-+        location /bind-metrics {
-+            proxy_pass http://localhost:9119/metrics;
-+        }
-+
-+        location /node-metrics {
-+            proxy_pass http://localhost:9100/metrics;
-+        }
-+
-+        location /nginx-metrics {
-+            proxy_pass http://localhost:9113/metrics;
-+        }
-+
-+}
-
-changed: [manmanmano-3]
---- before: /etc/nginx/sites-enabled/default
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpv4ulebp0/default.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpozpr1wpe/default.j2
 @@ -1,91 +1,46 @@
 -##
 -# You should look at the following URL's in order to grasp a solid understanding
@@ -2205,7 +2075,137 @@ changed: [manmanmano-3]
 
 changed: [manmanmano-2]
 --- before: /etc/nginx/sites-enabled/default
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpo8z_6eiq/default.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmp3vqvaf0z/default.j2
+@@ -1,91 +1,37 @@
+-##
+-# You should look at the following URL's in order to grasp a solid understanding
+-# of Nginx configuration files in order to fully unleash the power of Nginx.
+-# https://www.nginx.com/resources/wiki/start/
+-# https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+-# https://wiki.debian.org/Nginx/DirectoryStructure
+-#
+-# In most cases, administrators will remove this file from sites-enabled/ and
+-# leave it as reference inside of sites-available where it will continue to be
+-# updated by the nginx packaging team.
+-#
+-# This file will automatically load configuration files provided by other
+-# applications, such as Drupal or Wordpress. These applications will be made
+-# available underneath a path with that package name, such as /drupal8.
+-#
+-# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+-##
++server {
++        listen 80 default_server;
++        server_name manmanmano;
+ 
+-# Default server configuration
+-#
+-server {
+-	listen 80 default_server;
+-	listen [::]:80 default_server;
+-
+-	# SSL configuration
+-	#
+-	# listen 443 ssl default_server;
+-	# listen [::]:443 ssl default_server;
+-	#
+-	# Note: You should disable gzip for SSL traffic.
+-	# See: https://bugs.debian.org/773332
+-	#
+-	# Read up on ssl_ciphers to ensure a secure configuration.
+-	# See: https://bugs.debian.org/765782
+-	#
+-	# Self signed certs generated by the ssl-cert package
+-	# Don't use them in a production server!
+-	#
+-	# include snippets/snakeoil.conf;
+-
+-	root /var/www/html;
+-
+-	# Add index.php to the list if you are using PHP
+-	index index.html index.htm index.nginx-debian.html;
+-
+-	server_name _;
+-
+-	location / {
+-		# First attempt to serve request as file, then
+-		# as directory, then fall back to displaying a 404.
+-		try_files $uri $uri/ =404;
+-	}
+-
+-	# pass PHP scripts to FastCGI server
+-	#
+-	#location ~ \.php$ {
+-	#	include snippets/fastcgi-php.conf;
+-	#
+-	#	# With php-fpm (or other unix sockets):
+-	#	fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+-	#	# With php-cgi (or other tcp sockets):
+-	#	fastcgi_pass 127.0.0.1:9000;
+-	#}
+-
+-	# deny access to .htaccess files, if Apache's document root
+-	# concurs with nginx's one
+-	#
+-	#location ~ /\.ht {
+-	#	deny all;
+-	#}
+-}
++        location / {
++            proxy_pass http://localhost:8001;
++            proxy_set_header Host $http_host;
++        }
+ 
+ 
+-# Virtual Host configuration for example.com
+-#
+-# You can move that to a different file under sites-available/ and symlink that
+-# to sites-enabled/ to enable it.
+-#
+-#server {
+-#	listen 80;
+-#	listen [::]:80;
+-#
+-#	server_name example.com;
+-#
+-#	root /var/www/example.com;
+-#	index index.html;
+-#
+-#	location / {
+-#		try_files $uri $uri/ =404;
+-#	}
+-#}
++
++        location /haproxy-metrics {
++            proxy_pass http://localhost:9101/metrics;
++        }
++
++        location /keepalived-metrics {
++            proxy_pass http://localhost:9165/metrics;
++        }
++
++
++        location /mysql-metrics {
++            proxy_pass http://localhost:9104/metrics;
++        }
++
++        location /bind-metrics {
++            proxy_pass http://localhost:9119/metrics;
++        }
++
++        location /node-metrics {
++            proxy_pass http://localhost:9100/metrics;
++        }
++
++        location /nginx-metrics {
++            proxy_pass http://localhost:9113/metrics;
++        }
++
++}
+
+changed: [manmanmano-3]
+--- before: /etc/nginx/sites-enabled/default
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpwkgv2nh3/default.j2
 @@ -1,91 +1,37 @@
 -##
 -# You should look at the following URL's in order to grasp a solid understanding
@@ -2348,9 +2348,9 @@ changed: [manmanmano-1]
     \___)=(___/
 
 
+ok: [manmanmano-2]
 ok: [manmanmano-3]
 ok: [manmanmano-1]
-ok: [manmanmano-2]
  ________________________________________________
 < TASK [nginx_exporter : Install nginx-exporter] >
  ------------------------------------------------
@@ -2368,11 +2368,11 @@ ok: [manmanmano-2]
 The following NEW packages will be installed:
   prometheus-nginx-exporter
 0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-3]
+changed: [manmanmano-2]
 The following NEW packages will be installed:
   prometheus-nginx-exporter
 0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-2]
+changed: [manmanmano-3]
 The following NEW packages will be installed:
   prometheus-nginx-exporter
 0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
@@ -2391,8 +2391,8 @@ changed: [manmanmano-1]
     \___)=(___/
 
 
-changed: [manmanmano-3]
 changed: [manmanmano-2]
+changed: [manmanmano-3]
 changed: [manmanmano-1]
  _______________________________________
 < TASK [nginx_exporter : exporter file] >
@@ -2418,7 +2418,7 @@ changed: [manmanmano-1]
 +    }
 +}
 
-changed: [manmanmano-3]
+changed: [manmanmano-2]
 --- before
 +++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/nginx_exporter/files/exporter
 @@ -0,0 +1,6 @@
@@ -2440,7 +2440,7 @@ changed: [manmanmano-1]
 +    }
 +}
 
-changed: [manmanmano-2]
+changed: [manmanmano-3]
  __________________________________________________
 < RUNNING HANDLER [nginx_exporter : Restart Nginx] >
  --------------------------------------------------
@@ -2455,9 +2455,9 @@ changed: [manmanmano-2]
     \___)=(___/
 
 
-changed: [manmanmano-1]
-changed: [manmanmano-3]
 changed: [manmanmano-2]
+changed: [manmanmano-3]
+changed: [manmanmano-1]
  ___________________________________________________________
 < RUNNING HANDLER [nginx_exporter : Restart nginx-exporter] >
  -----------------------------------------------------------
@@ -2472,9 +2472,9 @@ changed: [manmanmano-2]
     \___)=(___/
 
 
+changed: [manmanmano-2]
 changed: [manmanmano-3]
 changed: [manmanmano-1]
-changed: [manmanmano-2]
  ______________________________
 < PLAY [Haproxy and Keepalive] >
  ------------------------------
@@ -2510,14 +2510,6 @@ Suggested packages:
 The following NEW packages will be installed:
   haproxy liblua5.3-0
 0 upgraded, 2 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-1]
-The following additional packages will be installed:
-  liblua5.3-0
-Suggested packages:
-  vim-haproxy haproxy-doc
-The following NEW packages will be installed:
-  haproxy liblua5.3-0
-0 upgraded, 2 newly installed, 0 to remove and 137 not upgraded.
 changed: [manmanmano-2]
 The following additional packages will be installed:
   liblua5.3-0
@@ -2527,6 +2519,14 @@ The following NEW packages will be installed:
   haproxy liblua5.3-0
 0 upgraded, 2 newly installed, 0 to remove and 137 not upgraded.
 changed: [manmanmano-3]
+The following additional packages will be installed:
+  liblua5.3-0
+Suggested packages:
+  vim-haproxy haproxy-doc
+The following NEW packages will be installed:
+  haproxy liblua5.3-0
+0 upgraded, 2 newly installed, 0 to remove and 137 not upgraded.
+changed: [manmanmano-1]
  _________________________________
 < TASK [haproxy : haproxy config] >
  ---------------------------------
@@ -2542,7 +2542,7 @@ changed: [manmanmano-3]
 
 
 --- before: /etc/haproxy/haproxy.cfg
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpzwqysh2x/haproxy.cfg.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpf8nns23x/haproxy.cfg.j2
 @@ -7,15 +7,6 @@
  	user haproxy
  	group haproxy
@@ -2578,7 +2578,7 @@ changed: [manmanmano-3]
 
 changed: [manmanmano-2]
 --- before: /etc/haproxy/haproxy.cfg
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmp1bsmxl_g/haproxy.cfg.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmp5xu7wret/haproxy.cfg.j2
 @@ -7,15 +7,6 @@
  	user haproxy
  	group haproxy
@@ -2614,7 +2614,7 @@ changed: [manmanmano-2]
 
 changed: [manmanmano-3]
 --- before: /etc/haproxy/haproxy.cfg
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmphev76yzl/haproxy.cfg.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmp37lghtdw/haproxy.cfg.j2
 @@ -7,15 +7,6 @@
  	user haproxy
  	group haproxy
@@ -2663,9 +2663,9 @@ changed: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  ____________________________________________________
 < TASK [haproxy_exporter : Install haproxy exporter] >
  ----------------------------------------------------
@@ -2687,11 +2687,11 @@ changed: [manmanmano-2]
 The following NEW packages will be installed:
   prometheus-haproxy-exporter
 0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-1]
+changed: [manmanmano-3]
 The following NEW packages will be installed:
   prometheus-haproxy-exporter
 0 upgraded, 1 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-3]
+changed: [manmanmano-1]
  ___________________________________________________
 < TASK [haproxy_exporter : haproxy exporter config] >
  ---------------------------------------------------
@@ -2707,43 +2707,7 @@ changed: [manmanmano-3]
 
 
 --- before: /etc/default/prometheus-haproxy-exporter
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpwch2qc3n/prometheus-haproxy-exporter.j2
-@@ -2,7 +2,7 @@
- # Due to shell scaping, to pass backslashes for regexes, you need to double
- # them (\\d for \d). If running under systemd, you need to double them again
- # (\\\\d to mean \d), and escape newlines too.
--ARGS=""
-+ARGS="--haproxy.scrape-uri=http://localhost:88/stats;csv"
- 
- # Prometheus-haproxy-exporter supports the following options:
- #
-@@ -33,3 +33,4 @@
- #  --log.format="logger:stderr"
- #    Set the log target and format. Example:
- #    "logger:syslog?appname=bob&local=7" or "logger:stdout?json=true"
-+
-
-changed: [manmanmano-3]
---- before: /etc/default/prometheus-haproxy-exporter
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmp9gno95_4/prometheus-haproxy-exporter.j2
-@@ -2,7 +2,7 @@
- # Due to shell scaping, to pass backslashes for regexes, you need to double
- # them (\\d for \d). If running under systemd, you need to double them again
- # (\\\\d to mean \d), and escape newlines too.
--ARGS=""
-+ARGS="--haproxy.scrape-uri=http://localhost:88/stats;csv"
- 
- # Prometheus-haproxy-exporter supports the following options:
- #
-@@ -33,3 +33,4 @@
- #  --log.format="logger:stderr"
- #    Set the log target and format. Example:
- #    "logger:syslog?appname=bob&local=7" or "logger:stdout?json=true"
-+
-
-changed: [manmanmano-1]
---- before: /etc/default/prometheus-haproxy-exporter
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpl87ydr3t/prometheus-haproxy-exporter.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpfvi_qwv0/prometheus-haproxy-exporter.j2
 @@ -2,7 +2,7 @@
  # Due to shell scaping, to pass backslashes for regexes, you need to double
  # them (\\d for \d). If running under systemd, you need to double them again
@@ -2760,6 +2724,42 @@ changed: [manmanmano-1]
 +
 
 changed: [manmanmano-2]
+--- before: /etc/default/prometheus-haproxy-exporter
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmptn4_p_fk/prometheus-haproxy-exporter.j2
+@@ -2,7 +2,7 @@
+ # Due to shell scaping, to pass backslashes for regexes, you need to double
+ # them (\\d for \d). If running under systemd, you need to double them again
+ # (\\\\d to mean \d), and escape newlines too.
+-ARGS=""
++ARGS="--haproxy.scrape-uri=http://localhost:88/stats;csv"
+ 
+ # Prometheus-haproxy-exporter supports the following options:
+ #
+@@ -33,3 +33,4 @@
+ #  --log.format="logger:stderr"
+ #    Set the log target and format. Example:
+ #    "logger:syslog?appname=bob&local=7" or "logger:stdout?json=true"
++
+
+changed: [manmanmano-3]
+--- before: /etc/default/prometheus-haproxy-exporter
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpg9ygwxll/prometheus-haproxy-exporter.j2
+@@ -2,7 +2,7 @@
+ # Due to shell scaping, to pass backslashes for regexes, you need to double
+ # them (\\d for \d). If running under systemd, you need to double them again
+ # (\\\\d to mean \d), and escape newlines too.
+-ARGS=""
++ARGS="--haproxy.scrape-uri=http://localhost:88/stats;csv"
+ 
+ # Prometheus-haproxy-exporter supports the following options:
+ #
+@@ -33,3 +33,4 @@
+ #  --log.format="logger:stderr"
+ #    Set the log target and format. Example:
+ #    "logger:syslog?appname=bob&local=7" or "logger:stdout?json=true"
++
+
+changed: [manmanmano-1]
  __________________________________
 / TASK [haproxy_exporter : Service \
 \ prometheus-haproxy-exporter]     /
@@ -2776,8 +2776,8 @@ changed: [manmanmano-2]
 
 
 ok: [manmanmano-2]
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  ________________________________________
 < TASK [keepalived : Install keepalived] >
  ----------------------------------------
@@ -2801,6 +2801,16 @@ The following NEW packages will be installed:
   ipvsadm keepalived libmysqlclient21 libnl-3-200 libnl-genl-3-200
   libsensors-config libsensors5 libsnmp-base libsnmp35
 0 upgraded, 9 newly installed, 0 to remove and 137 not upgraded.
+changed: [manmanmano-2]
+The following additional packages will be installed:
+  ipvsadm libmysqlclient21 libnl-3-200 libnl-genl-3-200 libsensors-config
+  libsensors5 libsnmp-base libsnmp35
+Suggested packages:
+  heartbeat ldirectord lm-sensors snmp-mibs-downloader
+The following NEW packages will be installed:
+  ipvsadm keepalived libmysqlclient21 libnl-3-200 libnl-genl-3-200
+  libsensors-config libsensors5 libsnmp-base libsnmp35
+0 upgraded, 9 newly installed, 0 to remove and 137 not upgraded.
 changed: [manmanmano-3]
 The following additional packages will be installed:
   ipvsadm libmysqlclient21 libnl-3-200 libnl-genl-3-200 libsensors-config
@@ -2812,16 +2822,6 @@ The following NEW packages will be installed:
   libsensors-config libsensors5 libsnmp-base libsnmp35
 0 upgraded, 9 newly installed, 0 to remove and 137 not upgraded.
 changed: [manmanmano-1]
-The following additional packages will be installed:
-  ipvsadm libmysqlclient21 libnl-3-200 libnl-genl-3-200 libsensors-config
-  libsensors5 libsnmp-base libsnmp35
-Suggested packages:
-  heartbeat ldirectord lm-sensors snmp-mibs-downloader
-The following NEW packages will be installed:
-  ipvsadm keepalived libmysqlclient21 libnl-3-200 libnl-genl-3-200
-  libsensors-config libsensors5 libsnmp-base libsnmp35
-0 upgraded, 9 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-2]
  _______________________________________
 < TASK [keepalived : keepalived script] >
  ---------------------------------------
@@ -2837,26 +2837,26 @@ changed: [manmanmano-2]
 
 
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpkjvlo7b8/ha88.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpsq8d4chr/ha88.j2
 @@ -0,0 +1,2 @@
 +#!/bin/bash
 +ss -ntl | grep -q ':88 '
 
-changed: [manmanmano-1]
+changed: [manmanmano-2]
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpvh7u450s/ha88.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpk2uaikta/ha88.j2
 @@ -0,0 +1,2 @@
 +#!/bin/bash
 +ss -ntl | grep -q ':88 '
 
 changed: [manmanmano-3]
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmplcj8dh6v/ha88.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpq8w_pqm7/ha88.j2
 @@ -0,0 +1,2 @@
 +#!/bin/bash
 +ss -ntl | grep -q ':88 '
 
-changed: [manmanmano-2]
+changed: [manmanmano-1]
  _____________________________________
 < TASK [keepalived : keepalived.conf] >
  -------------------------------------
@@ -2872,7 +2872,7 @@ changed: [manmanmano-2]
 
 
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmp4ven7txx/keepalived.conf.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmprrrlflo0/keepalived.conf.j2
 @@ -0,0 +1,21 @@
 +vrrp_script check_haproxy {                 
 +    script "/usr/local/bin/ha88" 
@@ -2885,11 +2885,11 @@ changed: [manmanmano-2]
 +        priority 99
 +        advert_int 1                            
 +    virtual_ipaddress {                     
-+        192.168.100.115/24                   
++        192.168.100.21/24                   
 +    }
 +    unicast_peer {                          
-+                        192.168.42.115
-+                                                192.168.42.126
++                        192.168.42.21
++                                                192.168.42.125
 +                    }
 +    track_script {
 +        check_haproxy
@@ -2898,33 +2898,7 @@ changed: [manmanmano-2]
 
 changed: [manmanmano-2]
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpyb8g99pd/keepalived.conf.j2
-@@ -0,0 +1,21 @@
-+vrrp_script check_haproxy {                 
-+    script "/usr/local/bin/ha88" 
-+    weight 20                              
-+    interval 1               
-+}
-+vrrp_instance clounsible.mano {             
-+    interface ens3
-+    virtual_router_id 1 
-+        priority 99
-+        advert_int 1                            
-+    virtual_ipaddress {                     
-+        192.168.100.115/24                   
-+    }
-+    unicast_peer {                          
-+                        192.168.42.115
-+                                192.168.42.50
-+                                    }
-+    track_script {
-+        check_haproxy
-+    }
-+}
-
-changed: [manmanmano-3]
---- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpmm0xl1h_/keepalived.conf.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpdqmkm7dy/keepalived.conf.j2
 @@ -0,0 +1,21 @@
 +vrrp_script check_haproxy {                 
 +    script "/usr/local/bin/ha88" 
@@ -2937,11 +2911,11 @@ changed: [manmanmano-3]
 +        priority 100
 +        advert_int 1                            
 +    virtual_ipaddress {                     
-+        192.168.100.115/24                   
++        192.168.100.21/24                   
 +    }
 +    unicast_peer {                          
-+                                        192.168.42.50
-+                                192.168.42.126
++                                        192.168.42.185
++                                192.168.42.125
 +                    }
 +    track_script {
 +        check_haproxy
@@ -2949,6 +2923,32 @@ changed: [manmanmano-3]
 +}
 
 changed: [manmanmano-1]
+--- before
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpxt3o7m1b/keepalived.conf.j2
+@@ -0,0 +1,21 @@
++vrrp_script check_haproxy {                 
++    script "/usr/local/bin/ha88" 
++    weight 20                              
++    interval 1               
++}
++vrrp_instance clounsible.mano {             
++    interface ens3
++    virtual_router_id 1 
++        priority 98
++        advert_int 1                            
++    virtual_ipaddress {                     
++        192.168.100.21/24                   
++    }
++    unicast_peer {                          
++                        192.168.42.21
++                                192.168.42.185
++                                    }
++    track_script {
++        check_haproxy
++    }
++}
+
+changed: [manmanmano-3]
  ________________________________________
 < TASK [keepalived : Service keepalived] >
  ----------------------------------------
@@ -2963,11 +2963,11 @@ changed: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-1] => (item=haproxy)
 ok: [manmanmano-3] => (item=haproxy)
 ok: [manmanmano-2] => (item=haproxy)
-changed: [manmanmano-3] => (item=keepalived)
+ok: [manmanmano-1] => (item=haproxy)
 changed: [manmanmano-2] => (item=keepalived)
+changed: [manmanmano-3] => (item=keepalived)
 changed: [manmanmano-1] => (item=keepalived)
  ______________________________________________________
 / TASK [keepalived_exporter : Copy keepalived-exporter \
@@ -3020,7 +3020,7 @@ changed: [manmanmano-3]
 +[Install]                                                                       
 +WantedBy=multi-user.target 
 
-changed: [manmanmano-1]
+changed: [manmanmano-2]
 --- before
 +++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/keepalived_exporter/files/keepalived-exporter.service
 @@ -0,0 +1,11 @@
@@ -3052,7 +3052,7 @@ changed: [manmanmano-3]
 +[Install]                                                                       
 +WantedBy=multi-user.target 
 
-changed: [manmanmano-2]
+changed: [manmanmano-1]
  __________________________________________________________
 < TASK [keepalived_exporter : Keepalived-exporter service] >
  ----------------------------------------------------------
@@ -3067,9 +3067,9 @@ changed: [manmanmano-2]
     \___)=(___/
 
 
-changed: [manmanmano-1]
-changed: [manmanmano-3]
 changed: [manmanmano-2]
+changed: [manmanmano-3]
+changed: [manmanmano-1]
  _____________________________________________
 < RUNNING HANDLER [haproxy : Restart haproxy] >
  ---------------------------------------------
@@ -3084,9 +3084,9 @@ changed: [manmanmano-2]
     \___)=(___/
 
 
-changed: [manmanmano-1]
-changed: [manmanmano-3]
 changed: [manmanmano-2]
+changed: [manmanmano-3]
+changed: [manmanmano-1]
  _____________________________________________
 / RUNNING HANDLER [haproxy_exporter : Restart \
 \ haproxy-exporter]                           /
@@ -3102,9 +3102,9 @@ changed: [manmanmano-2]
     \___)=(___/
 
 
+changed: [manmanmano-2]
 changed: [manmanmano-3]
 changed: [manmanmano-1]
-changed: [manmanmano-2]
  ___________________________________________________
 < RUNNING HANDLER [keepalived : Restart keepalived] >
  ---------------------------------------------------
@@ -3120,10 +3120,10 @@ changed: [manmanmano-2]
 
 
 changed: [manmanmano-2] => (item=keepalived)
-changed: [manmanmano-1] => (item=keepalived)
 changed: [manmanmano-3] => (item=keepalived)
-changed: [manmanmano-3] => (item=haproxy)
+changed: [manmanmano-1] => (item=keepalived)
 changed: [manmanmano-2] => (item=haproxy)
+changed: [manmanmano-3] => (item=haproxy)
 changed: [manmanmano-1] => (item=haproxy)
  ________________________________________________________
 < RUNNING HANDLER [keepalived_exporter : Reload daemons] >
@@ -3139,8 +3139,8 @@ changed: [manmanmano-1] => (item=haproxy)
     \___)=(___/
 
 
-changed: [manmanmano-3]
 changed: [manmanmano-2]
+changed: [manmanmano-3]
 changed: [manmanmano-1]
  ________________________________________________
 / RUNNING HANDLER [keepalived_exporter : Restart \
@@ -3157,9 +3157,9 @@ changed: [manmanmano-1]
     \___)=(___/
 
 
-changed: [manmanmano-1]
-changed: [manmanmano-3]
 changed: [manmanmano-2]
+changed: [manmanmano-3]
+changed: [manmanmano-1]
  ___________________
 < PLAY [Docker bug] >
  -------------------
@@ -3193,7 +3193,7 @@ The following additional packages will be installed:
 The following NEW packages will be installed:
   iptables-persistent netfilter-persistent
 0 upgraded, 2 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-1]
+changed: [manmanmano-2]
 The following additional packages will be installed:
   netfilter-persistent
 The following NEW packages will be installed:
@@ -3205,7 +3205,7 @@ The following additional packages will be installed:
 The following NEW packages will be installed:
   iptables-persistent netfilter-persistent
 0 upgraded, 2 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-2]
+changed: [manmanmano-1]
  __________________________________________
 < TASK [iptables : Fix ssl bug for docker] >
  ------------------------------------------
@@ -3237,7 +3237,7 @@ changed: [manmanmano-2]
 +COMMIT
 +# Completed on Mon Nov 22 11:27:22 2021
 
-changed: [manmanmano-2]
+changed: [manmanmano-3]
 --- before
 +++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/iptables/files/iptables.mangle
 @@ -0,0 +1,13 @@
@@ -3255,7 +3255,7 @@ changed: [manmanmano-2]
 +COMMIT
 +# Completed on Mon Nov 22 11:27:22 2021
 
-changed: [manmanmano-3]
+changed: [manmanmano-2]
 --- before
 +++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/iptables/files/iptables.mangle
 @@ -0,0 +1,13 @@
@@ -3291,7 +3291,7 @@ changed: [manmanmano-1]
 --- before: /etc/iptables/rules.v4
 +++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/iptables/files/iptables.mangle
 @@ -1,7 +1,13 @@
--# Generated by iptables-save v1.8.4 on Thu Dec  9 10:37:03 2021
+-# Generated by iptables-save v1.8.4 on Fri Dec 10 08:46:51 2021
 -*filter
 -:INPUT ACCEPT [0:0]
 +# Generated by iptables-save v1.8.4 on Mon Nov 22 11:27:22 2021
@@ -3307,37 +3307,14 @@ changed: [manmanmano-1]
 +-A POSTROUTING -o ens3 -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 +-A LIBVIRT_PRT -o virbr0 -p udp -m udp --dport 68 -j CHECKSUM --checksum-fill
  COMMIT
--# Completed on Thu Dec  9 10:37:03 2021
-+# Completed on Mon Nov 22 11:27:22 2021
-
-changed: [manmanmano-1]
---- before: /etc/iptables/rules.v4
-+++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/iptables/files/iptables.mangle
-@@ -1,7 +1,13 @@
--# Generated by iptables-save v1.8.4 on Thu Dec  9 10:37:03 2021
--*filter
--:INPUT ACCEPT [0:0]
-+# Generated by iptables-save v1.8.4 on Mon Nov 22 11:27:22 2021
-+*mangle
-+:PREROUTING ACCEPT [48:3360]
-+:INPUT ACCEPT [48:3360]
- :FORWARD ACCEPT [0:0]
--:OUTPUT ACCEPT [0:0]
-+:OUTPUT ACCEPT [25:2248]
-+:POSTROUTING ACCEPT [25:2248]
-+:LIBVIRT_PRT - [0:0]
-+-A POSTROUTING -j LIBVIRT_PRT
-+-A POSTROUTING -o ens3 -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
-+-A LIBVIRT_PRT -o virbr0 -p udp -m udp --dport 68 -j CHECKSUM --checksum-fill
- COMMIT
--# Completed on Thu Dec  9 10:37:03 2021
+-# Completed on Fri Dec 10 08:46:51 2021
 +# Completed on Mon Nov 22 11:27:22 2021
 
 changed: [manmanmano-3]
 --- before: /etc/iptables/rules.v4
 +++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/iptables/files/iptables.mangle
 @@ -1,7 +1,13 @@
--# Generated by iptables-save v1.8.4 on Thu Dec  9 10:37:04 2021
+-# Generated by iptables-save v1.8.4 on Fri Dec 10 08:46:52 2021
 -*filter
 -:INPUT ACCEPT [0:0]
 +# Generated by iptables-save v1.8.4 on Mon Nov 22 11:27:22 2021
@@ -3353,10 +3330,33 @@ changed: [manmanmano-3]
 +-A POSTROUTING -o ens3 -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 +-A LIBVIRT_PRT -o virbr0 -p udp -m udp --dport 68 -j CHECKSUM --checksum-fill
  COMMIT
--# Completed on Thu Dec  9 10:37:04 2021
+-# Completed on Fri Dec 10 08:46:52 2021
 +# Completed on Mon Nov 22 11:27:22 2021
 
 changed: [manmanmano-2]
+--- before: /etc/iptables/rules.v4
++++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/iptables/files/iptables.mangle
+@@ -1,7 +1,13 @@
+-# Generated by iptables-save v1.8.4 on Fri Dec 10 08:46:52 2021
+-*filter
+-:INPUT ACCEPT [0:0]
++# Generated by iptables-save v1.8.4 on Mon Nov 22 11:27:22 2021
++*mangle
++:PREROUTING ACCEPT [48:3360]
++:INPUT ACCEPT [48:3360]
+ :FORWARD ACCEPT [0:0]
+-:OUTPUT ACCEPT [0:0]
++:OUTPUT ACCEPT [25:2248]
++:POSTROUTING ACCEPT [25:2248]
++:LIBVIRT_PRT - [0:0]
++-A POSTROUTING -j LIBVIRT_PRT
++-A POSTROUTING -o ens3 -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
++-A LIBVIRT_PRT -o virbr0 -p udp -m udp --dport 68 -j CHECKSUM --checksum-fill
+ COMMIT
+-# Completed on Fri Dec 10 08:46:52 2021
++# Completed on Mon Nov 22 11:27:22 2021
+
+changed: [manmanmano-1]
  ____________________________________
 < TASK [iptables : Restore iptables] >
  ------------------------------------
@@ -3386,9 +3386,9 @@ mistake may lead the ansible controller to loose access to the hosts and never
 regain it before fixing firewall rules through a serial console, or any other
 way except SSH. Please set task attribute 'poll' (=15) to 0, and 'async' (=0)
 to a value >2 and not greater than 'ansible_timeout' (=10) (recommended).
+changed: [manmanmano-3]
 changed: [manmanmano-1]
 changed: [manmanmano-2]
-changed: [manmanmano-3]
  _______________
 < PLAY [Docker] >
  ---------------
@@ -3427,6 +3427,17 @@ The following NEW packages will be installed:
   bridge-utils containerd dnsmasq-base docker.io libidn11 pigz python3-docker
   python3-websocket runc ubuntu-fan
 0 upgraded, 10 newly installed, 0 to remove and 137 not upgraded.
+changed: [manmanmano-2]
+The following additional packages will be installed:
+  bridge-utils containerd dnsmasq-base libidn11 pigz python3-websocket runc
+  ubuntu-fan
+Suggested packages:
+  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-doc
+  rinse zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  bridge-utils containerd dnsmasq-base docker.io libidn11 pigz python3-docker
+  python3-websocket runc ubuntu-fan
+0 upgraded, 10 newly installed, 0 to remove and 137 not upgraded.
 changed: [manmanmano-3]
 The following additional packages will be installed:
   bridge-utils containerd dnsmasq-base libidn11 pigz python3-websocket runc
@@ -3439,17 +3450,6 @@ The following NEW packages will be installed:
   python3-websocket runc ubuntu-fan
 0 upgraded, 10 newly installed, 0 to remove and 137 not upgraded.
 changed: [manmanmano-1]
-The following additional packages will be installed:
-  bridge-utils containerd dnsmasq-base libidn11 pigz python3-websocket runc
-  ubuntu-fan
-Suggested packages:
-  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-doc
-  rinse zfs-fuse | zfsutils
-The following NEW packages will be installed:
-  bridge-utils containerd dnsmasq-base docker.io libidn11 pigz python3-docker
-  python3-websocket runc ubuntu-fan
-0 upgraded, 10 newly installed, 0 to remove and 137 not upgraded.
-changed: [manmanmano-2]
  ________________________________
 < TASK [docker : Docker service] >
  --------------------------------
@@ -3464,9 +3464,9 @@ changed: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-2]
 ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
  ______________
 < PLAY [Agama] >
  --------------
@@ -3504,16 +3504,6 @@ ok: [manmanmano-1]
 +    "state": "directory"
  }
 
-changed: [manmanmano-3]
---- before
-+++ after
-@@ -1,4 +1,4 @@
- {
-     "path": "/opt/agama",
--    "state": "absent"
-+    "state": "directory"
- }
-
 changed: [manmanmano-1]
 --- before
 +++ after
@@ -3525,6 +3515,16 @@ changed: [manmanmano-1]
  }
 
 changed: [manmanmano-2]
+--- before
++++ after
+@@ -1,4 +1,4 @@
+ {
+     "path": "/opt/agama",
+-    "state": "absent"
++    "state": "directory"
+ }
+
+changed: [manmanmano-3]
  ____________________________________
 < TASK [agama : Download dockerfile] >
  ------------------------------------
@@ -3539,9 +3539,9 @@ changed: [manmanmano-2]
     \___)=(___/
 
 
-changed: [manmanmano-2]
 changed: [manmanmano-3]
 changed: [manmanmano-1]
+changed: [manmanmano-2]
  ____________________________
 < TASK [agama : Agama image] >
  ----------------------------
@@ -3556,9 +3556,9 @@ changed: [manmanmano-1]
     \___)=(___/
 
 
-changed: [manmanmano-3]
 changed: [manmanmano-2]
 changed: [manmanmano-1]
+changed: [manmanmano-3]
  _________________________________
 < TASK [agama : Agama containers] >
  ---------------------------------
@@ -3573,6 +3573,17 @@ changed: [manmanmano-1]
     \___)=(___/
 
 
+--- before
++++ after
+@@ -1,4 +1,4 @@
+ {
+-    "exists": false,
+-    "running": false
++    "exists": true,
++    "running": true
+ }
+
+changed: [manmanmano-2] => (item={'key': 'agama-1', 'value': 8001})
 --- before
 +++ after
 @@ -1,4 +1,4 @@
@@ -3605,7 +3616,7 @@ changed: [manmanmano-1] => (item={'key': 'agama-1', 'value': 8001})
 +    "running": true
  }
 
-changed: [manmanmano-2] => (item={'key': 'agama-1', 'value': 8001})
+changed: [manmanmano-2] => (item={'key': 'agama-2', 'value': 8010})
 --- before
 +++ after
 @@ -1,4 +1,4 @@
@@ -3628,17 +3639,6 @@ changed: [manmanmano-1] => (item={'key': 'agama-2', 'value': 8010})
  }
 
 changed: [manmanmano-3] => (item={'key': 'agama-2', 'value': 8010})
---- before
-+++ after
-@@ -1,4 +1,4 @@
- {
--    "exists": false,
--    "running": false
-+    "exists": true,
-+    "running": true
- }
-
-changed: [manmanmano-2] => (item={'key': 'agama-2', 'value': 8010})
  ___________________
 < PLAY [Prometheus] >
  -------------------
@@ -3713,7 +3713,7 @@ ok: [manmanmano-2]
 
 
 --- before: /etc/prometheus/prometheus.yml
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmp27dewrm8/prometheus.yml.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpr630l7t4/prometheus.yml.j2
 @@ -1,44 +1,59 @@
 -# Sample config for Prometheus.
 -
@@ -3822,11 +3822,11 @@ changed: [manmanmano-2]
 
 
 --- before: /etc/default/prometheus
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmpx_535ryv/prometheus.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmpl7s6elle/prometheus.j2
 @@ -1,5 +1,5 @@
  # Set the command-line arguments to pass to the server.
 -ARGS=""
-+ARGS="--web.external-url=http://prometheus:5080/prometheus"
++ARGS="--web.external-url=http://prometheus:18580/prometheus"
  
  # Prometheus supports the following options:
  #  --config.file="/etc/prometheus/prometheus.yml"
@@ -3903,64 +3903,6 @@ changed: [manmanmano-2]
     /'\_   _/`\
     \___)=(___/
 
-
---- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmplv748_2u/grafana.ini.j2
-@@ -0,0 +1,54 @@
-+[paths]
-+
-+[security]
-+admin_password = grafana
-+
-+[server]
-+root_url = http://193.40.156.86:5080/grafana
-+serve_from_sub_path=true
-+
-+[database]
-+[remote_cache]
-+[dataproxy]
-+[analytics]
-+[security]
-+[snapshots]
-+[dashboards]
-+[users]
-+[auth]
-+[auth.anonymous]
-+[auth.github]
-+[auth.gitlab]
-+[auth.google]
-+[auth.grafana_com]
-+[auth.azuread]
-+[auth.okta]
-+[auth.generic_oauth]
-+[auth.basic]
-+[auth.proxy]
-+[auth.ldap]
-+[smtp]
-+[emails]
-+[log]
-+[log.console]
-+[log.file]
-+[log.syslog]
-+[quota]
-+[alerting]
-+[explore]
-+[metrics]
-+[metrics.graphite]
-+[grafana_com]
-+[tracing.jaeger]
-+[external_image_storage]
-+[external_image_storage.s3]
-+[external_image_storage.webdav]
-+[external_image_storage.gcs]
-+[external_image_storage.azure_blob]
-+[external_image_storage.local]
-+[rendering]
-+[panels]
-+[plugins]
-+[plugin.grafana-image-renderer]
-+[enterprise]
-+[feature_toggles]
 
 changed: [manmanmano-2]
  ___________________________________________________
@@ -4137,7 +4079,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 
 --- before
 +++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/grafana/files/main.json
-@@ -0,0 +1,1391 @@
+@@ -0,0 +1,1295 @@
 +{
 +  "annotations": {
 +    "list": [
@@ -4159,13 +4101,13 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +    ]
 +  },
 +  "editable": true,
-+  "gnetId": null,
++  "fiscalYearStartMonth": 0,
 +  "graphTooltip": 0,
 +  "links": [],
++  "liveNow": false,
 +  "panels": [
 +    {
 +      "collapsed": false,
-+      "datasource": null,
 +      "gridPos": {
 +        "h": 1,
 +        "w": 24,
@@ -4178,7 +4120,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "type": "row"
 +    },
 +    {
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "color": {
@@ -4228,7 +4169,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "overrides": []
 +      },
 +      "gridPos": {
-+        "h": 16,
++        "h": 18,
 +        "w": 24,
 +        "x": 0,
 +        "y": 1
@@ -4247,11 +4188,12 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +          "values": false
 +        },
 +        "text": {
-+          "titleSize": 12
++          "titleSize": 13,
++          "valueSize": 70
 +        },
 +        "textMode": "auto"
 +      },
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "targets": [
 +        {
 +          "exemplar": true,
@@ -4265,7 +4207,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "type": "stat"
 +    },
 +    {
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "color": {
@@ -4308,7 +4249,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 8,
 +        "w": 12,
 +        "x": 0,
-+        "y": 17
++        "y": 19
 +      },
 +      "id": 34,
 +      "options": {
@@ -4326,7 +4267,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "text": {},
 +        "textMode": "auto"
 +      },
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "targets": [
 +        {
 +          "exemplar": true,
@@ -4340,7 +4281,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "type": "stat"
 +    },
 +    {
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "color": {
@@ -4394,7 +4334,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 8,
 +        "w": 12,
 +        "x": 12,
-+        "y": 17
++        "y": 19
 +      },
 +      "id": 38,
 +      "options": {
@@ -4410,11 +4350,11 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +          "values": false
 +        },
 +        "text": {
-+          "titleSize": 15
++          "titleSize": 13
 +        },
 +        "textMode": "value_and_name"
 +      },
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "targets": [
 +        {
 +          "exemplar": true,
@@ -4429,12 +4369,11 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +    },
 +    {
 +      "collapsed": false,
-+      "datasource": null,
 +      "gridPos": {
 +        "h": 1,
 +        "w": 24,
 +        "x": 0,
-+        "y": 25
++        "y": 27
 +      },
 +      "id": 28,
 +      "panels": [],
@@ -4442,7 +4381,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "type": "row"
 +    },
 +    {
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "color": {
@@ -4484,7 +4422,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 8,
 +        "w": 12,
 +        "x": 0,
-+        "y": 26
++        "y": 28
 +      },
 +      "id": 30,
 +      "options": {
@@ -4499,10 +4437,12 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +          "fields": "",
 +          "values": false
 +        },
-+        "text": {},
-+        "textMode": "auto"
++        "text": {
++          "titleSize": 20
++        },
++        "textMode": "value_and_name"
 +      },
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "targets": [
 +        {
 +          "exemplar": true,
@@ -4512,8 +4452,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +          "refId": "A"
 +        }
 +      ],
-+      "timeFrom": null,
-+      "timeShift": null,
 +      "title": "Status",
 +      "type": "stat"
 +    },
@@ -4522,7 +4460,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "bars": false,
 +      "dashLength": 10,
 +      "dashes": false,
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "links": []
@@ -4535,7 +4472,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 8,
 +        "w": 12,
 +        "x": 12,
-+        "y": 26
++        "y": 28
 +      },
 +      "hiddenSeries": false,
 +      "id": 32,
@@ -4555,7 +4492,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "alertThreshold": true
 +      },
 +      "percentage": false,
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "pointradius": 2,
 +      "points": false,
 +      "renderer": "flot",
@@ -4572,9 +4509,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        }
 +      ],
 +      "thresholds": [],
-+      "timeFrom": null,
 +      "timeRegions": [],
-+      "timeShift": null,
 +      "title": "Write rate",
 +      "tooltip": {
 +        "shared": true,
@@ -4583,33 +4518,24 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      },
 +      "type": "graph",
 +      "xaxis": {
-+        "buckets": null,
 +        "mode": "time",
-+        "name": null,
 +        "show": true,
 +        "values": []
 +      },
 +      "yaxes": [
 +        {
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        },
 +        {
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        }
 +      ],
 +      "yaxis": {
-+        "align": false,
-+        "alignLevel": null
++        "align": false
 +      }
 +    },
 +    {
@@ -4617,14 +4543,17 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "bars": false,
 +      "dashLength": 10,
 +      "dashes": false,
-+      "datasource": "InfluxDB-latency",
++      "datasource": {
++        "type": "influxdb",
++        "uid": "P29B7D75015DE2922"
++      },
 +      "fill": 0,
 +      "fillGradient": 0,
 +      "gridPos": {
 +        "h": 8,
 +        "w": 24,
 +        "x": 0,
-+        "y": 34
++        "y": 36
 +      },
 +      "hiddenSeries": false,
 +      "id": 26,
@@ -4644,7 +4573,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "alertThreshold": true
 +      },
 +      "percentage": false,
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "pointradius": 0.5,
 +      "points": true,
 +      "renderer": "flot",
@@ -4697,9 +4626,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        }
 +      ],
 +      "thresholds": [],
-+      "timeFrom": null,
 +      "timeRegions": [],
-+      "timeShift": null,
 +      "title": "Pinger",
 +      "tooltip": {
 +        "shared": true,
@@ -4708,9 +4635,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      },
 +      "type": "graph",
 +      "xaxis": {
-+        "buckets": null,
 +        "mode": "time",
-+        "name": null,
 +        "show": true,
 +        "values": []
 +      },
@@ -4718,35 +4643,27 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        {
 +          "$$hashKey": "object:242",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        },
 +        {
 +          "$$hashKey": "object:243",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        }
 +      ],
 +      "yaxis": {
-+        "align": false,
-+        "alignLevel": null
++        "align": false
 +      }
 +    },
 +    {
 +      "collapsed": false,
-+      "datasource": null,
 +      "gridPos": {
 +        "h": 1,
 +        "w": 24,
 +        "x": 0,
-+        "y": 42
++        "y": 44
 +      },
 +      "id": 24,
 +      "panels": [],
@@ -4754,7 +4671,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "type": "row"
 +    },
 +    {
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "mappings": [
@@ -4790,7 +4706,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 8,
 +        "w": 12,
 +        "x": 0,
-+        "y": 43
++        "y": 45
 +      },
 +      "id": 20,
 +      "options": {
@@ -4808,7 +4724,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "text": {},
 +        "textMode": "auto"
 +      },
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "targets": [
 +        {
 +          "expr": "nginx_up",
@@ -4817,8 +4733,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +          "refId": "A"
 +        }
 +      ],
-+      "timeFrom": null,
-+      "timeShift": null,
 +      "title": "NGINX status",
 +      "type": "stat"
 +    },
@@ -4827,7 +4741,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "bars": false,
 +      "dashLength": 10,
 +      "dashes": false,
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "links": []
@@ -4840,7 +4753,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 8,
 +        "w": 12,
 +        "x": 12,
-+        "y": 43
++        "y": 45
 +      },
 +      "hiddenSeries": false,
 +      "id": 22,
@@ -4860,7 +4773,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "alertThreshold": true
 +      },
 +      "percentage": false,
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "pointradius": 2,
 +      "points": false,
 +      "renderer": "flot",
@@ -4877,9 +4790,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        }
 +      ],
 +      "thresholds": [],
-+      "timeFrom": null,
 +      "timeRegions": [],
-+      "timeShift": null,
 +      "title": "Requests per minute",
 +      "tooltip": {
 +        "shared": true,
@@ -4888,43 +4799,33 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      },
 +      "type": "graph",
 +      "xaxis": {
-+        "buckets": null,
 +        "mode": "time",
-+        "name": null,
 +        "show": true,
 +        "values": []
 +      },
 +      "yaxes": [
 +        {
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        },
 +        {
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        }
 +      ],
 +      "yaxis": {
-+        "align": false,
-+        "alignLevel": null
++        "align": false
 +      }
 +    },
 +    {
 +      "collapsed": false,
-+      "datasource": null,
 +      "gridPos": {
 +        "h": 1,
 +        "w": 24,
 +        "x": 0,
-+        "y": 51
++        "y": 53
 +      },
 +      "id": 18,
 +      "panels": [],
@@ -4936,7 +4837,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "bars": false,
 +      "dashLength": 10,
 +      "dashes": false,
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "links": []
@@ -4949,7 +4849,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 10,
 +        "w": 24,
 +        "x": 0,
-+        "y": 52
++        "y": 54
 +      },
 +      "hiddenSeries": false,
 +      "id": 16,
@@ -4970,7 +4870,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "alertThreshold": true
 +      },
 +      "percentage": false,
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "pointradius": 2,
 +      "points": false,
 +      "renderer": "flot",
@@ -4987,9 +4887,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        }
 +      ],
 +      "thresholds": [],
-+      "timeFrom": null,
 +      "timeRegions": [],
-+      "timeShift": null,
 +      "title": "SELECTs per minute",
 +      "tooltip": {
 +        "shared": true,
@@ -4998,9 +4896,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      },
 +      "type": "graph",
 +      "xaxis": {
-+        "buckets": null,
 +        "mode": "time",
-+        "name": null,
 +        "show": true,
 +        "values": []
 +      },
@@ -5008,29 +4904,21 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        {
 +          "$$hashKey": "object:326",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        },
 +        {
 +          "$$hashKey": "object:327",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        }
 +      ],
 +      "yaxis": {
-+        "align": false,
-+        "alignLevel": null
++        "align": false
 +      }
 +    },
 +    {
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "mappings": [
@@ -5075,7 +4963,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 9,
 +        "w": 24,
 +        "x": 0,
-+        "y": 62
++        "y": 64
 +      },
 +      "id": 14,
 +      "options": {
@@ -5095,7 +4983,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        },
 +        "textMode": "auto"
 +      },
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "targets": [
 +        {
 +          "expr": "mysql_up",
@@ -5104,19 +4992,16 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +          "refId": "A"
 +        }
 +      ],
-+      "timeFrom": null,
-+      "timeShift": null,
 +      "title": "MySQL status",
 +      "type": "stat"
 +    },
 +    {
 +      "collapsed": false,
-+      "datasource": null,
 +      "gridPos": {
 +        "h": 1,
 +        "w": 24,
 +        "x": 0,
-+        "y": 71
++        "y": 73
 +      },
 +      "id": 12,
 +      "panels": [],
@@ -5128,7 +5013,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "bars": false,
 +      "dashLength": 10,
 +      "dashes": false,
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "links": []
@@ -5141,7 +5025,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 9,
 +        "w": 24,
 +        "x": 0,
-+        "y": 72
++        "y": 74
 +      },
 +      "hiddenSeries": false,
 +      "id": 10,
@@ -5162,7 +5046,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "alertThreshold": true
 +      },
 +      "percentage": false,
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "pointradius": 2,
 +      "points": false,
 +      "renderer": "flot",
@@ -5179,9 +5063,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        }
 +      ],
 +      "thresholds": [],
-+      "timeFrom": null,
 +      "timeRegions": [],
-+      "timeShift": null,
 +      "title": "DNS queries per minute",
 +      "tooltip": {
 +        "shared": true,
@@ -5190,9 +5072,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      },
 +      "type": "graph",
 +      "xaxis": {
-+        "buckets": null,
 +        "mode": "time",
-+        "name": null,
 +        "show": true,
 +        "values": []
 +      },
@@ -5200,29 +5080,21 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        {
 +          "$$hashKey": "object:162",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        },
 +        {
 +          "$$hashKey": "object:163",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        }
 +      ],
 +      "yaxis": {
-+        "align": false,
-+        "alignLevel": null
++        "align": false
 +      }
 +    },
 +    {
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "mappings": [
@@ -5258,7 +5130,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 9,
 +        "w": 24,
 +        "x": 0,
-+        "y": 81
++        "y": 83
 +      },
 +      "id": 8,
 +      "options": {
@@ -5278,7 +5150,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        },
 +        "textMode": "auto"
 +      },
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "targets": [
 +        {
 +          "expr": "bind_up",
@@ -5287,19 +5159,16 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +          "refId": "A"
 +        }
 +      ],
-+      "timeFrom": null,
-+      "timeShift": null,
 +      "title": "Bind9 status",
 +      "type": "stat"
 +    },
 +    {
 +      "collapsed": false,
-+      "datasource": null,
 +      "gridPos": {
 +        "h": 1,
 +        "w": 24,
 +        "x": 0,
-+        "y": 90
++        "y": 92
 +      },
 +      "id": 6,
 +      "panels": [],
@@ -5311,7 +5180,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "bars": false,
 +      "dashLength": 10,
 +      "dashes": false,
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "links": []
@@ -5324,7 +5192,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 8,
 +        "w": 24,
 +        "x": 0,
-+        "y": 91
++        "y": 93
 +      },
 +      "hiddenSeries": false,
 +      "id": 2,
@@ -5345,7 +5213,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "alertThreshold": true
 +      },
 +      "percentage": false,
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "pointradius": 2,
 +      "points": false,
 +      "renderer": "flot",
@@ -5362,9 +5230,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        }
 +      ],
 +      "thresholds": [],
-+      "timeFrom": null,
 +      "timeRegions": [],
-+      "timeShift": null,
 +      "title": "CPU load",
 +      "tooltip": {
 +        "shared": true,
@@ -5373,9 +5239,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      },
 +      "type": "graph",
 +      "xaxis": {
-+        "buckets": null,
 +        "mode": "time",
-+        "name": null,
 +        "show": true,
 +        "values": []
 +      },
@@ -5383,25 +5247,18 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        {
 +          "$$hashKey": "object:81",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        },
 +        {
 +          "$$hashKey": "object:82",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        }
 +      ],
 +      "yaxis": {
-+        "align": false,
-+        "alignLevel": null
++        "align": false
 +      }
 +    },
 +    {
@@ -5409,7 +5266,6 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      "bars": false,
 +      "dashLength": 10,
 +      "dashes": false,
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "links": []
@@ -5422,7 +5278,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "h": 8,
 +        "w": 24,
 +        "x": 0,
-+        "y": 99
++        "y": 101
 +      },
 +      "hiddenSeries": false,
 +      "id": 4,
@@ -5442,7 +5298,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        "alertThreshold": true
 +      },
 +      "percentage": false,
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "pointradius": 2,
 +      "points": false,
 +      "renderer": "flot",
@@ -5459,9 +5315,7 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +        }
 +      ],
 +      "thresholds": [],
-+      "timeFrom": null,
 +      "timeRegions": [],
-+      "timeShift": null,
 +      "title": "RAM load",
 +      "tooltip": {
 +        "shared": true,
@@ -5470,38 +5324,29 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +      },
 +      "type": "graph",
 +      "xaxis": {
-+        "buckets": null,
 +        "mode": "time",
-+        "name": null,
 +        "show": true,
 +        "values": []
 +      },
 +      "yaxes": [
 +        {
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        },
 +        {
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        }
 +      ],
 +      "yaxis": {
-+        "align": false,
-+        "alignLevel": null
++        "align": false
 +      }
 +    }
 +  ],
 +  "refresh": "10s",
-+  "schemaVersion": 30,
++  "schemaVersion": 33,
 +  "style": "dark",
 +  "tags": [],
 +  "templating": {
@@ -5527,13 +5372,14 @@ changed: [manmanmano-2] => (item={'src': 'datasource.yaml', 'dest': 'datasources
 +  "timezone": "",
 +  "title": "clounsible.mano",
 +  "uid": "mPEUZid7k",
-+  "version": 1
++  "version": 2,
++  "weekStart": ""
 +}
 
 changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 --- before
 +++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/grafana/files/mysql.json
-@@ -0,0 +1,591 @@
+@@ -0,0 +1,550 @@
 +{
 +  "annotations": {
 +    "list": [
@@ -5555,16 +5401,16 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +    ]
 +  },
 +  "editable": true,
-+  "gnetId": null,
++  "fiscalYearStartMonth": 0,
 +  "graphTooltip": 0,
 +  "links": [],
++  "liveNow": false,
 +  "panels": [
 +    {
 +      "aliasColors": {},
 +      "bars": false,
 +      "dashLength": 10,
 +      "dashes": false,
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "links": []
@@ -5598,7 +5444,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        "alertThreshold": true
 +      },
 +      "percentage": false,
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "pointradius": 2,
 +      "points": false,
 +      "renderer": "flot",
@@ -5615,9 +5461,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        }
 +      ],
 +      "thresholds": [],
-+      "timeFrom": null,
 +      "timeRegions": [],
-+      "timeShift": null,
 +      "title": "IO replication thread status",
 +      "tooltip": {
 +        "shared": true,
@@ -5626,9 +5470,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +      },
 +      "type": "graph",
 +      "xaxis": {
-+        "buckets": null,
 +        "mode": "time",
-+        "name": null,
 +        "show": true,
 +        "values": []
 +      },
@@ -5636,10 +5478,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        {
 +          "$$hashKey": "object:265",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        },
 +        {
@@ -5647,14 +5486,11 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +          "format": "short",
 +          "label": "",
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        }
 +      ],
 +      "yaxis": {
-+        "align": false,
-+        "alignLevel": null
++        "align": false
 +      }
 +    },
 +    {
@@ -5662,7 +5498,6 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +      "bars": false,
 +      "dashLength": 10,
 +      "dashes": false,
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "links": []
@@ -5698,7 +5533,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        "alertThreshold": true
 +      },
 +      "percentage": false,
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "pointradius": 2,
 +      "points": false,
 +      "renderer": "flot",
@@ -5716,9 +5551,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        }
 +      ],
 +      "thresholds": [],
-+      "timeFrom": null,
 +      "timeRegions": [],
-+      "timeShift": null,
 +      "title": "SQL replication thread status",
 +      "tooltip": {
 +        "shared": true,
@@ -5727,9 +5560,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +      },
 +      "type": "graph",
 +      "xaxis": {
-+        "buckets": null,
 +        "mode": "time",
-+        "name": null,
 +        "show": true,
 +        "values": []
 +      },
@@ -5737,10 +5568,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        {
 +          "$$hashKey": "object:265",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        },
 +        {
@@ -5748,18 +5576,14 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +          "format": "short",
 +          "label": "",
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        }
 +      ],
 +      "yaxis": {
-+        "align": false,
-+        "alignLevel": null
++        "align": false
 +      }
 +    },
 +    {
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "mappings": [
@@ -5793,7 +5617,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +      },
 +      "gridPos": {
 +        "h": 8,
-+        "w": 12,
++        "w": 24,
 +        "x": 0,
 +        "y": 8
 +      },
@@ -5815,7 +5639,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        },
 +        "textMode": "auto"
 +      },
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "targets": [
 +        {
 +          "expr": "mysql_global_variables_server_id",
@@ -5824,13 +5648,10 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +          "refId": "A"
 +        }
 +      ],
-+      "timeFrom": null,
-+      "timeShift": null,
 +      "title": "Server ID",
 +      "type": "stat"
 +    },
 +    {
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "mappings": [
@@ -5877,9 +5698,9 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +      },
 +      "gridPos": {
 +        "h": 8,
-+        "w": 12,
-+        "x": 12,
-+        "y": 8
++        "w": 24,
++        "x": 0,
++        "y": 16
 +      },
 +      "id": 6,
 +      "options": {
@@ -5899,7 +5720,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        },
 +        "textMode": "auto"
 +      },
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "targets": [
 +        {
 +          "expr": "mysql_global_variables_read_only",
@@ -5908,13 +5729,10 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +          "refId": "A"
 +        }
 +      ],
-+      "timeFrom": null,
-+      "timeShift": null,
 +      "title": "Read only status",
 +      "type": "stat"
 +    },
 +    {
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "color": {
@@ -5962,7 +5780,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        "h": 9,
 +        "w": 24,
 +        "x": 0,
-+        "y": 16
++        "y": 24
 +      },
 +      "id": 2,
 +      "options": {
@@ -5982,7 +5800,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        },
 +        "textMode": "auto"
 +      },
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "targets": [
 +        {
 +          "expr": "mysql_up",
@@ -5991,8 +5809,6 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +          "refId": "A"
 +        }
 +      ],
-+      "timeFrom": null,
-+      "timeShift": null,
 +      "title": "MySQL status",
 +      "type": "stat"
 +    },
@@ -6001,7 +5817,6 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +      "bars": false,
 +      "dashLength": 10,
 +      "dashes": false,
-+      "datasource": null,
 +      "fieldConfig": {
 +        "defaults": {
 +          "links": []
@@ -6014,7 +5829,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        "h": 9,
 +        "w": 24,
 +        "x": 0,
-+        "y": 25
++        "y": 33
 +      },
 +      "hiddenSeries": false,
 +      "id": 4,
@@ -6036,7 +5851,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        "alertThreshold": true
 +      },
 +      "percentage": false,
-+      "pluginVersion": "8.1.8",
++      "pluginVersion": "8.3.1",
 +      "pointradius": 2,
 +      "points": false,
 +      "renderer": "flot",
@@ -6053,9 +5868,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        }
 +      ],
 +      "thresholds": [],
-+      "timeFrom": null,
 +      "timeRegions": [],
-+      "timeShift": null,
 +      "title": "SELECTs per minute",
 +      "tooltip": {
 +        "shared": true,
@@ -6064,9 +5877,7 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +      },
 +      "type": "graph",
 +      "xaxis": {
-+        "buckets": null,
 +        "mode": "time",
-+        "name": null,
 +        "show": true,
 +        "values": []
 +      },
@@ -6074,30 +5885,23 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +        {
 +          "$$hashKey": "object:65",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        },
 +        {
 +          "$$hashKey": "object:66",
 +          "format": "short",
-+          "label": null,
 +          "logBase": 1,
-+          "max": null,
-+          "min": null,
 +          "show": true
 +        }
 +      ],
 +      "yaxis": {
-+        "align": false,
-+        "alignLevel": null
++        "align": false
 +      }
 +    }
 +  ],
 +  "refresh": "10s",
-+  "schemaVersion": 30,
++  "schemaVersion": 33,
 +  "style": "dark",
 +  "tags": [],
 +  "templating": {
@@ -6123,7 +5927,8 @@ changed: [manmanmano-2] => (item={'src': 'main.json', 'dest': 'main.json'})
 +  "timezone": "",
 +  "title": "MySQL",
 +  "uid": "-gAQY4tnk",
-+  "version": 1
++  "version": 2,
++  "weekStart": ""
 +}
 
 changed: [manmanmano-2] => (item={'src': 'mysql.json', 'dest': 'mysql.json'})
@@ -8038,9 +7843,9 @@ changed: [manmanmano-2]
 
 
 --- before
-+++ after: /home/jimi/.ansible/tmp/ansible-local-35565r8nz1hs2/tmp_wc0y7hr/influxdb-backup.j2
++++ after: /home/jimi/.ansible/tmp/ansible-local-8368vzr6v2u6/tmplt7o5csf/influxdb-backup.j2
 @@ -0,0 +1,3 @@
-+00 00 * * * backup rm -rf /home/backup/influxdb/*; influxd backup -database telegraf /home/backup/influxdb
++00 00 * * * backup rm -rf /home/backup/influxdb/*; influxd backup -portable -database telegraf /home/backup/influxdb
 +10 00 * * 0 backup duplicity --no-encryption full /home/backup/influxdb/ rsync://manmanmano@backup.clounsible.mano//home/manmanmano/influxdb/
 +10 00 * * 1-6 backup duplicity --no-encryption incremental /home/backup/influxdb/ rsync://manmanmano@backup.clounsible.mano//home/manmanmano/influxdb
 
@@ -8324,8 +8129,8 @@ changed: [manmanmano-2]
 
 
 ok: [manmanmano-2]
-ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
  ________________________________________
 < TASK [rsyslog : Copy 10-telegraf.conf] >
  ----------------------------------------
@@ -8351,6 +8156,18 @@ ok: [manmanmano-1]
 +# uncomment to use udp according to RFC 5424
 +*.* @influxdb:6514;RSYSLOG_SyslogProtocol23Format
 
+changed: [manmanmano-3]
+--- before
++++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/rsyslog/files/10-telegraf.conf
+@@ -0,0 +1,7 @@
++$ActionQueueType LinkedList # use asynchronous processing
++$ActionQueueFileName srvrfwd # set file name, also enables disk mode
++$ActionResumeRetryCount -1 # infinite retries on insert failure
++$ActionQueueSaveOnShutdown on # save in-memory data if rsyslog shuts down
++
++# uncomment to use udp according to RFC 5424
++*.* @influxdb:6514;RSYSLOG_SyslogProtocol23Format
+
 changed: [manmanmano-1]
 --- before
 +++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/rsyslog/files/10-telegraf.conf
@@ -8364,18 +8181,6 @@ changed: [manmanmano-1]
 +*.* @influxdb:6514;RSYSLOG_SyslogProtocol23Format
 
 changed: [manmanmano-2]
---- before
-+++ after: /home/jimi/Documents/TalTech/Roman/ica0002/roles/rsyslog/files/10-telegraf.conf
-@@ -0,0 +1,7 @@
-+$ActionQueueType LinkedList # use asynchronous processing
-+$ActionQueueFileName srvrfwd # set file name, also enables disk mode
-+$ActionResumeRetryCount -1 # infinite retries on insert failure
-+$ActionQueueSaveOnShutdown on # save in-memory data if rsyslog shuts down
-+
-+# uncomment to use udp according to RFC 5424
-+*.* @influxdb:6514;RSYSLOG_SyslogProtocol23Format
-
-changed: [manmanmano-3]
  _____________________________________________
 < RUNNING HANDLER [rsyslog : Restart rsyslog] >
  ---------------------------------------------
@@ -8390,8 +8195,8 @@ changed: [manmanmano-3]
     \___)=(___/
 
 
-changed: [manmanmano-1]
 changed: [manmanmano-3]
+changed: [manmanmano-1]
 changed: [manmanmano-2]
  ____________
 < PLAY RECAP >
@@ -8440,8 +8245,8 @@ manmanmano-3               : ok=78   changed=67   unreachable=0    failed=0    s
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
 ok: [manmanmano-2]
  ______________
 < TASK [setup] >
@@ -8457,9 +8262,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-2]
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
+ok: [manmanmano-2]
  _____________
 < PLAY [Init] >
  -------------
@@ -8488,8 +8293,8 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-2]
+ok: [manmanmano-3]
 ok: [manmanmano-1]
  ___________________________________________________________
 < TASK [backup : Add the user backup and generate ssh keys] >
@@ -8505,8 +8310,8 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
 ok: [manmanmano-3]
  __________________________________________________________
 < TASK [backup : Create directory restore for user backup] >
@@ -8522,9 +8327,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
+ok: [manmanmano-1]
  ___________________________________
 < TASK [backup : Install duplicity] >
  -----------------------------------
@@ -8539,9 +8344,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-2]
 ok: [manmanmano-1]
-ok: [manmanmano-3]
  __________________________________
 < TASK [backup : Copy known_hosts] >
  ----------------------------------
@@ -8605,8 +8410,8 @@ ok: [manmanmano-1]
 
 
 ok: [manmanmano-2]
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  ____________________________________
 < TASK [bind : Copy db.startup_name] >
  ------------------------------------
@@ -8655,8 +8460,8 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
 ok: [manmanmano-2]
  _________________________________________
 < TASK [bind : Copy new named.conf.local] >
@@ -8672,9 +8477,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
+ok: [manmanmano-2]
 ok: [manmanmano-3]
 ok: [manmanmano-1]
-ok: [manmanmano-2]
  _________________________________________________________
 / TASK [bind : Force notified handlers to restart at this \
 \ point]                                                  /
@@ -8726,27 +8531,27 @@ skipping: [manmanmano-1] => (item={'key': 'influxdb', 'value': 'manmanmano-2'})
 skipping: [manmanmano-1] => (item={'key': 'lb1', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-1] => (item={'key': 'lb2', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-3] => (item={'key': 'grafana', 'value': 'manmanmano-2'}) 
-skipping: [manmanmano-3] => (item={'key': 'influxdb', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'lb3', 'value': 'manmanmano-3'}) 
-skipping: [manmanmano-3] => (item={'key': 'lb1', 'value': 'manmanmano-1'}) 
+skipping: [manmanmano-3] => (item={'key': 'influxdb', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'mysql1', 'value': 'manmanmano-1'}) 
-skipping: [manmanmano-3] => (item={'key': 'lb2', 'value': 'manmanmano-2'}) 
+skipping: [manmanmano-3] => (item={'key': 'lb1', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-1] => (item={'key': 'mysql2', 'value': 'manmanmano-2'}) 
-skipping: [manmanmano-3] => (item={'key': 'lb3', 'value': 'manmanmano-3'}) 
+skipping: [manmanmano-3] => (item={'key': 'lb2', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'mysql3', 'value': 'manmanmano-3'}) 
-skipping: [manmanmano-3] => (item={'key': 'mysql1', 'value': 'manmanmano-1'}) 
+skipping: [manmanmano-3] => (item={'key': 'lb3', 'value': 'manmanmano-3'}) 
 skipping: [manmanmano-1] => (item={'key': 'ns1', 'value': 'manmanmano-2'}) 
+skipping: [manmanmano-3] => (item={'key': 'mysql1', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-1] => (item={'key': 'ns2', 'value': 'manmanmano-1'}) 
-skipping: [manmanmano-3] => (item={'key': 'mysql2', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'ns3', 'value': 'manmanmano-3'}) 
-skipping: [manmanmano-3] => (item={'key': 'mysql3', 'value': 'manmanmano-3'}) 
 skipping: [manmanmano-1] => (item={'key': 'prometheus', 'value': 'manmanmano-2'}) 
+skipping: [manmanmano-3] => (item={'key': 'mysql2', 'value': 'manmanmano-2'}) 
+skipping: [manmanmano-3] => (item={'key': 'mysql3', 'value': 'manmanmano-3'}) 
 skipping: [manmanmano-3] => (item={'key': 'ns1', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'web1', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-3] => (item={'key': 'ns2', 'value': 'manmanmano-1'}) 
-skipping: [manmanmano-3] => (item={'key': 'ns3', 'value': 'manmanmano-3'}) 
 skipping: [manmanmano-1] => (item={'key': 'web2', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'web3', 'value': 'manmanmano-3'}) 
+skipping: [manmanmano-3] => (item={'key': 'ns3', 'value': 'manmanmano-3'}) 
 skipping: [manmanmano-3] => (item={'key': 'prometheus', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-3] => (item={'key': 'web1', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-3] => (item={'key': 'web2', 'value': 'manmanmano-2'}) 
@@ -8780,9 +8585,9 @@ ok: [manmanmano-2] => (item={'key': 'web3', 'value': 'manmanmano-3'})
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-2]
 ok: [manmanmano-1]
-ok: [manmanmano-3]
  ______________________________________________
 < TASK [bind_exporter : Service bind-exporter] >
  ----------------------------------------------
@@ -8845,8 +8650,8 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
 ok: [manmanmano-3]
  ______________________
 < PLAY [Node exporter] >
@@ -8876,9 +8681,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
+ok: [manmanmano-1]
  ______________________________________________
 < TASK [node_exporter : Service node-exporter] >
  ----------------------------------------------
@@ -8893,9 +8698,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-3]
-ok: [manmanmano-2]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
+ok: [manmanmano-3]
  ________________________
 < PLAY [Database server] >
  ------------------------
@@ -8924,9 +8729,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-2]
 ok: [manmanmano-1]
-ok: [manmanmano-3]
  __________________________________________________
 < TASK [mysql : Install package "python3-pymysql"] >
  --------------------------------------------------
@@ -8941,9 +8746,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
+ok: [manmanmano-1]
  ______________________________
 < TASK [mysql : MySQL service] >
  ------------------------------
@@ -8958,9 +8763,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
+ok: [manmanmano-2]
 ok: [manmanmano-1]
 ok: [manmanmano-3]
-ok: [manmanmano-2]
  _______________________________
 < TASK [mysql : MySQL database] >
  -------------------------------
@@ -8975,8 +8780,8 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
 ok: [manmanmano-2]
  ___________________________
 < TASK [mysql : MySQL user] >
@@ -8992,8 +8797,8 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
 ok: [manmanmano-2]
  _________________________________
 < TASK [mysql : Replication user] >
@@ -9009,9 +8814,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-2]
-ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
+ok: [manmanmano-2]
  ____________________________________
 / TASK [mysql : copy override.cnf to \
 \ /etc/mysql/mysql.conf.d/]          /
@@ -9027,9 +8832,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
+ok: [manmanmano-2]
 ok: [manmanmano-3]
 ok: [manmanmano-1]
-ok: [manmanmano-2]
  ____________________________________________________________
 < TASK [mysql : Force notified handler to restart MySQL now] >
  ------------------------------------------------------------
@@ -9059,8 +8864,8 @@ ok: [manmanmano-2]
 
 
 skipping: [manmanmano-2]
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  __________________________________________
 < TASK [mysql : MySQL primary R0 mode off] >
  ------------------------------------------
@@ -9092,9 +8897,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
+ok: [manmanmano-1]
  __________________________________________
 < TASK [mysql_exporter : Pause for 10 sec] >
  ------------------------------------------
@@ -9124,9 +8929,9 @@ skipping: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-3]
-ok: [manmanmano-2]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
+ok: [manmanmano-3]
  ________________________________
 < TASK [mysql_exporter : my.cnf] >
  --------------------------------
@@ -9142,8 +8947,8 @@ ok: [manmanmano-1]
 
 
 ok: [manmanmano-3]
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
  __________________________________________
 / TASK [mysql_exporter :                   \
 \ /etc/default/prometheus-mysqld-exporter] /
@@ -9160,8 +8965,8 @@ ok: [manmanmano-2]
 
 
 ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
  _________________________________
 < TASK [mysql_exporter : service] >
  ---------------------------------
@@ -9176,8 +8981,8 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
 ok: [manmanmano-3]
  __________________________________________________________
 < TASK [mysql_backup : Create a directory for user backup] >
@@ -9210,9 +9015,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-2]
 ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
  _________________________________________
 < TASK [mysql_backup : MySQL user backup] >
  -----------------------------------------
@@ -9228,8 +9033,8 @@ ok: [manmanmano-3]
 
 
 ok: [manmanmano-2]
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  _____________________________________
 < TASK [mysql_backup : MySQL crontab] >
  -------------------------------------
@@ -9244,9 +9049,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
+ok: [manmanmano-1]
 ok: [manmanmano-3]
 ok: [manmanmano-2]
-ok: [manmanmano-1]
  ______________
 < PLAY [NGINX] >
  --------------
@@ -9276,8 +9081,8 @@ ok: [manmanmano-1]
 
 
 ok: [manmanmano-3]
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
  ___________________________________
 / TASK [nginx : Copy default to     \
 \ /etc/nginx/sites-enabled/default] /
@@ -9293,9 +9098,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-1]
 ok: [manmanmano-2]
-ok: [manmanmano-3]
  ______________________________
 < TASK [nginx : Nginx service] >
  ------------------------------
@@ -9310,8 +9115,8 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
 ok: [manmanmano-3]
  ________________________________________________
 < TASK [nginx_exporter : Install nginx-exporter] >
@@ -9327,9 +9132,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-2]
 ok: [manmanmano-1]
-ok: [manmanmano-3]
  ________________________________________________
 < TASK [nginx_exporter : Service nginx-exporter] >
  ------------------------------------------------
@@ -9361,9 +9166,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-2]
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
+ok: [manmanmano-2]
  ______________________________
 < PLAY [Haproxy and Keepalive] >
  ------------------------------
@@ -9392,9 +9197,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
+ok: [manmanmano-1]
  _________________________________
 < TASK [haproxy : haproxy config] >
  ---------------------------------
@@ -9409,9 +9214,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-1]
 ok: [manmanmano-2]
-ok: [manmanmano-3]
  __________________________________
 < TASK [haproxy : Service haproxy] >
  ----------------------------------
@@ -9443,9 +9248,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-2]
 ok: [manmanmano-1]
-ok: [manmanmano-3]
  ___________________________________________________
 < TASK [haproxy_exporter : haproxy exporter config] >
  ---------------------------------------------------
@@ -9461,8 +9266,8 @@ ok: [manmanmano-3]
 
 
 ok: [manmanmano-3]
-ok: [manmanmano-2]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
  __________________________________
 / TASK [haproxy_exporter : Service \
 \ prometheus-haproxy-exporter]     /
@@ -9478,8 +9283,8 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-2]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
 ok: [manmanmano-3]
  ________________________________________
 < TASK [keepalived : Install keepalived] >
@@ -9495,8 +9300,8 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
 ok: [manmanmano-1]
  _______________________________________
 < TASK [keepalived : keepalived script] >
@@ -9512,9 +9317,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  _____________________________________
 < TASK [keepalived : keepalived.conf] >
  -------------------------------------
@@ -9529,8 +9334,8 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
 ok: [manmanmano-2]
  ________________________________________
 < TASK [keepalived : Service keepalived] >
@@ -9546,9 +9351,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-3] => (item=haproxy)
 ok: [manmanmano-2] => (item=haproxy)
 ok: [manmanmano-1] => (item=haproxy)
+ok: [manmanmano-3] => (item=haproxy)
 ok: [manmanmano-1] => (item=keepalived)
 ok: [manmanmano-3] => (item=keepalived)
 ok: [manmanmano-2] => (item=keepalived)
@@ -9586,8 +9391,8 @@ ok: [manmanmano-2]
 
 
 ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
  __________________________________________________________
 < TASK [keepalived_exporter : Keepalived-exporter service] >
  ----------------------------------------------------------
@@ -9651,8 +9456,8 @@ ok: [manmanmano-1]
 
 
 ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
  ________________________________
 < TASK [iptables : Load on boot] >
  --------------------------------
@@ -9667,8 +9472,8 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
 ok: [manmanmano-2]
  ____________________________________
 < TASK [iptables : Restore iptables] >
@@ -9699,9 +9504,9 @@ mistake may lead the ansible controller to loose access to the hosts and never
 regain it before fixing firewall rules through a serial console, or any other
 way except SSH. Please set task attribute 'poll' (=15) to 0, and 'async' (=0)
 to a value >2 and not greater than 'ansible_timeout' (=10) (recommended).
-ok: [manmanmano-2]
 ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
  _______________
 < PLAY [Docker] >
  ---------------
@@ -9731,8 +9536,8 @@ ok: [manmanmano-1]
 
 
 ok: [manmanmano-3]
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
  ________________________________
 < TASK [docker : Docker service] >
  --------------------------------
@@ -9747,9 +9552,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
+ok: [manmanmano-1]
  ______________
 < PLAY [Agama] >
  --------------
@@ -9778,9 +9583,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-2]
 ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
  ____________________________________
 < TASK [agama : Download dockerfile] >
  ------------------------------------
@@ -9830,10 +9635,10 @@ ok: [manmanmano-2]
 
 
 ok: [manmanmano-3] => (item={'key': 'agama-1', 'value': 8001})
-ok: [manmanmano-2] => (item={'key': 'agama-1', 'value': 8001})
 ok: [manmanmano-1] => (item={'key': 'agama-1', 'value': 8001})
-ok: [manmanmano-1] => (item={'key': 'agama-2', 'value': 8010})
+ok: [manmanmano-2] => (item={'key': 'agama-1', 'value': 8001})
 ok: [manmanmano-3] => (item={'key': 'agama-2', 'value': 8010})
+ok: [manmanmano-1] => (item={'key': 'agama-2', 'value': 8010})
 ok: [manmanmano-2] => (item={'key': 'agama-2', 'value': 8010})
  ___________________
 < PLAY [Prometheus] >
@@ -10360,9 +10165,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  ________________________________________
 < TASK [rsyslog : Copy 10-telegraf.conf] >
  ----------------------------------------
@@ -10377,9 +10182,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-3]
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
+ok: [manmanmano-3]
  ____________
 < PLAY RECAP >
  ------------
@@ -10401,17 +10206,17 @@ manmanmano-3               : ok=65   changed=0    unreachable=0    failed=0    s
 + ansible all -b -m reboot -a test_command=uptime
 manmanmano-1 | CHANGED => {
     "changed": true,
-    "elapsed": 42,
-    "rebooted": true
-}
-manmanmano-3 | CHANGED => {
-    "changed": true,
-    "elapsed": 43,
+    "elapsed": 41,
     "rebooted": true
 }
 manmanmano-2 | CHANGED => {
     "changed": true,
-    "elapsed": 45,
+    "elapsed": 41,
+    "rebooted": true
+}
+manmanmano-3 | CHANGED => {
+    "changed": true,
+    "elapsed": 41,
     "rebooted": true
 }
 + ansible-playbook infra.yaml --diff
@@ -10444,8 +10249,8 @@ manmanmano-2 | CHANGED => {
 
 
 ok: [manmanmano-2]
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  ______________
 < TASK [setup] >
  --------------
@@ -10460,9 +10265,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-2]
 ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
  _____________
 < PLAY [Init] >
  -------------
@@ -10508,9 +10313,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-3]
 ok: [manmanmano-2]
+ok: [manmanmano-3]
+ok: [manmanmano-1]
  __________________________________________________________
 < TASK [backup : Create directory restore for user backup] >
  ----------------------------------------------------------
@@ -10525,9 +10330,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-3]
  ___________________________________
 < TASK [backup : Install duplicity] >
  -----------------------------------
@@ -10542,9 +10347,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-2]
 ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
  __________________________________
 < TASK [backup : Copy known_hosts] >
  ----------------------------------
@@ -10560,8 +10365,8 @@ ok: [manmanmano-3]
 
 
 ok: [manmanmano-3]
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
  ___________________
 < PLAY [DNS server] >
  -------------------
@@ -10590,9 +10395,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
+ok: [manmanmano-1]
  ____________________________
 < TASK [bind : Service bind] >
  ----------------------------
@@ -10607,9 +10412,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
+ok: [manmanmano-2]
 ok: [manmanmano-3]
 ok: [manmanmano-1]
-ok: [manmanmano-2]
  ____________________________________
 < TASK [bind : Copy db.startup_name] >
  ------------------------------------
@@ -10658,9 +10463,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
+ok: [manmanmano-2]
 ok: [manmanmano-1]
 ok: [manmanmano-3]
-ok: [manmanmano-2]
  _________________________________________
 < TASK [bind : Copy new named.conf.local] >
  -----------------------------------------
@@ -10675,9 +10480,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-3]
 ok: [manmanmano-2]
+ok: [manmanmano-3]
+ok: [manmanmano-1]
  _________________________________________________________
 / TASK [bind : Force notified handlers to restart at this \
 \ point]                                                  /
@@ -10727,30 +10532,30 @@ ok: [manmanmano-2] => (item={'key': 'backup', 'value': '192.168.42.156'})
 skipping: [manmanmano-1] => (item={'key': 'grafana', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'influxdb', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'lb1', 'value': 'manmanmano-1'}) 
-skipping: [manmanmano-3] => (item={'key': 'grafana', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'lb2', 'value': 'manmanmano-2'}) 
-skipping: [manmanmano-3] => (item={'key': 'influxdb', 'value': 'manmanmano-2'}) 
+skipping: [manmanmano-3] => (item={'key': 'grafana', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'lb3', 'value': 'manmanmano-3'}) 
-skipping: [manmanmano-3] => (item={'key': 'lb1', 'value': 'manmanmano-1'}) 
+skipping: [manmanmano-3] => (item={'key': 'influxdb', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'mysql1', 'value': 'manmanmano-1'}) 
-skipping: [manmanmano-3] => (item={'key': 'lb2', 'value': 'manmanmano-2'}) 
+skipping: [manmanmano-3] => (item={'key': 'lb1', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-1] => (item={'key': 'mysql2', 'value': 'manmanmano-2'}) 
-skipping: [manmanmano-3] => (item={'key': 'lb3', 'value': 'manmanmano-3'}) 
+skipping: [manmanmano-3] => (item={'key': 'lb2', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'mysql3', 'value': 'manmanmano-3'}) 
-skipping: [manmanmano-3] => (item={'key': 'mysql1', 'value': 'manmanmano-1'}) 
-skipping: [manmanmano-3] => (item={'key': 'mysql2', 'value': 'manmanmano-2'}) 
+skipping: [manmanmano-3] => (item={'key': 'lb3', 'value': 'manmanmano-3'}) 
 skipping: [manmanmano-1] => (item={'key': 'ns1', 'value': 'manmanmano-2'}) 
-skipping: [manmanmano-3] => (item={'key': 'mysql3', 'value': 'manmanmano-3'}) 
 skipping: [manmanmano-1] => (item={'key': 'ns2', 'value': 'manmanmano-1'}) 
-skipping: [manmanmano-3] => (item={'key': 'ns1', 'value': 'manmanmano-2'}) 
+skipping: [manmanmano-3] => (item={'key': 'mysql1', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-1] => (item={'key': 'ns3', 'value': 'manmanmano-3'}) 
-skipping: [manmanmano-3] => (item={'key': 'ns2', 'value': 'manmanmano-1'}) 
+skipping: [manmanmano-3] => (item={'key': 'mysql2', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'prometheus', 'value': 'manmanmano-2'}) 
-skipping: [manmanmano-3] => (item={'key': 'ns3', 'value': 'manmanmano-3'}) 
+skipping: [manmanmano-3] => (item={'key': 'mysql3', 'value': 'manmanmano-3'}) 
 skipping: [manmanmano-1] => (item={'key': 'web1', 'value': 'manmanmano-1'}) 
-skipping: [manmanmano-3] => (item={'key': 'prometheus', 'value': 'manmanmano-2'}) 
+skipping: [manmanmano-3] => (item={'key': 'ns1', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'web2', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-1] => (item={'key': 'web3', 'value': 'manmanmano-3'}) 
+skipping: [manmanmano-3] => (item={'key': 'ns2', 'value': 'manmanmano-1'}) 
+skipping: [manmanmano-3] => (item={'key': 'ns3', 'value': 'manmanmano-3'}) 
+skipping: [manmanmano-3] => (item={'key': 'prometheus', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-3] => (item={'key': 'web1', 'value': 'manmanmano-1'}) 
 skipping: [manmanmano-3] => (item={'key': 'web2', 'value': 'manmanmano-2'}) 
 skipping: [manmanmano-3] => (item={'key': 'web3', 'value': 'manmanmano-3'}) 
@@ -10783,9 +10588,9 @@ ok: [manmanmano-2] => (item={'key': 'web3', 'value': 'manmanmano-3'})
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  ______________________________________________
 < TASK [bind_exporter : Service bind-exporter] >
  ----------------------------------------------
@@ -10800,9 +10605,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-3]
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
+ok: [manmanmano-3]
  _________________________
 < PLAY [Systemd-resolved] >
  -------------------------
@@ -10831,8 +10636,8 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
 ok: [manmanmano-2]
  _________________________________________________
 < TASK [systemd-resolved : Stop systemd-resolved] >
@@ -10879,9 +10684,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-2]
 ok: [manmanmano-1]
-ok: [manmanmano-3]
  ______________________________________________
 < TASK [node_exporter : Service node-exporter] >
  ----------------------------------------------
@@ -10896,9 +10701,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-2]
 ok: [manmanmano-1]
-ok: [manmanmano-3]
  ________________________
 < PLAY [Database server] >
  ------------------------
@@ -10927,9 +10732,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-3]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
  __________________________________________________
 < TASK [mysql : Install package "python3-pymysql"] >
  --------------------------------------------------
@@ -10944,9 +10749,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
+ok: [manmanmano-1]
  ______________________________
 < TASK [mysql : MySQL service] >
  ------------------------------
@@ -10961,9 +10766,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-3]
-ok: [manmanmano-2]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
+ok: [manmanmano-3]
  _______________________________
 < TASK [mysql : MySQL database] >
  -------------------------------
@@ -10996,8 +10801,8 @@ ok: [manmanmano-1]
 
 
 ok: [manmanmano-3]
-ok: [manmanmano-2]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
  _________________________________
 < TASK [mysql : Replication user] >
  ---------------------------------
@@ -11012,9 +10817,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
+ok: [manmanmano-2]
 ok: [manmanmano-1]
 ok: [manmanmano-3]
-ok: [manmanmano-2]
  ____________________________________
 / TASK [mysql : copy override.cnf to \
 \ /etc/mysql/mysql.conf.d/]          /
@@ -11062,8 +10867,8 @@ ok: [manmanmano-1]
 
 
 skipping: [manmanmano-2]
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  __________________________________________
 < TASK [mysql : MySQL primary R0 mode off] >
  ------------------------------------------
@@ -11095,9 +10900,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-3]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
  __________________________________________
 < TASK [mysql_exporter : Pause for 10 sec] >
  ------------------------------------------
@@ -11127,8 +10932,8 @@ skipping: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
 ok: [manmanmano-2]
  ________________________________
 < TASK [mysql_exporter : my.cnf] >
@@ -11144,9 +10949,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-2]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
  __________________________________________
 / TASK [mysql_exporter :                   \
 \ /etc/default/prometheus-mysqld-exporter] /
@@ -11162,9 +10967,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-2]
-ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
+ok: [manmanmano-2]
  _________________________________
 < TASK [mysql_exporter : service] >
  ---------------------------------
@@ -11180,8 +10985,8 @@ ok: [manmanmano-1]
 
 
 ok: [manmanmano-2]
-ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
  __________________________________________________________
 < TASK [mysql_backup : Create a directory for user backup] >
  ----------------------------------------------------------
@@ -11196,8 +11001,8 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-2]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
 ok: [manmanmano-3]
  _____________________________________
 < TASK [mysql_backup : backup my.cnf] >
@@ -11213,9 +11018,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-2]
 ok: [manmanmano-1]
-ok: [manmanmano-3]
  _________________________________________
 < TASK [mysql_backup : MySQL user backup] >
  -----------------------------------------
@@ -11231,8 +11036,8 @@ ok: [manmanmano-3]
 
 
 ok: [manmanmano-2]
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  _____________________________________
 < TASK [mysql_backup : MySQL crontab] >
  -------------------------------------
@@ -11278,9 +11083,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
+ok: [manmanmano-2]
 ok: [manmanmano-3]
 ok: [manmanmano-1]
-ok: [manmanmano-2]
  ___________________________________
 / TASK [nginx : Copy default to     \
 \ /etc/nginx/sites-enabled/default] /
@@ -11296,9 +11101,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-3]
-ok: [manmanmano-2]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
+ok: [manmanmano-3]
  ______________________________
 < TASK [nginx : Nginx service] >
  ------------------------------
@@ -11330,9 +11135,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-2]
 ok: [manmanmano-1]
-ok: [manmanmano-3]
  ________________________________________________
 < TASK [nginx_exporter : Service nginx-exporter] >
  ------------------------------------------------
@@ -11347,8 +11152,8 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
 ok: [manmanmano-3]
  _______________________________________
 < TASK [nginx_exporter : exporter file] >
@@ -11365,8 +11170,8 @@ ok: [manmanmano-3]
 
 
 ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
  ______________________________
 < PLAY [Haproxy and Keepalive] >
  ------------------------------
@@ -11395,8 +11200,8 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
 ok: [manmanmano-1]
  _________________________________
 < TASK [haproxy : haproxy config] >
@@ -11412,8 +11217,8 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-1]
 ok: [manmanmano-3]
  __________________________________
 < TASK [haproxy : Service haproxy] >
@@ -11429,9 +11234,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-2]
-ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
+ok: [manmanmano-2]
  ____________________________________________________
 < TASK [haproxy_exporter : Install haproxy exporter] >
  ----------------------------------------------------
@@ -11447,8 +11252,8 @@ ok: [manmanmano-1]
 
 
 ok: [manmanmano-2]
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  ___________________________________________________
 < TASK [haproxy_exporter : haproxy exporter config] >
  ---------------------------------------------------
@@ -11464,8 +11269,8 @@ ok: [manmanmano-3]
 
 
 ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
  __________________________________
 / TASK [haproxy_exporter : Service \
 \ prometheus-haproxy-exporter]     /
@@ -11481,8 +11286,8 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-2]
+ok: [manmanmano-3]
 ok: [manmanmano-1]
  ________________________________________
 < TASK [keepalived : Install keepalived] >
@@ -11498,9 +11303,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
+ok: [manmanmano-3]
 ok: [manmanmano-2]
 ok: [manmanmano-1]
-ok: [manmanmano-3]
  _______________________________________
 < TASK [keepalived : keepalived script] >
  ---------------------------------------
@@ -11516,8 +11321,8 @@ ok: [manmanmano-3]
 
 
 ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
  _____________________________________
 < TASK [keepalived : keepalived.conf] >
  -------------------------------------
@@ -11532,9 +11337,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-1]
 ok: [manmanmano-2]
+ok: [manmanmano-3]
  ________________________________________
 < TASK [keepalived : Service keepalived] >
  ----------------------------------------
@@ -11553,8 +11358,8 @@ ok: [manmanmano-3] => (item=haproxy)
 ok: [manmanmano-2] => (item=haproxy)
 ok: [manmanmano-1] => (item=haproxy)
 ok: [manmanmano-3] => (item=keepalived)
-ok: [manmanmano-1] => (item=keepalived)
 ok: [manmanmano-2] => (item=keepalived)
+ok: [manmanmano-1] => (item=keepalived)
  ______________________________________________________
 / TASK [keepalived_exporter : Copy keepalived-exporter \
 \ binary]                                              /
@@ -11589,8 +11394,8 @@ ok: [manmanmano-1]
 
 
 ok: [manmanmano-2]
-ok: [manmanmano-1]
 ok: [manmanmano-3]
+ok: [manmanmano-1]
  __________________________________________________________
 < TASK [keepalived_exporter : Keepalived-exporter service] >
  ----------------------------------------------------------
@@ -11636,8 +11441,8 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-3]
 ok: [manmanmano-2]
+ok: [manmanmano-3]
 ok: [manmanmano-1]
  __________________________________________
 < TASK [iptables : Fix ssl bug for docker] >
@@ -11653,9 +11458,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
+ok: [manmanmano-2]
 ok: [manmanmano-3]
 ok: [manmanmano-1]
-ok: [manmanmano-2]
  ________________________________
 < TASK [iptables : Load on boot] >
  --------------------------------
@@ -11670,9 +11475,9 @@ ok: [manmanmano-2]
     \___)=(___/
 
 
-ok: [manmanmano-3]
-ok: [manmanmano-2]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
+ok: [manmanmano-3]
  ____________________________________
 < TASK [iptables : Restore iptables] >
  ------------------------------------
@@ -11702,8 +11507,8 @@ mistake may lead the ansible controller to loose access to the hosts and never
 regain it before fixing firewall rules through a serial console, or any other
 way except SSH. Please set task attribute 'poll' (=15) to 0, and 'async' (=0)
 to a value >2 and not greater than 'ansible_timeout' (=10) (recommended).
-ok: [manmanmano-2]
 ok: [manmanmano-1]
+ok: [manmanmano-2]
 ok: [manmanmano-3]
  _______________
 < PLAY [Docker] >
@@ -11733,9 +11538,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-3]
 ok: [manmanmano-2]
+ok: [manmanmano-3]
+ok: [manmanmano-1]
  ________________________________
 < TASK [docker : Docker service] >
  --------------------------------
@@ -11781,9 +11586,9 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-2]
-ok: [manmanmano-3]
 ok: [manmanmano-1]
+ok: [manmanmano-3]
+ok: [manmanmano-2]
  ____________________________________
 < TASK [agama : Download dockerfile] >
  ------------------------------------
@@ -11798,8 +11603,8 @@ ok: [manmanmano-1]
     \___)=(___/
 
 
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
 ok: [manmanmano-1]
  ____________________________
 < TASK [agama : Agama image] >
@@ -11832,12 +11637,12 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1] => (item={'key': 'agama-1', 'value': 8001})
-ok: [manmanmano-3] => (item={'key': 'agama-1', 'value': 8001})
 ok: [manmanmano-2] => (item={'key': 'agama-1', 'value': 8001})
-ok: [manmanmano-1] => (item={'key': 'agama-2', 'value': 8010})
+ok: [manmanmano-3] => (item={'key': 'agama-1', 'value': 8001})
+ok: [manmanmano-1] => (item={'key': 'agama-1', 'value': 8001})
 ok: [manmanmano-2] => (item={'key': 'agama-2', 'value': 8010})
 ok: [manmanmano-3] => (item={'key': 'agama-2', 'value': 8010})
+ok: [manmanmano-1] => (item={'key': 'agama-2', 'value': 8010})
  ___________________
 < PLAY [Prometheus] >
  -------------------
@@ -12380,9 +12185,9 @@ ok: [manmanmano-3]
     \___)=(___/
 
 
-ok: [manmanmano-1]
-ok: [manmanmano-2]
 ok: [manmanmano-3]
+ok: [manmanmano-2]
+ok: [manmanmano-1]
  ____________
 < PLAY RECAP >
  ------------
@@ -12402,4 +12207,4 @@ manmanmano-2               : ok=98   changed=0    unreachable=0    failed=0    s
 manmanmano-3               : ok=65   changed=0    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
 
 + date
-Thu Dec  9 12:47:15 PM EET 2021
+Fri Dec 10 10:55:08 AM EET 2021
