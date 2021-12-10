@@ -255,7 +255,7 @@
         "text": {
           "titleSize": 15
         },
-        "textMode": "auto"
+        "textMode": "value_and_name"
       },
       "pluginVersion": "8.3.1",
       "targets": [
@@ -336,7 +336,7 @@
         "text": {
           "titleSize": 15
         },
-        "textMode": "auto"
+        "textMode": "value_and_name"
       },
       "pluginVersion": "8.3.1",
       "targets": [
@@ -361,6 +361,7 @@
               "options": {
                 "from": 0.5,
                 "result": {
+                  "index": 0,
                   "text": "UP"
                 },
                 "to": 1
@@ -371,11 +372,23 @@
               "options": {
                 "from": 0,
                 "result": {
+                  "index": 1,
                   "text": "DOWN"
                 },
                 "to": 0.4
               },
               "type": "range"
+            },
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "color": "red",
+                  "index": 2,
+                  "text": "No data"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -416,7 +429,7 @@
         "text": {
           "valueSize": 95
         },
-        "textMode": "auto"
+        "textMode": "value_and_name"
       },
       "pluginVersion": "8.3.1",
       "targets": [
@@ -545,6 +558,6 @@
   "timezone": "",
   "title": "MySQL",
   "uid": "-gAQY4tnk",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
