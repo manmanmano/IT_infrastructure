@@ -47,6 +47,7 @@
             {
               "options": {
                 "0": {
+                  "color": "red",
                   "index": 2,
                   "text": "DOWN"
                 },
@@ -109,7 +110,7 @@
           "titleSize": 13,
           "valueSize": 70
         },
-        "textMode": "auto"
+        "textMode": "value_and_name"
       },
       "pluginVersion": "8.3.1",
       "targets": [
@@ -145,6 +146,17 @@
                 }
               },
               "type": "value"
+            },
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "color": "red",
+                  "index": 2,
+                  "text": "No data"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -183,7 +195,7 @@
           "values": false
         },
         "text": {},
-        "textMode": "auto"
+        "textMode": "value_and_name"
       },
       "pluginVersion": "8.3.1",
       "targets": [
@@ -595,13 +607,28 @@
             {
               "options": {
                 "0": {
+                  "color": "red",
+                  "index": 0,
                   "text": "DOWN"
                 },
                 "1": {
+                  "color": "green",
+                  "index": 1,
                   "text": "UP"
                 }
               },
               "type": "value"
+            },
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "color": "red",
+                  "index": 2,
+                  "text": "No data"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -640,7 +667,7 @@
           "values": false
         },
         "text": {},
-        "textMode": "auto"
+        "textMode": "value_and_name"
       },
       "pluginVersion": "8.3.1",
       "targets": [
@@ -844,6 +871,8 @@
               "options": {
                 "from": 0.5,
                 "result": {
+                  "color": "green",
+                  "index": 0,
                   "text": "UP"
                 },
                 "to": 1
@@ -854,11 +883,24 @@
               "options": {
                 "from": 0,
                 "result": {
+                  "color": "red",
+                  "index": 1,
                   "text": "DOWN"
                 },
                 "to": 0.4
               },
               "type": "range"
+            },
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "color": "red",
+                  "index": 2,
+                  "text": "No data"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -899,7 +941,7 @@
         "text": {
           "valueSize": 90
         },
-        "textMode": "auto"
+        "textMode": "value_and_name"
       },
       "pluginVersion": "8.3.1",
       "targets": [
@@ -1019,13 +1061,28 @@
             {
               "options": {
                 "0": {
+                  "color": "red",
+                  "index": 0,
                   "text": "DOWN"
                 },
                 "1": {
+                  "color": "green",
+                  "index": 1,
                   "text": "UP"
                 }
               },
               "type": "value"
+            },
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "color": "red",
+                  "index": 2,
+                  "text": "No data"
+                }
+              },
+              "type": "special"
             }
           ],
           "thresholds": {
@@ -1066,7 +1123,7 @@
         "text": {
           "valueSize": 90
         },
-        "textMode": "auto"
+        "textMode": "value_and_name"
       },
       "pluginVersion": "8.3.1",
       "targets": [
@@ -1290,6 +1347,6 @@
   "timezone": "",
   "title": "clounsible.mano",
   "uid": "mPEUZid7k",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
