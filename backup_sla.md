@@ -9,7 +9,7 @@ Infrastructure services.
 
 ## RECOVERY POINT OBJECTIVE 
 
-Backups are created every day around midnight. We can accept only 12h of data loss since the last backup.
+Backups are created every day around midnight. We can accept only 24h of data loss since the last backup.
 
 
 ## VERSIONING AND RETENTION

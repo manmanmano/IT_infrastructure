@@ -2,7 +2,7 @@ acl lans { {%for network in dns_networks%} {{ network }}; {%endfor%} };
 
 options {
         directory "/var/cache/bind";
-
+        allow-query { lans; };
         forwarders {
 {%for forwarder in dns_forwarders-%} 
             {{ forwarder }};
