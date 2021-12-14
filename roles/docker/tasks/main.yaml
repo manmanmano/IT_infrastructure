@@ -4,7 +4,7 @@
       - docker.io
       - python3-docker
 
-- name: Log into DockerHub
+- name: Log in to DockerHub
   community.docker.docker_login:
     username: manmanmano
     password: "{{ docker_password }}"
