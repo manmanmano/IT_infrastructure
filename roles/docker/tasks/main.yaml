@@ -4,6 +4,11 @@
       - docker.io
       - python3-docker
 
+- name: Log into DockerHub
+  community.docker.docker_login:
+    username: manmanmano
+    password: "{{ docker_password }}"
+
 - name: Docker service
   ansible.builtin.service:
     name: docker
