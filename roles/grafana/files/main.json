@@ -88,7 +88,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 18,
+        "h": 13,
         "w": 24,
         "x": 0,
         "y": 1
@@ -112,7 +112,7 @@
         },
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "targets": [
         {
           "exemplar": true,
@@ -179,7 +179,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 19
+        "y": 14
       },
       "id": 34,
       "options": {
@@ -197,7 +197,7 @@
         "text": {},
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "targets": [
         {
           "exemplar": true,
@@ -264,7 +264,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 19
+        "y": 14
       },
       "id": 38,
       "options": {
@@ -284,7 +284,7 @@
         },
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "targets": [
         {
           "exemplar": true,
@@ -303,7 +303,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 22
       },
       "id": 28,
       "panels": [],
@@ -352,7 +352,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 28
+        "y": 23
       },
       "id": 30,
       "options": {
@@ -372,7 +372,7 @@
         },
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "targets": [
         {
           "exemplar": true,
@@ -402,7 +402,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 28
+        "y": 23
       },
       "hiddenSeries": false,
       "id": 32,
@@ -422,7 +422,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -483,7 +483,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 31
       },
       "hiddenSeries": false,
       "id": 26,
@@ -503,7 +503,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "pointradius": 0.5,
       "points": true,
       "renderer": "flot",
@@ -593,7 +593,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 44
+        "y": 39
       },
       "id": 24,
       "panels": [],
@@ -651,7 +651,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 45
+        "y": 40
       },
       "id": 20,
       "options": {
@@ -669,7 +669,7 @@
         "text": {},
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "targets": [
         {
           "expr": "nginx_up",
@@ -698,7 +698,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 45
+        "y": 40
       },
       "hiddenSeries": false,
       "id": 22,
@@ -718,7 +718,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -770,7 +770,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 53
+        "y": 48
       },
       "id": 18,
       "panels": [],
@@ -794,7 +794,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 49
       },
       "hiddenSeries": false,
       "id": 16,
@@ -815,7 +815,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -923,7 +923,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 64
+        "y": 59
       },
       "id": 14,
       "options": {
@@ -943,7 +943,7 @@
         },
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "targets": [
         {
           "expr": "mysql_up",
@@ -961,7 +961,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 73
+        "y": 68
       },
       "id": 12,
       "panels": [],
@@ -985,7 +985,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 74
+        "y": 69
       },
       "hiddenSeries": false,
       "id": 10,
@@ -1006,7 +1006,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1105,7 +1105,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 83
+        "y": 78
       },
       "id": 8,
       "options": {
@@ -1125,7 +1125,7 @@
         },
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "targets": [
         {
           "expr": "bind_up",
@@ -1143,7 +1143,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 92
+        "y": 87
       },
       "id": 6,
       "panels": [],
@@ -1167,7 +1167,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 93
+        "y": 88
       },
       "hiddenSeries": false,
       "id": 2,
@@ -1188,7 +1188,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1253,7 +1253,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 101
+        "y": 96
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1273,7 +1273,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1321,7 +1321,7 @@
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 33,
+  "schemaVersion": 34,
   "style": "dark",
   "tags": [],
   "templating": {

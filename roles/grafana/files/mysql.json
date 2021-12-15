@@ -62,7 +62,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -151,7 +151,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -234,8 +234,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 24,
+        "h": 7,
+        "w": 12,
         "x": 0,
         "y": 8
       },
@@ -257,7 +257,7 @@
         },
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.3",
       "targets": [
         {
           "expr": "mysql_global_variables_server_id",
@@ -315,10 +315,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 16
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 8
       },
       "id": 6,
       "options": {
@@ -338,7 +338,7 @@
         },
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.3",
       "targets": [
         {
           "expr": "mysql_global_variables_read_only",
@@ -411,7 +411,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 15
       },
       "id": 2,
       "options": {
@@ -431,7 +431,7 @@
         },
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.3",
       "targets": [
         {
           "expr": "mysql_up",
@@ -460,7 +460,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 4,
@@ -482,7 +482,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.3",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -532,7 +532,7 @@
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 33,
+  "schemaVersion": 34,
   "style": "dark",
   "tags": [],
   "templating": {
