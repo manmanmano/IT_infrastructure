@@ -66,7 +66,7 @@
     - nx
 
 - name: Haproxy and Keepalive
-  hosts: haproxies
+  hosts: haproxy
   become: yes
   gather_facts: no
   roles: 
@@ -78,7 +78,7 @@
     - hk
 
 - name: Docker bug
-  hosts: web_apps
+  hosts: web_servers
   become: yes
   gather_facts: no
   roles:
@@ -87,7 +87,7 @@
     - ip
 
 - name: Docker
-  hosts: web_apps
+  hosts: web_servers
   become: yes
   gather_facts: no
   roles:
