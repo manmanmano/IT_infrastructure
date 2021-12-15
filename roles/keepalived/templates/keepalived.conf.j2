@@ -3,6 +3,10 @@ vrrp_script check_haproxy {
     weight 20                              
     interval 1               
 }
+global_defs {
+    enable_script_security
+    script_user ubuntu
+}
 vrrp_instance clounsible.mano {             
     interface ens3
     virtual_router_id 1 
