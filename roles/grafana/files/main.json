@@ -107,8 +107,8 @@
           "values": false
         },
         "text": {
-          "titleSize": 13,
-          "valueSize": 70
+          "titleSize": 20,
+          "valueSize": 100
         },
         "textMode": "value_and_name"
       },
@@ -1347,6 +1347,6 @@
   "timezone": "",
   "title": "clounsible.mano",
   "uid": "mPEUZid7k",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
