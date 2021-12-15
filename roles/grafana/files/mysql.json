@@ -253,7 +253,8 @@
           "values": false
         },
         "text": {
-          "titleSize": 15
+          "titleSize": 15,
+          "valueSize": 150
         },
         "textMode": "value_and_name"
       },
@@ -558,6 +559,6 @@
   "timezone": "",
   "title": "MySQL",
   "uid": "-gAQY4tnk",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
