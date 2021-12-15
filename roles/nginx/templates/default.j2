@@ -2,7 +2,7 @@ server {
         listen 80 default_server;
         server_name manmanmano;
 
-{%if inventory_hostname in groups['web_servers']%}
+{%if inventory_hostname in groups['web_apps']%}
         location / {
             proxy_pass http://localhost:{{ agama_ports["agama-1"] }};
             proxy_set_header Host $http_host;

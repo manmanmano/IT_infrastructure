@@ -8,10 +8,8 @@ vrrp_instance clounsible.mano {
     virtual_router_id 1 
     {% if inventory_hostname == 'manmanmano-1' %}
     priority 100
-    {% elif inventory_hostname == 'manmanmano-2' %}
-    priority 99
     {% else %}
-    priority 98
+    priority 99
     {% endif %}
     advert_int 1                            
     virtual_ipaddress {                     
